@@ -1,40 +1,125 @@
 .header{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 19px;
-    font-family: 'Manrope', sans-serif;
-   }
-   a{
-       text-decoration: none;
-       color: black;
-   }
-   .map{
+    height: 182px;
+    padding: 20px 0 10.5px 0;
+
+    }
+    .searchPart{
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+        height: 48px;
+        font-family: Manrope-Regular;
+    }
+  
+    .geolocation{
+        
+    }
+    .map{
        display: flex;
-   }
-   .time{
+       gap: 10px;
+    }
+    .time{
        display: flex;
+       gap: 10px;
        margin-top: 7px;
-   }
-   input {
-       width: 367px;
-       border-radius: 24px;
-       padding: 8px 18px 8px 18px;
-       border: 2px solid #F3F1F1;
-   }
-   .input-with-svg{ 
-       background: url('C:\Users\Notnik_kg\Desktop\clinic-project\clinic\public\System.svg') no-repeat right center;
-       background-size:  20px 20px;
-       border: 1px solid #ccc;
-   }
-   .nav{
-       padding-top: 10px;
-   }
-   .contact{
-       margin-right: 10px ;
-   }
-   .phonenum{
-       display: flex;
-   }
+    }
+    .searchInput {
+        width: 367px;
+        height: 40px;
+        border: none;
+        border-radius: 24px;
+        background-color: rgb(243, 241, 241);
+        padding: 8px 18px 8px 18px;
+        font-family: Manrope-Medium;
+    }
+
+    .links{
+        display: flex;
+        align-items:center;
+        gap: 10px;
+    }
+
+    .phoneNumbers{
+
+    }
+     .number1{
+        display: flex;
+        gap: 6px;
+     }
+     .number2{
+        display: flex;
+        justify-content: end;
+        margin-top: 4px;
+
+     }
+    
+.navPart{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    height: 96.5px;
+    font-family: Manrope-Medium;
+    padding-top: 12.5px;
+    margin-top: 19.5px;
+    border-top: 1px solid rgb(217, 217, 217);
+}
+
+
+
+.navPart .nav ul{ 
+    display: flex;
+    list-style-type:none;
+    gap: 36px;
+
+}
+
+.navPart .buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.navPart .buttons button {
+    display: block;
+    border: none;
+    height: 43px;
+    padding: 8px 20px 8px 20px;
+    background: linear-gradient(180.00deg, rgb(12, 187, 107),rgb(2, 123, 68) 100%);
+    border-radius: 24px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-family: Manrope-Medium;
+    font-size: 14px;
+
+}
+
+
+.navPart .buttons button:hover {
+    background: rgb(255, 255, 255);
+    color: rgb(4, 135, 65);
+    border: 1px solid rgb(4, 135, 65);
+    padding: 7px 19px 7px 19px;
+
+    
+}
+
+
+.navPart .buttons .btn1 {
+    width: 205px; 
+}
+
+.navPart .buttons .btn2 {
+    width: 158px;
+}
+
+
+
+   
+
+
+
+
+
+
 
 
 
