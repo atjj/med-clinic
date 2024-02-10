@@ -7,7 +7,7 @@ import map from  '../../assets/icons/map.svg';
 import time from  '../../assets/icons/time.svg';
 import phone from  '../../assets/icons/phone.svg';
 
-import logo from '../../assets/images/logos/medcheckLogo.svg'
+import logo from '../../assets/logos/medcheckLogo.svg'
 
 
 
@@ -44,11 +44,11 @@ const Header = () => {
                             <img src={phone} alt="phone" />
                             <span>+996(800) 000 000</span>
                         </div>
-                        <div className={styles.number2}>+996(505) 000 000</div> 
+                        <dgitiv className={styles.number2}>+996(505) 000 000</dgitiv> 
                     </div>
 
                     <div className={styles.profile}> 
-                        <img src={profile} alt="profile" />
+                        <a href = "#"><img src={profile} alt="profile" /></a>
                     </div>
             </div>
 
@@ -56,16 +56,16 @@ const Header = () => {
             <div className = {styles.navPart}>
                 
                 <div className= {styles.logo}>
-                    <img src = {logo}/>
+                    <a href = '#'><img src = {logo} alt = "logo"/></a>
                 </div>
 
                 <div className= {styles.nav}>
                     <ul>
-                        <li>О клинике</li>
-                        <li>Услуги</li>
-                        <li>Врачи</li>
-                        <li>Прайс</li>
-                        <li>Контакты</li>
+                        <li><a href='#'>О клинике</a></li>
+                        <li><a href='#'>Услуги</a></li>
+                        <li><a href='#'>Врачи</a></li>
+                        <li><a href='#'>Прайс</a></li>
+                        <li><a href='#'>Контакты</a></li>
                     </ul>
                 </div>
 

@@ -1,0 +1,183 @@
+.poster {
+    display: flex;
+    margin-top: 22px;
+}
+
+.poster .title {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    gap: 26px;
+
+}
+
+.poster .title h1 {
+    background: linear-gradient(90.00deg, rgb(48, 207, 208),rgb(51, 8, 103));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'Poppins Black', sans-serif;
+    font-size: 48px;
+}
+
+.poster .title p {
+    color: rgb(34, 34, 34);
+    font-family: Manrope-Regular;
+    font-size: 18px;
+}
+
+.poster .title button {
+    display: block;
+    border: none;
+    height: 43px;
+    padding: 8px 20px 8px 20px;
+    background: linear-gradient(180.00deg, rgb(12, 187, 107),rgb(2, 123, 68) 100%);
+    border-radius: 24px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-family: Manrope-Semi-Bold;
+    font-size: 14px;
+    
+    width: 177px;
+    
+}
+
+.poster .title button:hover {
+    background: rgb(255, 255, 255);
+    color: rgb(4, 135, 65);
+    border: 1px solid rgb(4, 135, 65);
+    padding: 7px 19px 7px 19px;
+
+    
+}
+
+
+.cards {
+    margin-top: 20px;
+}
+
+.cards h2{
+    font-family: Manrope-Semi-Bold;
+    font-size: 36px;
+}
+.cards h2 span {
+    color: rgb(4, 135, 65);
+}
+
+.cards .cardContainer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+
+
+.serviceSection{
+    margin-top: 120px;
+}
+
+.serviceSection h2 {
+    font-family: Manrope-Semi-Bold;
+    font-size: 36px;
+}
+
+.serviceSection h2 span{
+    color: rgb(4, 135, 65);
+}
+
+.serviceSection h3{
+    margin-top: 34px;
+    font-family: Manrope-Regular;
+    font-size: 18px;
+}
+
+
+.serviceSection .services {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+
+
+
+
+
+
+.serviceSection .services .wrapper .icon {
+    width: 102px;
+    height: 106px;
+    border: 1px solid rgb(222, 222, 222);
+    border-radius: 18px;
+    padding: 23px 26px;
+}
+
+.serviceSection .services .wrapper .desc {
+    margin-top: 20px;
+    font-family: Manrope-Light;
+    text-align: center;
+}
+
+.serviceSection .btnPanel {
+    margin-top: 48px;
+    text-align: center;
+}
+
+
+
+.serviceSection .btnPanel button {
+    width: 147px;
+    height: 42px;
+    padding: 10px 20px 10px 20px;
+    border: 1px solid rgb(4, 135, 65);
+    border-radius: 10px;
+    background-color: white;
+    color: rgb(4, 135, 65);
+    font-family: Manrope-Medium;
+    cursor: pointer;
+}
+
+
+
+.infoSection {
+    margin-top: 120px;
+}
+
+.infoSection  h2 {
+    font-family: Manrope-Semi-Bold;
+    font-size: 36px;
+    margin-bottom: 60px;
+}
+.infoSection  h2 span {
+    color: rgb(4, 135, 65);
+}
+
+
+.infoSection .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.infoSection .wrapper .info p {
+    color: rgb(77, 78, 81);
+    font-family: Manrope-Regular;
+    font-size: 16px;
+    width: 513px;
+    margin-bottom: 30px;
+    line-height: 160%;
+}
+
+.infoSection .wrapper .info a{
+    color: rgb(4, 135, 65);
+    font-family: Manrope-Regular;
+    text-decoration: none;
+}
+
+
+.infoSection .wrapper .clinicImages .subImages {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 26px;
+
+}

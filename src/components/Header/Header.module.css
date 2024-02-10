@@ -52,6 +52,8 @@
         margin-top: 4px;
 
      }
+
+
     
 .navPart{
     display: flex;
@@ -71,6 +73,11 @@
     list-style-type:none;
     gap: 36px;
 
+}
+
+.navPart .nav ul li a{
+    text-decoration: none;
+    color: rgb(34, 34, 34);
 }
 
 .navPart .buttons {

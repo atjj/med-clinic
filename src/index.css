@@ -23,27 +23,40 @@
 
 @font-face {
     font-family: Manrope-Semi-Bold;
-    src: url('./assets/fonts/Manrope-SemiBold.ttf');
+    src: url('./assets/fonts/Manrope/Manrope-SemiBold.ttf');
     font-weight: 600;
 }
 
 
 @font-face {
     font-family: Manrope-Medium;
-    src: url('./assets/fonts/Manrope-Medium.ttf');
+    src: url('./assets/fonts/Manrope/Manrope-Medium.ttf');
     font-weight: 500;
 }
 
 
 @font-face {
     font-family: Manrope-Regular;
-    src: url('./assets/fonts/Manrope-Regular.ttf');
+    src: url('./assets/fonts/Manrope/Manrope-Regular.ttf');
     font-weight: 400;
 }
 
 
 @font-face {
     font-family: Manrope-Light;
-    src: url('./assets/fonts/Manrope-Light.ttf');
+    src: url('./assets/fonts/Manrope/Manrope-Light.ttf');
     font-weight: 300;
 }
+
+@font-face {
+    font-family: 'Poppins Black';
+    src: url('./assets/fonts/Poppins/Poppins-Black.ttf') format('truetype');
+    font-weight: 900;
+    }
+
+
+@font-face {
+    font-family: 'Montserrat Medium';
+    src: url('./assets/fonts/Montserrat/Montserrat-Medium.ttf') format('truetype');
+    font-weight: 500;
+    }
