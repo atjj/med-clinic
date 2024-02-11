@@ -5,7 +5,7 @@ const BestDoctors = () =>{
     console.log(DB[0].name)
     return(
          <div className={styles.bestDoctors}>
-            <h1>Лучшие <span> врачи </span></h1>
+            <h2>Лучшие <span> врачи </span></h2>
             <p className={styles.title}>Попасть в команду медицинской клиники «MedCheck» могут
                только лучшие специалисты с многолетней практикой и доказанным опытом.</p>
             <div className={styles.doctorsData}>{DB.map((e, i)=>(

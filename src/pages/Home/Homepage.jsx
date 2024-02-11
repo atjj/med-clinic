@@ -184,7 +184,7 @@ const Homepage = () =>{
                         <img src={user} alt="user"/>
                     </div>
                     <div className={styles.input2}>
-                        <div>Номер мобильного телефона</div>
+                        <div className={styles.text}>Номер мобильного телефона</div>
                        <div>
                         <input  type="text" placeholder='+996 (___) __-__-__' />
                         <img src={phone2} alt="phone" />

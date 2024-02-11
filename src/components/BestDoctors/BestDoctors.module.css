@@ -1,13 +1,14 @@
 .bestDoctors {
   height: 555px;
   margin-top: 150px;
-  font-family: Manrope-Regular;
 }
-.bestDoctors h1 {
+.bestDoctors h2 {
   color: #000;
   font-size: 36px;
+  font-family: Manrope-Bold;
+  font-weight: 600;
 }
-.bestDoctors h1 span {
+.bestDoctors h2 span {
   color: #048741;
 }
 .bestDoctors .title {
@@ -38,6 +39,7 @@
 .doctorsData .cards {
   display: flex;
   flex-direction: column;
+  font-family: Manrope-Regular;
 }
 .doctorsData .cards p {
   text-align: center;
