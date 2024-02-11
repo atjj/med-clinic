@@ -44,7 +44,7 @@ const Header = () => {
                             <img src={phone} alt="phone" />
                             <span>+996(800) 000 000</span>
                         </div>
-                        <dgitiv className={styles.number2}>+996(505) 000 000</dgitiv> 
+                        <div className={styles.number2}>+996(505) 000 000</div> 
                     </div>
 
                     <div className={styles.profile}> 
