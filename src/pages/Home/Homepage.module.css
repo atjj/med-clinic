@@ -2,14 +2,12 @@
   display: flex;
   margin-top: 22px;
 }
-
 .poster .title {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 26px;
 }
-
 .poster .title h1 {
   background: linear-gradient(90deg, rgb(48, 207, 208), rgb(51, 8, 103));
   -webkit-background-clip: text;
@@ -18,13 +16,11 @@
   font-family: "Poppins Black", sans-serif;
   font-size: 48px;
 }
-
 .poster .title p {
   color: rgb(34, 34, 34);
   font-family: Manrope-Regular;
   font-size: 18px;
 }
-
 .poster .title button {
   display: block;
   border: none;
@@ -38,7 +34,6 @@
   font-size: 14px;
   width: 177px;
 }
-
 .poster .title button:hover {
   background: rgb(255, 255, 255);
   color: rgb(4, 135, 65);
@@ -49,16 +44,13 @@
 .cards {
   margin-top: 20px;
 }
-
 .cards h2 {
   font-family: Manrope-Semi-Bold;
   font-size: 36px;
 }
-
 .cards h2 span {
   color: rgb(4, 135, 65);
 }
-
 .cards .cardContainer {
   display: flex;
   justify-content: space-between;
@@ -68,28 +60,23 @@
 .serviceSection {
   margin-top: 120px;
 }
-
 .serviceSection h2 {
   font-family: Manrope-Semi-Bold;
   font-size: 36px;
 }
-
 .serviceSection h2 span {
   color: rgb(4, 135, 65);
 }
-
 .serviceSection h3 {
   margin-top: 34px;
   font-family: Manrope-Regular;
   font-size: 18px;
 }
-
 .serviceSection .services {
   display: flex;
   justify-content: space-between;
   margin-top: 60px;
 }
-
 .serviceSection .services .wrapper .icon {
   width: 102px;
   height: 106px;
@@ -97,18 +84,15 @@
   border-radius: 18px;
   padding: 23px 26px;
 }
-
 .serviceSection .services .wrapper .desc {
   margin-top: 20px;
   font-family: Manrope-Light;
   text-align: center;
 }
-
 .serviceSection .btnPanel {
   margin-top: 48px;
   text-align: center;
 }
-
 .serviceSection .btnPanel button {
   width: 147px;
   height: 42px;
@@ -124,22 +108,18 @@
 .infoSection {
   margin-top: 120px;
 }
-
 .infoSection h2 {
   font-family: Manrope-Semi-Bold;
   font-size: 36px;
   margin-bottom: 60px;
 }
-
 .infoSection h2 span {
   color: rgb(4, 135, 65);
 }
-
 .infoSection .wrapper {
   display: flex;
   justify-content: space-between;
 }
-
 .infoSection .wrapper .info p {
   color: rgb(77, 78, 81);
   font-family: Manrope-Regular;
@@ -148,61 +128,28 @@
   margin-bottom: 30px;
   line-height: 160%;
 }
-
 .infoSection .wrapper .info a {
   color: rgb(4, 135, 65);
   font-family: Manrope-Regular;
   text-decoration: none;
 }
-
 .infoSection .wrapper .clinicImages .subImages {
   display: flex;
   justify-content: space-between;
   margin-top: 26px;
 }
 
-.form {
-  margin-bottom: 90px;
+.bestDoctorsSection {
+  height: 555px;
+  margin-top: 120px;
+}
+
+.formSection {
+  margin-top: 120px;
   height: 530px;
   display: flex;
 }
-.form .inputs {
-  display: flex;
-  margin-top: 50px;
-  color: #4D4E51;
-}
-.form input {
-  width: 263px;
-  height: 42px;
-  margin-right: 13px;
-  border-radius: 5px;
-  border: 1px solid rgba(0, 147, 68, 0.5);
-}
-.form .input1 {
-  position: relative;
-}
-.form .input1 input {
-  padding-left: 30px;
-}
-.form .input1 img {
-  position: absolute;
-  top: 60%;
-  transform: translateY(-40%);
-  left: 10px;
-}
-.form .input2 {
-  position: relative;
-}
-.form .input2 input {
-  padding-left: 30px;
-}
-.form .input2 img {
-  position: absolute;
-  top: 60%;
-  transform: translateY(-40%);
-  left: 10px;
-}
-.form .forms {
+.formSection .form {
   width: 659px;
   background-color: rgb(219, 235, 255);
   border-radius: 20px;
@@ -212,23 +159,60 @@
   flex-direction: column;
   align-items: center;
 }
-.form .forms h1 {
+.formSection .form h1 {
   margin-top: 70px;
   font-size: 36px;
-  font-weight: 500;
-  font-family: Manrope-Regular;
+  font-family: Manrope-Medium;
 }
-.form .forms p {
+.formSection .form p {
   text-align: center;
   font-size: 18px;
   font-family: Manrope-Regular;
   width: 512px;
-  padding-top: 20px;
+  margin-top: 20px;
 }
-.form .forms .buttonCont {
+.formSection .form input {
+  width: 263px;
+  height: 42px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 147, 68, 0.5);
+}
+.formSection .form input::-moz-placeholder {
+  color: rgb(196, 196, 196);
+  font-size: 16px;
+}
+.formSection .form input::placeholder {
+  color: rgb(196, 196, 196);
+  font-size: 16px;
+}
+.formSection .form .inputs {
+  display: flex;
+  margin-top: 50px;
+  color: #4D4E51;
+  gap: 20px;
+}
+.formSection .form .inputs .text {
+  color: rgb(77, 78, 81);
+  font-family: Manrope-Regular;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.formSection .form .inputs .inputPanel {
   position: relative;
 }
-.form .forms .buttonCont button {
+.formSection .form .inputs .inputPanel input {
+  padding-left: 30px;
+}
+.formSection .form .inputs .inputPanel img {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-40%);
+  left: 10px;
+}
+.formSection .form .buttonCont {
+  position: relative;
+}
+.formSection .form .buttonCont button {
   display: block;
   border: none;
   height: 43px;
@@ -238,10 +222,10 @@
   border-radius: 24px;
   cursor: pointer;
   color: rgb(255, 255, 255);
-  font-family: Manrope-Regular;
+  font-family: Manrope-Semi-Bold;
   font-size: 14px;
 }
-.form .forms .buttonCont span {
+.formSection .form .buttonCont span {
   position: absolute;
   top: 63%;
   right: 5px;

@@ -42,10 +42,12 @@
 .text2 {
   padding-top: 20px;
   font-weight: 400;
+  color: #CCCCCC;
 }
 
 .contact {
   color: #fff;
+  font-family: Manrope-Regular;
 }
 .contact ul {
   display: flex;
@@ -53,6 +55,7 @@
   margin-top: 19px;
   justify-content: center;
   list-style-type: none;
+  color: #CCCCCC;
 }
 .contact li {
   display: flex;
@@ -81,6 +84,7 @@
   margin-top: 46px;
   font-family: Manrope-Regular;
   font-size: 16px;
+  color: #CCCCCC;
 }
 .nav ul .liscContact {
   display: flex;

@@ -1,58 +1,70 @@
-.bestDoctors{
-height: 555px;
-margin-top: 150px;
 
-
-h2{
-    color: #000;
-    font-size: 36px;
-    font-family: Manrope-Bold;
-    font-weight: 600;
-  span{
-    color: #048741;
-  }
- }
- .title{
-    display: block;
-    width: 45%;
-    padding-top: 20px;
- }
- button{
-    padding: 10px 20px;
-    border: 1px solid #048741;
-    background-color: #fff;
-    border-radius: 10px;
-    color:#048741;
-    font-family: Manrope-Regular;
- }
-}
-.doctorsData{
+    h2 {
+      color: #000;
+      font-size: 36px;
+      font-family: Manrope-Semi-Bold;
+      font-weight: 600;
+  
+      span {
+        color: #048741;
+      }
+    }
+  
+    .title {
+      margin-top: 34px;
+      width: 664px;
+      font-family: Manrope-Regular;
+      font-size: 18px;
+    }
+  
+    button {
+      padding: 10px 20px;
+      border: 1px solid #048741;
+      background-color: #fff;
+      border-radius: 10px;
+      color: #048741;
+      font-family: Manrope-Regular;
+    }
+  
+  .doctorsData {
     display: flex;
     justify-content: space-around;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    gap: 20px;
-    img{
-    border-radius: 50%;
-    padding-bottom: 10px;
-    }
-    .cards{
-        display: flex;
-        flex-direction: column;
-        font-family: Manrope-Regular;
-        p{
-            text-align: center;
-            font-size: 16px;
+    margin-top: 60px;
+    gap: 30px;
+  
 
-        }
-        .prof{
-            font-size: 14px;
-            color: #959595;
-        }
+  
+    .cards {
+      display: flex;
+      flex-direction: column;
+      font-family: Manrope-Regular;
+
+      img {
+        border-radius: 50%;
+        width: 203px;
+      
+      }
+  
+      p {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 16px;
+        font-family: Manrope-Medium;
+      }
+  
+      .prof {
+        margin-top: 2px;
+        font-size: 14px;
+        color: #959595;
+        font-family: Manrope-Medium;
+      }
     }
-}
-.btn{
+  }
+  
+  .btn {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+    margin-top: 40px;
+  }
+  
