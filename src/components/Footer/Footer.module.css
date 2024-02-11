@@ -1,0 +1,114 @@
+.footer {
+  background-color: rgb(33, 37, 41);
+  height: 494px;
+  color: #fff;
+}
+
+.container {
+  padding-top: 68px;
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footerCol {
+  display: flex;
+  justify-content: space-between;
+}
+.footerCol .about {
+  width: 35%;
+}
+.footerCol .about .logo {
+  display: flex;
+}
+.footerCol .about .logo .medchek {
+  padding-top: 35px;
+  padding-left: 10px;
+}
+.footerCol .info {
+  display: flex;
+  width: 55%;
+  justify-content: space-between;
+}
+
+.text {
+  font-family: Manrope-Regular;
+  padding-top: 20px;
+  font-size: 16px;
+}
+
+.text2 {
+  padding-top: 20px;
+  font-weight: 400;
+}
+
+.contact {
+  color: #fff;
+}
+.contact ul {
+  display: flex;
+  flex-direction: column;
+  margin-top: 19px;
+  justify-content: center;
+  list-style-type: none;
+}
+.contact li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.contact li img {
+  width: 22px;
+  height: 22px;
+  margin-right: 2px;
+}
+
+.links {
+  margin-top: 19px;
+}
+.links img {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+
+.nav ul {
+  display: flex;
+  list-style-type: none;
+  gap: 36px;
+  margin-top: 46px;
+  font-family: Manrope-Regular;
+  font-size: 16px;
+}
+.nav ul .liscContact {
+  display: flex;
+  flex-direction: column;
+}
+.nav ul .image {
+  margin-top: -15px;
+}
+
+.footerMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footerMain .nav {
+  margin-top: 40px;
+}
+
+.footerMain::after {
+  content: "";
+  background: #6F7074;
+  height: 1px;
+  display: block;
+  width: 1200px;
+  margin-top: 45px;
+}
+
+.footerDown {
+  color: #959595;
+  margin-top: 27.75px;
+}/*# sourceMappingURL=Footer.module.css.map */
