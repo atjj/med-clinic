@@ -1,9 +1,12 @@
-import styles from './Homepage.module.css'
+import styles from './Homepage.module.scss'
 
 import Card from '../../components/Card/Card.jsx'
 
 import doctorImage from '../../assets/images/doctor.jpg'
-
+import form from '../../assets/images/form.png'
+import user from '../../assets/icons/Users.svg';
+import phone2 from '../../assets/icons/phone2.svg';
+import send from '../../assets/icons/send.svg';
 import vaccine from '../../assets/images/vaksinasiya.png'
 import derma from '../../assets/images/Dermatologiya.png'
 import fizio from '../../assets/images/Fizioterapiya.png'
@@ -20,6 +23,7 @@ import clinic1 from '../../assets/images/clinic/clinic1.jpeg';
 import clinic2 from '../../assets/images/clinic/clinic2.jpeg';
 import clinic3 from '../../assets/images/clinic/clinic3.jpeg';
 import clinic4 from '../../assets/images/clinic/clinic4.jpeg';
+import BestDoctors from '../../components/BestDoctors/BestDoctors.jsx'
 
 
 
@@ -165,6 +169,36 @@ const Homepage = () =>{
 
 
             </div>
+
+            <div className={styles.bestDoctors}>
+                <BestDoctors/>     
+            </div>
+            <div className={styles.form}>
+            <div className={styles.forms}>
+                <h1>Оставьте заявку</h1>
+                <p>Оставьте свой номер и наши специалисты свяжутся с Вами в ближайшее время</p>
+                <div className={styles.inputs}>
+                    <div className={styles.input1}>
+                        <div className={styles.text}>Как к Вам обратиться?</div>
+                        <input type="text" placeholder='Введите имя' />
+                        <img src={user} alt="user"/>
+                    </div>
+                    <div className={styles.input2}>
+                        <div>Номер мобильного телефона</div>
+                       <div>
+                        <input  type="text" placeholder='+996 (___) __-__-__' />
+                        <img src={phone2} alt="phone" />
+                    </div>
+                    </div>
+                   
+                </div>
+
+                <div className={styles.buttonCont}><button>ОТПРАВИТЬ ЗАЯВКУ</button><span><img src={send} alt="" /></span></div>
+            </div>
+            <div className={styles.images}>
+                <img src={form} alt="" />
+            </div>
+        </div>
 
 
 
