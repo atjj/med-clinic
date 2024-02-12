@@ -1,0 +1,31 @@
+h2 {
+  font-family: Manrope-Semi-Bold;
+  font-size: 36px;
+  margin-bottom: 60px;
+}
+h2 span {
+  color: rgb(4, 135, 65);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.wrapper .info p {
+  color: rgb(77, 78, 81);
+  font-family: Manrope-Regular;
+  font-size: 16px;
+  width: 513px;
+  margin-bottom: 30px;
+  line-height: 160%;
+}
+.wrapper .info a {
+  color: rgb(4, 135, 65);
+  font-family: Manrope-Regular;
+  text-decoration: none;
+}
+.wrapper .clinicImages .subImages {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 26px;
+}/*# sourceMappingURL=Info.module.css.map */

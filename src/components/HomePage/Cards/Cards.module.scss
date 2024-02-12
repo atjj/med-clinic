@@ -1,0 +1,18 @@
+.cards {
+    margin-top: 20px;
+  
+    h2 {
+      font-family: Manrope-Semi-Bold;
+      font-size: 36px;
+  
+      span {
+        color: rgb(4, 135, 65);
+      }
+    }
+  
+    .cardContainer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 60px;
+    }
+  }

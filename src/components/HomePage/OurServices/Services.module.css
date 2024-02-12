@@ -1,0 +1,47 @@
+h2 {
+  font-family: Manrope-Semi-Bold;
+  font-size: 36px;
+}
+h2 span {
+  color: rgb(4, 135, 65);
+}
+
+h3 {
+  margin-top: 34px;
+  font-family: Manrope-Regular;
+  font-size: 18px;
+}
+
+.services {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+.services .wrapper .icon {
+  width: 102px;
+  height: 106px;
+  border: 1px solid rgb(222, 222, 222);
+  border-radius: 18px;
+  padding: 23px 26px;
+}
+.services .wrapper .desc {
+  margin-top: 20px;
+  font-family: Manrope-Light;
+  text-align: center;
+}
+
+.btnPanel {
+  margin-top: 48px;
+  text-align: center;
+}
+.btnPanel button {
+  width: 147px;
+  height: 42px;
+  padding: 10px 20px 10px 20px;
+  border: 1px solid rgb(4, 135, 65);
+  border-radius: 10px;
+  background-color: white;
+  color: rgb(4, 135, 65);
+  font-family: Manrope-Medium;
+  cursor: pointer;
+}/*# sourceMappingURL=Services.module.css.map */
