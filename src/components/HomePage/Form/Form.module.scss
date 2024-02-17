@@ -52,8 +52,7 @@
       }
   
       .inputPanel{
-        position: relative;
-  
+        position: relative;  
         input {
           padding-left: 30px;
         }
@@ -61,7 +60,7 @@
         img{
           position: absolute;
           top: 60%;
-          transform: translateY(-40%);
+          transform: translateY(-20%);
           left: 10px;
         }
       }

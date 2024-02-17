@@ -20,7 +20,6 @@ const Homepage = () => {
             <Poster/>
             <Cards/>
 
-
             <div className= {styles.serviceSection}>
                 <Services/>
             </div>

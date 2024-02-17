@@ -55,7 +55,7 @@
 .form .inputs .inputPanel img {
   position: absolute;
   top: 60%;
-  transform: translateY(-40%);
+  transform: translateY(-20%);
   left: 10px;
 }
 .form .buttonCont {

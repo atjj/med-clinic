@@ -9,7 +9,7 @@ import phone from  '../../assets/icons/phone.svg';
 
 import logo from '../../assets/logos/medcheckLogo.svg'
 
-
+import { Link } from 'react-router-dom';
 
 
 
@@ -56,16 +56,16 @@ const Header = () => {
             <div className = {styles.navPart}>
                 
                 <div className= {styles.logo}>
-                    <a href = '#'><img src = {logo} alt = "logo"/></a>
+                    <Link to = '/'><img src = {logo} alt = "logo"/></Link>
                 </div>
 
                 <div className= {styles.nav}>
                     <ul>
-                        <li><a href='#'>О клинике</a></li>
-                        <li><a href='#'>Услуги</a></li>
-                        <li><a href='#'>Врачи</a></li>
-                        <li><a href='#'>Прайс</a></li>
-                        <li><a href='#'>Контакты</a></li>
+                        <li><Link to ='/about'>О клинике</Link></li>
+                        <li><Link to ='/services'>Услуги</Link></li>
+                        <li><Link to ='/doctors'>Врачи</Link></li>
+                        <li><Link to ='/price'>Прайс</Link></li>
+                        <li><Link to ='/contacts'>Контакты</Link></li>
                     </ul>
                 </div>
 

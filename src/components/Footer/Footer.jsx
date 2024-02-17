@@ -9,6 +9,12 @@ import whats from '../../assets/icons/what.svg';
 
 import logos from '../../assets/icons/logos.svg';
 import med from '../../assets/images/MedCheck.svg';
+
+
+
+import { Link } from 'react-router-dom';
+
+
 const Footer = () =>{
     return(
      <div className={styles.footer}>
@@ -50,8 +56,8 @@ const Footer = () =>{
                     </ul>
                 </div>
 
-                <div className={styles.social}>
-                    <div className="social_text">
+                <div className = {styles.social}>
+                    <div className = {styles.text} >
                         Мы в социальных сетях:
                     </div>
                     <div className={styles.links}>
@@ -65,18 +71,17 @@ const Footer = () =>{
             </div>
             <div className= {styles.nav}>
                     <ul>
-                        <li>О клинике</li>
-                        <li>Услуги</li>
-                        <li>Врачи</li>
-                        <li>Прайс</li>
-                        <li>Контакты</li>
+                        <li><Link to = '/about'>О клинике</Link></li>
+                        <li><Link to = '/services'>Услуги</Link></li>
+                        <li><Link to = '/doctors'>Врачи</Link></li>
+                        <li><Link to = '/price'>Прайс</Link></li>
+                        <li><Link to = '/contacts'>Контакты</Link></li>
                     </ul>
                 </div>
                 </div>
             
-                <div className={styles.footerDown}>
-                    
-                © Peaksoft House 2023  | MedCheck | Все права защищены
+                <div className={styles.footerDown}> 
+                    © Peaksoft House 2023  | MedCheck | Все права защищены
                 </div>
         </div> 
         

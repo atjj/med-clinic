@@ -3,8 +3,9 @@ $font:Manrope-Regular;
 
 .footer{
     background-color: rgb(33,37,41);
-    height: 494px;
     color: #fff;
+    box-shadow: 0 0 0 100vmax rgb(33,37,41);
+    clip-path: inset(0 -100vmax);
 }
 .container{
     padding-top: 68px;
@@ -32,6 +33,13 @@ $font:Manrope-Regular;
         display: flex;
         width: 55%;
         justify-content:space-between;
+
+        .social {
+            .text{
+                font-family: Manrope-Medium;
+            }
+
+        }
         
     }
 }
@@ -93,6 +101,11 @@ $font:Manrope-Regular;
     }
 
 }
+
+
+.footerDown{
+    font-family: Manrope-Regular;
+}
 .footerMain{
     display: flex;
     flex-direction: column;
@@ -111,5 +124,12 @@ $font:Manrope-Regular;
 }
 .footerDown{
     color: #959595;
-    margin-top: 27.75px;
+/*     margin-top: 27.75px;
+ */    padding: 20px 0;
+    
+}
+
+a{
+    text-decoration: none;
+    color:#6F7074;
 }
