@@ -1,0 +1,104 @@
+.services .header {
+  color: rgb(4, 135, 65);
+  font-family: Manrope-Semi-Bold;
+  font-size: 36px;
+  margin-top: 75px;
+}
+.services .descr {
+  font-family: Manrope-Light;
+  line-height: 150%;
+  width: 742px;
+  margin-top: 34px;
+}
+.services h3 {
+  font-family: Manrope-Semi-Bold;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 50px;
+}
+.services .reason {
+  margin-top: 16px;
+  font-family: Manrope-Light;
+  width: 742px;
+  line-height: 150%;
+}
+.services .list {
+  margin-top: 12px;
+  margin-left: 25px;
+  font-family: Manrope-Light;
+}
+.services .list li {
+  margin: 15px 0;
+}
+.services .list li::marker {
+  color: rgb(4, 135, 65);
+}
+.services .prices {
+  margin-top: 120px;
+}
+.services .prices h3 {
+  font-family: Manrope-Bold;
+  font-size: 36px;
+}
+.services .prices h3 span {
+  color: rgb(4, 135, 65);
+}
+.services .prices .pricetitle {
+  background-color: rgb(219, 240, 229);
+  display: flex;
+  padding: 16px 38px 20px 30px;
+  width: 852px;
+  border-radius: 10px;
+  font-family: Manrope-Semi-Bold;
+  font-size: 18px;
+  justify-content: space-between;
+  margin: 60px 0 26px 0;
+}
+.services .prices .priceitem {
+  width: 852px;
+  font-family: Manrope-Regular;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 50px 20px 14px;
+  border-bottom: 1px solid rgb(224, 226, 231);
+}
+.services .experts {
+  margin-top: 120px;
+}
+.services .experts h1 {
+  font-family: Manrope-Semi-Bold;
+  font-size: 24px;
+  color: rgb(77, 78, 81);
+}
+.services .experts .wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  width: 1017px;
+}
+.services .experts .wrapper .expert {
+  height: 472px;
+  width: 319px;
+  display: flex;
+  flex-direction: column;
+}
+.services .experts .wrapper .expert img {
+  height: 349px;
+  width: 100%;
+}
+.services .experts .wrapper .expert .name {
+  margin-top: 16px;
+  font-family: Manrope-Medium;
+  font-size: 18px;
+}
+.services .experts .wrapper .expert .speciality {
+  color: rgb(145, 147, 153);
+  font-family: Manrope-Medium;
+  font-size: 16px;
+}
+.services .experts .wrapper .expert .btn {
+  margin-top: 18px;
+  width: 202px;
+  height: 42px;
+}/*# sourceMappingURL=ServicePage.module.css.map */

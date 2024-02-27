@@ -7,7 +7,7 @@ import BestDoctors from '../../components/HomePage/BestDoctors/BestDoctors.jsx'
 import Poster from '../../components/HomePage/Poster/Poster.jsx';
 import Services from '../../components/HomePage/OurServices/Services.jsx';
 import Info from '../../components/HomePage/Info/Info.jsx';
-import Form from '../../components/HomePage/Form/Form.jsx';
+import Form from '../../components/commonComponents/Form/Form.jsx';
 import Cards from '../../components/HomePage/Cards/Cards.jsx';
 
 
@@ -15,7 +15,6 @@ const Homepage = () => {
     return(
         
         <div className= {styles.home}>
-
 
             <Poster/>
             <Cards/>
@@ -33,11 +32,9 @@ const Homepage = () => {
             <div className={styles.bestDoctorsSection}>
                 <BestDoctors/>     
             </div>
-
-
-            <div className={styles.formSection}>
-                <Form/>
-            </div>
+            
+            
+            <Form/>
 
         </div>
     )

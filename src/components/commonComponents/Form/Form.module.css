@@ -1,4 +1,9 @@
-.form {
+.formSection {
+  margin: 120px 0;
+  height: 530px;
+  display: flex;
+}
+.formSection .form {
   width: 659px;
   background-color: rgb(219, 235, 255);
   border-radius: 20px;
@@ -8,60 +13,60 @@
   flex-direction: column;
   align-items: center;
 }
-.form h1 {
+.formSection .form h1 {
   margin-top: 70px;
   font-size: 36px;
   font-family: Manrope-Medium;
 }
-.form p {
+.formSection .form p {
   text-align: center;
   font-size: 18px;
   font-family: Manrope-Regular;
   width: 512px;
   margin-top: 20px;
 }
-.form input {
+.formSection .form input {
   width: 263px;
   height: 42px;
   border-radius: 5px;
   border: 1px solid rgba(0, 147, 68, 0.5);
 }
-.form input::-moz-placeholder {
+.formSection .form input::-moz-placeholder {
   color: rgb(196, 196, 196);
   font-size: 16px;
 }
-.form input::placeholder {
+.formSection .form input::placeholder {
   color: rgb(196, 196, 196);
   font-size: 16px;
 }
-.form .inputs {
+.formSection .form .inputs {
   display: flex;
   margin-top: 50px;
   color: #4D4E51;
   gap: 20px;
 }
-.form .inputs .text {
+.formSection .form .inputs .text {
   color: rgb(77, 78, 81);
   font-family: Manrope-Regular;
   font-size: 14px;
   margin-bottom: 6px;
 }
-.form .inputs .inputPanel {
+.formSection .form .inputs .inputPanel {
   position: relative;
 }
-.form .inputs .inputPanel input {
+.formSection .form .inputs .inputPanel input {
   padding-left: 30px;
 }
-.form .inputs .inputPanel img {
+.formSection .form .inputs .inputPanel img {
   position: absolute;
   top: 60%;
   transform: translateY(-20%);
   left: 10px;
 }
-.form .buttonCont {
+.formSection .form .buttonCont {
   position: relative;
 }
-.form .buttonCont button {
+.formSection .form .buttonCont button {
   display: block;
   border: none;
   height: 43px;
@@ -74,7 +79,7 @@
   font-family: Manrope-Semi-Bold;
   font-size: 14px;
 }
-.form .buttonCont span {
+.formSection .form .buttonCont span {
   position: absolute;
   top: 63%;
   right: 5px;

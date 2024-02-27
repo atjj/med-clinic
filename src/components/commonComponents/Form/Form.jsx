@@ -8,7 +8,7 @@ import send from '../../../assets/icons/send.svg';
 
 const Form = () =>{
     return (
-        <>
+        <div className={styles.formSection}>
 
                 <div className={styles.form}>
 
@@ -41,7 +41,7 @@ const Form = () =>{
                 </div>
         
         
-        </>
+        </div>
     
     )
 }
