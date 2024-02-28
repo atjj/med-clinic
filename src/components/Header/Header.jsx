@@ -8,7 +8,7 @@ import time from  '../../assets/icons/time.svg';
 import phone from  '../../assets/icons/phone.svg';
 
 import logo from '../../assets/logos/medcheckLogo.svg'
-
+import container from '../../styles/ContainerStyles.module.scss'
 import { Link } from 'react-router-dom';
 
 
@@ -16,7 +16,9 @@ import { Link } from 'react-router-dom';
 const Header = () => {
 
     return (
+        <div className={container.container}>
         <div className={styles.header}>
+            
             <div className={styles.searchPart} >
                     <div className={styles.geolocation}>
                         <div className={styles.map}>
@@ -83,7 +85,7 @@ const Header = () => {
         </div>
             
             
-       
+        </div>
 
     )
 }

@@ -1,21 +1,16 @@
 import styles from './Homepage.module.scss'
-
-
-
-
 import BestDoctors from '../../components/HomePage/BestDoctors/BestDoctors.jsx'
 import Poster from '../../components/HomePage/Poster/Poster.jsx';
 import Services from '../../components/HomePage/OurServices/Services.jsx';
 import Info from '../../components/HomePage/Info/Info.jsx';
 import Form from '../../components/HomePage/Form/Form.jsx';
 import Cards from '../../components/HomePage/Cards/Cards.jsx';
-
+import container from '../../styles/ContainerStyles.module.scss'
 
 const Homepage = () => {
     return(
-        
         <div className= {styles.home}>
-
+            <div className={container.container} >
 
             <Poster/>
             <Cards/>
@@ -38,7 +33,7 @@ const Homepage = () => {
             <div className={styles.formSection}>
                 <Form/>
             </div>
-
+            </div>
         </div>
     )
 }

@@ -1,0 +1,113 @@
+[
+    {
+        "profName": "Хирургия",
+        "data":[
+            {
+                "img":"https://hips.hearstapps.com/hmg-prod/images/portrait-of-a-happy-young-doctor-in-his-clinic-royalty-free-image-1661432441.jpg?crop=0.66698xw:1xh;center,top&resize=1200:*",
+                "name":"Антух Евгений",
+                "prof":"Врач-невролог"
+            },
+            {
+                "img":"https://hips.hearstapps.com/hmg-prod/images/portrait-of-a-happy-young-doctor-in-his-clinic-royalty-free-image-1661432441.jpg?crop=0.66698xw:1xh;center,top&resize=1200:*",
+                "name":"Мисник Елена",
+                "prof":"Врач эндокринолог"
+            },
+        
+            {
+                "img":"https://hips.hearstapps.com/hmg-prod/images/portrait-of-a-happy-young-doctor-in-his-clinic-royalty-free-image-1661432441.jpg?crop=0.66698xw:1xh;center,top&resize=1200:*",
+                "name":"Мисник Елена",
+                "prof":"Врач эндокринолог"
+            },
+        
+            {
+                "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-MOfc0uicCtsL9itGYl9FQJ_E6PM3NnGipw&usqp=CAU",
+                "name":"Мисник Елена",
+                "prof":"Врач эндокринолог"
+            },
+        
+            {
+                "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-MOfc0uicCtsL9itGYl9FQJ_E6PM3NnGipw&usqp=CAU",
+                "name":"Мисник Елена",
+                "prof":"Врач эндокринолог"
+            },
+        
+            {
+                "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-MOfc0uicCtsL9itGYl9FQJ_E6PM3NnGipw&usqp=CAU",
+                "name":"Мисник Елена",
+                "prof":"Врач эндокринолог"
+            },
+        
+            {
+                "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-MOfc0uicCtsL9itGYl9FQJ_E6PM3NnGipw&usqp=CAU",
+                "name":"Мисник Елена",
+                "prof":"Врач эндокринолог"
+            },
+        
+            {
+                "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-MOfc0uicCtsL9itGYl9FQJ_E6PM3NnGipw&usqp=CAU",
+                "name":"Мисник Елена",
+                "prof":"Врач эндокринолог"
+            },
+        
+            {
+                "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-MOfc0uicCtsL9itGYl9FQJ_E6PM3NnGipw&usqp=CAU",
+                "name":"Мисник Елена",
+                "prof":"Врач эндокринолог"
+            },
+        
+            {
+                "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-MOfc0uicCtsL9itGYl9FQJ_E6PM3NnGipw&usqp=CAU",
+                "name":"Мисник Елена",
+                "prof":"Врач эндокринолог"
+            },
+        
+            {
+                "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-MOfc0uicCtsL9itGYl9FQJ_E6PM3NnGipw&usqp=CAU",
+                "name":"Мисник Елена",
+                "prof":"Врач эндокринолог"
+            }
+        ]
+    },
+    {
+        "profName": "Кардиологи",
+        "data":[
+            {
+                "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-MOfc0uicCtsL9itGYl9FQJ_E6PM3NnGipw&usqp=CAU",
+                "name":"Антух Евгений",
+                "prof":"Врач-невролог"
+            },
+            {
+                "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-MOfc0uicCtsL9itGYl9FQJ_E6PM3NnGipw&usqp=CAU",
+                "name":"Мисник Елена",
+                "prof":"Врач эндокринолог"
+            },
+        
+            {
+                "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-MOfc0uicCtsL9itGYl9FQJ_E6PM3NnGipw&usqp=CAU",
+                "name":"Мисник Елена",
+                "prof":"Врач эндокринолог"
+            }
+        ]
+    },
+    {
+        "profName": "Онкология",
+        "data":[
+            {
+                "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-MOfc0uicCtsL9itGYl9FQJ_E6PM3NnGipw&usqp=CAU",
+                "name":"Антух Евгений",
+                "prof":"Врач-невролог"
+            },
+            {
+                "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-MOfc0uicCtsL9itGYl9FQJ_E6PM3NnGipw&usqp=CAU",
+                "name":"Мисник Елена",
+                "prof":"Врач эндокринолог"
+            },
+        
+            {
+                "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-MOfc0uicCtsL9itGYl9FQJ_E6PM3NnGipw&usqp=CAU",
+                "name":"Мисник Елена",
+                "prof":"Врач эндокринолог"
+            }
+        ]
+    }
+]
