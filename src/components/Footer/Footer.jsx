@@ -80,7 +80,7 @@ const Footer = () =>{
                 </div>
             
                 <div className={styles.footerDown}> 
-                    © Peaksoft House 2023  | MedCheck | Все права защищены
+                    ©  MedCheck 2023 | Все права защищены
                 </div>
         </div> 
         

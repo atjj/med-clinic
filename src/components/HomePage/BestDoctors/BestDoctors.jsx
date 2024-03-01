@@ -1,6 +1,6 @@
 import DB from './db.json';
 import styles from './BestDoctors.module.scss';
-
+import Button from '../../../UI/Button/Button.jsx';
 const BestDoctors = () =>{
     console.log(DB[0].name)
     return(
@@ -29,7 +29,7 @@ const BestDoctors = () =>{
 
 
             <div className={styles.btn}>
-                <button>Все врачи клиники</button>
+                <Button text= "Все врачи клиники" radius = "small"/>
             </div>
         </>
     )

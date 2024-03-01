@@ -11,7 +11,7 @@ import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link  from '@mui/material/Link';
 
-
+import container from '../../styles/ContainerStyles.module.scss';
 
 import Line from '../../UI/Line/Line.jsx'
 
@@ -19,7 +19,7 @@ import Line from '../../UI/Line/Line.jsx'
 
 const PricePage = () =>{
     return(
-        <>
+        <div className= {container.container}>
             <Line/>
 
             <Breadcrumbs style={{marginTop: "30px"}} aria-label="breadcrumb">
@@ -70,7 +70,7 @@ const PricePage = () =>{
 
 
         
-        </>
+        </div>
     )
 }
 

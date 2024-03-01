@@ -11,7 +11,7 @@ import onko from '../../../assets/images/medservices/onkology.svg'
 import terapy from '../../../assets/images/medservices/therapy.svg'
 import uro from '../../../assets/images/medservices/urology.svg'
 
-
+import Button from '../../../UI/Button/Button.jsx';
 
 const Services = () =>{
     return (
@@ -87,7 +87,7 @@ const Services = () =>{
 
 
             <div className= {styles.btnPanel}>
-                <button>Смотреть все</button>
+                <Button text = 'Смотреть все' radius = 'small'/>
             </div>
         
         </>

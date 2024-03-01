@@ -2,7 +2,7 @@
   color: rgb(4, 135, 65);
   font-family: Manrope-Semi-Bold;
   font-size: 36px;
-  margin-top: 75px;
+  margin-top: 26px;
 }
 .services .descr {
   font-family: Manrope-Light;
@@ -99,6 +99,4 @@
 }
 .services .experts .wrapper .expert .btn {
   margin-top: 18px;
-  width: 202px;
-  height: 42px;
 }/*# sourceMappingURL=ServicePage.module.css.map */

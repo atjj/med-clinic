@@ -1,10 +1,12 @@
 import { createBrowserRouter } from 'react-router-dom';
-
 import Home from '../pages/Home/Homepage.jsx'
 import ServicesPage from '../pages/ServicesPage/ServicesPage.jsx';
 import PricePage from '../pages/PricePage/PricePage.jsx';
 import Service from '../pages/ServicePage/ServicePage.jsx';
 
+import About from '../pages/About/Aboutpage.jsx'
+import Doctors from '../pages/Doctors/Doctors.jsx'
+import Contacts from '../pages/Contacts/Contacts.jsx'
 import App from '../App/App.jsx'
 
 
@@ -21,7 +23,7 @@ export default new createBrowserRouter([
           },
           {
             path: '/about',
-            element: <div>about</div>,
+            element: <About/>,
             errorElement: <div>404 Not Found</div>
           },
           {
@@ -31,7 +33,7 @@ export default new createBrowserRouter([
           },
           {
             path: '/doctors',
-            element: <div>doctors</div>,
+            element: <Doctors/>,
             errorElement: <div>404 Not Found</div>
           },
           {
@@ -41,7 +43,7 @@ export default new createBrowserRouter([
           },
           {
             path: '/contacts',
-            element: <div>contacts</div>,
+            element: <Contacts/>,
             errorElement: <div>404 Not Found</div>
           },
           

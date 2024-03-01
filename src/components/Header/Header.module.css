@@ -63,28 +63,4 @@
 .header .navPart .buttons {
   display: flex;
   gap: 16px;
-}
-.header .navPart .buttons button {
-  display: block;
-  border: none;
-  height: 43px;
-  padding: 8px 20px 8px 20px;
-  background: linear-gradient(180deg, rgb(12, 187, 107), rgb(2, 123, 68) 100%);
-  border-radius: 24px;
-  cursor: pointer;
-  color: rgb(255, 255, 255);
-  font-family: Manrope-Medium;
-  font-size: 14px;
-}
-.header .navPart .buttons button:hover {
-  background: rgb(255, 255, 255);
-  color: rgb(4, 135, 65);
-  border: 1px solid rgb(4, 135, 65);
-  padding: 7px 19px 7px 19px;
-}
-.header .navPart .buttons .btn1 {
-  width: 205px;
-}
-.header .navPart .buttons .btn2 {
-  width: 158px;
 }/*# sourceMappingURL=Header.module.css.map */

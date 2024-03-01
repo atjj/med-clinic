@@ -4,8 +4,7 @@ import styles from './Form.module.scss';
 import form from '../../../assets/images/form.png'
 import user from '../../../assets/icons/Users.svg';
 import phone2 from '../../../assets/icons/phone2.svg';
-import send from '../../../assets/icons/send.svg';
-
+import FormButton from '../../../UI/FormButton/FormButton.jsx';
 const Form = () =>{
     return (
         <div className={styles.formSection}>
@@ -33,7 +32,7 @@ const Form = () =>{
                 </div>
 
 
-                <div className={styles.buttonCont}><button>ОТПРАВИТЬ ЗАЯВКУ</button><span><img src={send} alt="" /></span></div>
+                <FormButton text = 'ОТПРАВИТЬ ЗАЯВКУ'/>
                 </div>
 
                 <div className={styles.images}>

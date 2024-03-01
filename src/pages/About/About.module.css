@@ -1,0 +1,84 @@
+.about {
+  margin-bottom: 120px;
+}
+.about h2 {
+  font-family: Manrope-Semi-Bold;
+  margin-top: 26px;
+}
+.about h2 span {
+  color: rgb(4, 135, 65);
+}
+.about .health {
+  display: flex;
+  justify-content: space-between;
+}
+.about .health .leftHealth {
+  width: 585px;
+  color: rgb(77, 78, 81);
+  font-family: Manrope-Regular;
+}
+.about .health .leftHealth p {
+  margin-bottom: 18px;
+}
+.about .signature {
+  display: flex;
+  justify-content: end;
+}
+.about .health .rightHealth {
+  position: relative;
+}
+.about .health .rightHealth__img {
+  max-width: 359px;
+}
+.about .health .rightHealth__frame {
+  width: 548px;
+  height: 385px;
+  position: absolute;
+  top: 40px;
+  left: -30px;
+  z-index: -1;
+  border: 2px solid rgba(2, 152, 71, 0.3803921569);
+  border-right: none;
+}
+.about .health .rightHealth__name {
+  text-align: center;
+}
+.about .health .rightHealth__name .name__prof {
+  color: #048741;
+  font-family: Manrope-Regular;
+  font-weight: 400;
+  font-size: 18px;
+}
+.about .health .rightHealth__name .name__person {
+  font-size: 22px;
+  color: #222222;
+  font-family: Manrope-Regular;
+}
+.about .aboutUs {
+  margin-top: 80px;
+}
+.about .aboutUs h2 {
+  font-family: Manrope-Semi-Bold;
+  font-size: 36px;
+  margin-bottom: 60px;
+}
+.about .aboutUs h2 span {
+  color: rgb(4, 135, 65);
+}
+.about .aboutUs .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.about .aboutUs .wrapper .info p {
+  color: rgb(77, 78, 81);
+  font-family: Manrope-Regular;
+  font-size: 16px;
+  width: 513px;
+  margin-bottom: 30px;
+  line-height: 160%;
+}
+.about .aboutUs .wrapper .clinicImages .subImages {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 26px;
+}/*# sourceMappingURL=About.module.css.map */
