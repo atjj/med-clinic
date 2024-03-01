@@ -1,17 +1,17 @@
 import styles from './Services.module.scss';
 
 
-import vaccine from '../../../assets/images/vaksinasiya.png'
-import derma from '../../../assets/images/Dermatologiya.png'
-import fizio from '../../../assets/images/Fizioterapiya.png'
-import kardio from '../../../assets/images/Kardiologiya.png'
-import nevro from '../../../assets/images/Nevrologiya.png'
-import ofta from '../../../assets/images/Oftalmologiya.png'
-import onko from '../../../assets/images/Onkologiya.png'
-import terapy from '../../../assets/images/Terapiya.png'
-import uro from '../../../assets/images/Urologiya.png'
+import vaccine from '../../../assets/images/medservices/anesthesiology.svg'
+import derma from '../../../assets/images/medservices/dermatology.svg'
+import fizio from '../../../assets/images/medservices/physiotherapy.svg'
+import kardio from '../../../assets/images/medservices/cardiology.svg'
+import nevro from '../../../assets/images/medservices/nevrology.svg'
+import ofta from '../../../assets/images/medservices/oftalmology.svg'
+import onko from '../../../assets/images/medservices/onkology.svg'
+import terapy from '../../../assets/images/medservices/therapy.svg'
+import uro from '../../../assets/images/medservices/urology.svg'
 
-
+import Button from '../../../UI/Button/Button.jsx';
 
 const Services = () =>{
     return (
@@ -87,7 +87,7 @@ const Services = () =>{
 
 
             <div className= {styles.btnPanel}>
-                <button>Смотреть все</button>
+                <Button text = 'Смотреть все' radius = 'small'/>
             </div>
         
         </>

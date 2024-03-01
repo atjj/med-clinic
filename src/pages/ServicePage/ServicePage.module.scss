@@ -1,0 +1,127 @@
+.services{
+    .header{
+        color: rgb(4, 135, 65);
+        font-family: Manrope-Semi-Bold;
+        font-size: 36px;
+        margin-top: 26px;
+    }
+    
+    .descr{
+        font-family: Manrope-Light;
+        line-height: 150%;
+        width: 742px;
+        margin-top: 34px;
+    }
+    
+    h3{
+        font-family: Manrope-Semi-Bold;
+        font-size: 24px;
+        font-weight: 600;
+        margin-top: 50px;
+    }
+    
+    .reason{
+        margin-top: 16px;
+        font-family:Manrope-Light;
+        width: 742px;
+        line-height: 150%;
+    }
+    
+    .list{
+        margin-top: 12px;
+        margin-left: 25px;
+        font-family: Manrope-Light;
+        li{
+            margin: 15px 0;
+            &::marker{
+                color:rgb(4, 135, 65);
+            } 
+    
+        }
+    }
+    
+    .prices{
+        margin-top: 120px;
+        h3{
+            font-family: Manrope-Bold;
+            font-size: 36px;
+            span{
+                color:rgb(4, 135, 65);
+            }
+    
+        }
+
+        .pricetitle{
+                background-color: rgb(219, 240, 229);
+                display: flex;
+                padding: 16px 38px 20px 30px;
+                width: 852px;
+                border-radius: 10px;
+                font-family: Manrope-Semi-Bold;
+                font-size: 18px;
+                justify-content: space-between;
+
+                margin:60px 0 26px 0;
+        }
+
+        .priceitem{
+            width: 852px;
+            font-family: Manrope-Regular;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            padding: 16px 50px 20px 14px;
+            border-bottom: 1px solid  rgb(224, 226, 231);
+
+
+        }
+    }
+
+    .experts{
+        margin-top: 120px;
+        h1{
+            font-family: Manrope-Semi-Bold;
+            font-size: 24px;
+            color: rgb(77, 78, 81);
+
+        }
+
+        .wrapper{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            width: 1017px;
+            .expert{
+                height: 472px;
+                width: 319px;
+                display: flex;
+                flex-direction: column;
+    
+                img{
+                    height: 349px;
+                    width: 100%;
+                }
+    
+                .name {
+                    margin-top: 16px;
+                    font-family: Manrope-Medium;
+                    font-size: 18px;
+                }
+                .speciality{
+                    color: rgb(145, 147, 153);
+                    font-family: Manrope-Medium;
+                    font-size: 16px;
+                }
+
+                .btn{
+                    margin-top: 18px;
+                }
+            }
+        }
+
+
+
+    }
+    
+    
+}

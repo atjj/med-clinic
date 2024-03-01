@@ -15,15 +15,6 @@ h2 span {
   font-size: 18px;
 }
 
-button {
-  padding: 10px 20px;
-  border: 1px solid #048741;
-  background-color: #fff;
-  border-radius: 10px;
-  color: #048741;
-  font-family: Manrope-Regular;
-}
-
 .doctorsData {
   display: flex;
   justify-content: space-around;

@@ -8,15 +8,18 @@ import time from  '../../assets/icons/time.svg';
 import phone from  '../../assets/icons/phone.svg';
 
 import logo from '../../assets/logos/medcheckLogo.svg'
-
+import container from '../../styles/ContainerStyles.module.scss'
 import { Link } from 'react-router-dom';
+import Button from '../../UI/Button/Button.jsx';
 
 
 
 const Header = () => {
 
     return (
+        <div className={container.container}>
         <div className={styles.header}>
+            
             <div className={styles.searchPart} >
                     <div className={styles.geolocation}>
                         <div className={styles.map}>
@@ -70,8 +73,8 @@ const Header = () => {
                 </div>
 
                 <div className= {styles.buttons}>
-                    <button className = {styles.btn1}>ПОЛУЧИТЬ РЕЗУЛЬТАТЫ</button>
-                    <button className = {styles.btn2}>ЗАПИСЬ ОНЛАЙН</button>
+                    <Button text = {'ПОЛУЧИТЬ РЕЗУЛЬТАТЫ'} radius= "medium" />
+                    <Button text = {'ЗАПИСЬ ОНЛАЙН'} radius= "medium" />
                 </div>
 
 
@@ -83,7 +86,7 @@ const Header = () => {
         </div>
             
             
-       
+        </div>
 
     )
 }

@@ -7,8 +7,7 @@ import instag from '../../assets/icons/insta.svg';
 import teleg from '../../assets/icons/teleg.svg';
 import whats from '../../assets/icons/what.svg';
 
-import logos from '../../assets/icons/logos.svg';
-import med from '../../assets/images/MedCheck.svg';
+import medcheckLogowhite from '../../assets/logos/medcheckLogowhite.svg'
 
 
 
@@ -23,7 +22,7 @@ const Footer = () =>{
             <div className={styles.footerCol}>
             <div className={styles.about}>
                 <div className={styles.logo}>
-                    <img src={logos} alt="" /><div className={styles.medchek}><img src={med} alt="" /></div>
+                    <Link to = '/'><img src = {medcheckLogowhite}/></Link>
                 </div>
                 <div className={styles.text}>
                     <div className={styles.text1}>
@@ -81,7 +80,7 @@ const Footer = () =>{
                 </div>
             
                 <div className={styles.footerDown}> 
-                    © Peaksoft House 2023  | MedCheck | Все права защищены
+                    ©  MedCheck 2023 | Все права защищены
                 </div>
         </div> 
         
