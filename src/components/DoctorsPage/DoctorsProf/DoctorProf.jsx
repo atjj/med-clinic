@@ -1,8 +1,9 @@
 // import React from 'react';
 import styles from './DoctorProf.module.scss'
-import container from '../../styles/ContainerStyles.module.scss'
+import container from '../../../styles/ContainerStyles.module.scss'
 
-import Button from '../../UI/Button/Button.jsx';
+import Button from '../../../UI/Button/Button.jsx';
+import { Link } from 'react-router-dom';
 
 const DoctorProf = ({ data }) => {
   
@@ -11,9 +12,10 @@ const DoctorProf = ({ data }) => {
             <div className={container.container}>
                 <h3>{data.profName}</h3>
                 <div className={styles.cards}>
-                    
+        
                     {data.data.map((item, index) => (
-                        <div  className={styles.card} key={index}>
+                        <Link to={`/doctors/${item.name}`} key={index}>
+                        <div className={styles.card} >
                             <div className={styles.imageDoctor}>
                                 <img width="100%" height='100%' src={item.img} alt="" />
                             </div>
@@ -23,6 +25,7 @@ const DoctorProf = ({ data }) => {
                                 <Button text = "Записаться на прием" radius = 'small'/>
                             </div>
                         </div>
+                        </Link>
                     ))}
                 </div>
                 

@@ -3,11 +3,11 @@ import map from  '../../assets/icons/map.svg';
 import time from  '../../assets/icons/time.svg';
 import phone from  '../../assets/icons/phone.svg';
 import post from  '../../assets/icons/post.svg';
-import instag from '../../assets/icons/insta.svg';
-import teleg from '../../assets/icons/teleg.svg';
-import whats from '../../assets/icons/what.svg';
+import instag from '../../assets/icons/instagram.svg';
+import teleg from '../../assets/icons/telegram.svg';
+import whats from '../../assets/icons/whatsapp.svg';
 
-import medcheckLogowhite from '../../assets/logos/medcheckLogowhite.svg'
+import medcheckLogowhite from '../../assets/icons/medcheck.svg'
 
 
 

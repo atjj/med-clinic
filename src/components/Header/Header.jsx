@@ -6,7 +6,8 @@ import profile from  '../../assets/icons/profile.svg';
 import map from  '../../assets/icons/map.svg';
 import time from  '../../assets/icons/time.svg';
 import phone from  '../../assets/icons/phone.svg';
-
+import cart from '../../assets/icons/cart.svg';
+import language from '../../assets/icons/language.svg'
 import logo from '../../assets/logos/medcheckLogo.svg'
 import container from '../../styles/ContainerStyles.module.scss'
 import { Link } from 'react-router-dom';
@@ -50,8 +51,18 @@ const Header = () => {
                         <div className={styles.number2}>+996(505) 000 000</div> 
                     </div>
 
-                    <div className={styles.profile}> 
-                        <a href = "#"><img src={profile} alt="profile" /></a>
+                    
+
+                        <div className={styles.language}>
+                            <a href="#"><img src={language} alt="" /></a>
+                        </div>
+                        
+                        <div className={styles.cart}>
+                            <a href="#"><img src={cart} alt="" /></a>
+                        </div>
+                        <div className={styles.profile}> 
+                            <a href = "#"><img src={profile} alt="profile" /></a>
+                      
                     </div>
             </div>
 
@@ -68,6 +79,7 @@ const Header = () => {
                         <li><Link to ='/services'>Услуги</Link></li>
                         <li><Link to ='/doctors'>Врачи</Link></li>
                         <li><Link to ='/price'>Прайс</Link></li>
+                        <li><Link to ='/analize'>Анализы</Link></li>
                         <li><Link to ='/contacts'>Контакты</Link></li>
                     </ul>
                 </div>

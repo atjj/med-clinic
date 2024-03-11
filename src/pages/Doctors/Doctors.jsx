@@ -1,4 +1,4 @@
-import DoctorProf from '../../components/DoctorsPage/DoctorProf';
+import DoctorProf from '../../components/DoctorsPage/DoctorsProf/DoctorProf.jsx';
 import styles from './Doctors.module.scss';
 import DB from './doctors.json';
 import container from '../../styles/ContainerStyles.module.scss'
@@ -15,7 +15,7 @@ const Doctors = () => {
 
             <Line/>
             <Breadcrumbs style={{marginTop: "30px"}} aria-label="breadcrumb">
-                <Link underline="hover" color="rgb(4, 135, 65)" href="/">
+                <Link underline="hover" color="#346EFB" href="/">
                 Главная
                 </Link>
                 <Typography color="text.primary">О клинике</Typography>

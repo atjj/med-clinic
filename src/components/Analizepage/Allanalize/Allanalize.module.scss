@@ -1,0 +1,42 @@
+.Allanalize{
+    width: 60%;
+.borderCard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    margin-top: 30px;
+    border-radius: 20px;
+    border: 3px solid #DBEBFF ;
+    padding: 0px 30px;
+    transition: .2s;
+   
+       .leftAnalize{
+        h3{
+            font-size: 24px;
+            color: #000;
+        }
+       }
+
+       .rightAnalize{
+        display: flex;
+        justify-content: space-around;
+        width: 25%;
+        .prices{
+            .priceTitle{
+            color: #716B6B;
+            font-size: 14px;
+            font-family: Manrope-Regualr;
+            }
+        .price{
+            font-size: 20px;
+        }
+       }
+       }
+
+    }
+    .borderCard:hover{
+        background: #DBEBFF;
+    }
+}
+

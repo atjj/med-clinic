@@ -1,6 +1,4 @@
 import styles from './Form.module.scss';
-
-
 import form from '../../../assets/images/form.png'
 import user from '../../../assets/icons/Users.svg';
 import phone2 from '../../../assets/icons/phone2.svg';
