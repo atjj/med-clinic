@@ -11,7 +11,7 @@
   margin-bottom: 34px;
 }
 .doctors h2 span {
-  color: rgb(4, 135, 65);
+  color: rgb(52, 110, 251);
 }
 .doctors .infoDoctors {
   font-weight: 400;
@@ -37,5 +37,5 @@
   color: black;
 }
 .doctors .cardsFooter .more {
-  color: #048741;
+  color: rgb(52, 110, 251);
 }/*# sourceMappingURL=Doctors.module.css.map */

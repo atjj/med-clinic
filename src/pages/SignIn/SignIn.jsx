@@ -1,0 +1,146 @@
+import Button from '../../UI/Button/Button.jsx';
+
+import google from '../../assets/icons/google.svg';
+
+import styles from './SignIn.module.scss';
+
+import { useState,useRef,useEffect, useContext } from 'react';
+import  AuthContext from '../../context/AuthProvider.jsx';
+
+import { signIn } from '../../services/network.js';
+
+import { useNavigate } from 'react-router-dom';
+
+
+/* const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
+ */
+
+
+const SignIn = () => {
+
+
+    const {setAuth} = useContext(AuthContext);
+    const userRef = useRef();
+    const errRef = useRef();
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+
+    const [errorMsg,setErrorMsg] = useState('');
+    const navigate = useNavigate();
+   
+
+    useEffect(() =>{
+        userRef.current.focus();
+    },[])
+
+
+
+    useEffect(() => {
+        setErrorMsg('');
+    },[email,password])
+
+
+    const handleSubmit = async (e) => {
+
+        e.preventDefault();
+
+
+
+        console.log('Отправка данных на сервер:', { email, password });
+
+        const res = await signIn(email, password);
+        if (res) {
+
+            console.log('success',res);
+            const email = res.email;
+            localStorage.setItem('site',res.token);
+            const token = res.token;
+            const roles = res.roles;
+
+            setAuth((prev) => ({
+                ...prev,
+                email,
+                roles,
+                token
+            }));
+            setEmail('');
+            setPassword('');
+            navigate('/dashboard');
+
+        } else {
+            setErrorMsg('Invalid email or password')
+            console.log(res);
+            errRef.current.focus();
+        }
+    };
+    
+    const handleLoginChange = (e) => {
+        setEmail(e.target.value);
+        /* console.log(email); */
+    };
+
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+       /*  console.log(password); */
+    };
+
+
+
+
+
+
+
+    return (
+        <div className= {styles.wrapper}>
+            <form onSubmit={handleSubmit} className= {styles.signIn}>
+
+                <p ref = {errRef} aria-live = "assertive">{errorMsg}</p>
+
+                <h1 className= {styles.header}>Войти</h1>
+
+                <input className = {styles.input}  
+                       type = "text" 
+                       id = "username"
+                       ref = {userRef}
+                       autoComplete='off'
+                       placeholder = "Email"
+                       value={email}
+                       onChange={handleLoginChange}
+                       required
+                       />
+
+                <input className = {styles.input}  
+                       type = "password" 
+                       id = "password"
+                       placeholder = "Пароль"
+                       value = {password}
+                       onChange = {handlePasswordChange}
+                       required
+                       />
+
+                <Button 
+                    text = "ВОЙТИ" 
+                    radius = 'small' 
+                    />
+                
+
+                <div className = {styles.forgot}><a href='#'>Забыли пароль?</a></div>
+
+                <div className= {styles.lines}>или</div>
+
+                <button 
+                    className= {styles.signinwithgoogle}><img src={google} alt='google' />Продолжить с Google</button>
+
+                <div className= {styles.signup}>Нет аккаунта? <a href="#">Зарегистрироваться</a></div>
+
+            </form>
+        </div>
+    )
+}
+
+
+
+export default SignIn;

@@ -8,6 +8,12 @@ import About from '../pages/About/Aboutpage.jsx'
 import Doctors from '../pages/Doctors/Doctors.jsx'
 import Contacts from '../pages/Contacts/Contacts.jsx'
 import App from '../App/App.jsx'
+import SignIn from '../pages/SignIn/SignIn.jsx';
+import SignUp from '../pages/SignUp/SignUp.jsx';
+import Dashboard from '../pages/Dashboard/Dashboard.jsx';
+
+import Profile from '../pages/Dashboard/profile/Profile.jsx';
+import Records from '../pages/Dashboard/records/Records.jsx';
 
 
 export default new createBrowserRouter([
@@ -52,11 +58,45 @@ export default new createBrowserRouter([
             element: <Service/>,
             errorElement: <div>404 Not Found</div>
 
+          },
+          {
+            path: '/signup',
+            element: <SignUp/>,
+            errorElement: <div>404 Not Found</div>
+
+          },
+
+          {
+            path: '/signin',
+            element: <SignIn/>,
+            errorElement: <div>404 Not Found</div>
+
+          },
+
+          {
+            path: '/dashboard',
+            element: <Dashboard/>,
+            errorElement: <div>404 Not Found</div>,
+            children: [
+              {
+                path: '/dashboard/profile',
+                element: <Profile/>,
+                errorElement: <div>404 Not Found</div>
+    
+              },
+              {
+                path: '/dashboard/records',
+                element: <Records/>,
+                errorElement: <div>404 Not Found</div>
+    
+              }
+            ]
           }
 
 
       ]
-    }
+    },
+
   ]);
 
 
