@@ -13,11 +13,22 @@
     min-width: 158px;
     transition: .4s;
 
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
     &:hover {
       color: rgb(255, 255, 255);
       border: none;
       background: linear-gradient(180deg, rgb(52, 110, 251), rgb(52, 110, 251) 100%);
     
+    }
+    &[disabled] {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
     }
 
    }

@@ -12,6 +12,7 @@
   width: 270px;
 }
 .profile ul li {
+  cursor: pointer;
   font-family: Manrope-Semi-Bold;
   font-size: 12px;
 }

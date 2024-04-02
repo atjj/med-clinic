@@ -13,10 +13,19 @@
   min-width: 158px;
   transition: 0.4s;
 }
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .btn:hover {
   color: rgb(255, 255, 255);
   border: none;
   background: linear-gradient(180deg, rgb(52, 110, 251), rgb(52, 110, 251) 100%);
+}
+.btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .small {

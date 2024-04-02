@@ -1,54 +1,50 @@
-export const signIn = async (email,password) =>{
+class HttpError extends Error {
+    constructor(message,status,errText,ok) {
+        super(message);
+        this.status = status;
+        this.errText = errText;
+        this.ok = ok;
+    }
+}
+
+
+
+
+export const fetchAuthData = async (data,auth) =>{
 
     try {
         
-        const res = await fetch('http://medcheck-415904.ey.r.appspot.com/api/v1/auth/sign-in',{
+        const res = await fetch(`http://medcheck-415904.ey.r.appspot.com/api/v1/auth/${auth}`,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({email,password})
-        });
-
-
-        if(!res.ok) {
-            console.error('Could not fetch', res.status);
-            return false;
-        }
-        
-        return  await res.json();
-
-    } catch(error){
-        console.error('Could not fetch', error.message);
-        console.log(error)
-        return false;
-    }
-
-
-}
-
-
-export const signUp = async (data) => {
-    try {
-        const res = await fetch('http://medcheck-415904.ey.r.appspot.com/api/v1/auth/sign-up',{
-            method: 'POST',
-            headers:{
-                "Content-Type": "application/json",
-            },
             body: JSON.stringify(data)
         });
 
+
+        
         if(!res.ok) {
-            console.error('Could not fetch', res.status);
-            return false;
+            console.log(res);
+            const handledRes = await res.json();
+            const errText = res.status == '500' ? handledRes.error : handledRes.message
+            throw new HttpError(`Could not fetch http://medcheck-415904.ey.r.appspot.com/api/v1/auth/sign-in`,res.status,errText,false);
         }
         
         return  await res.json();
-    }
-    catch(error){
-        console.error('Could not fetch', error.message);
-        console.log(error)
-        return false;
+
+
+    } catch(error){
+    
+        console.error(`message: ${error.message} status: ${error.status} errText: ${error.errText}`)
+        return {
+            status: error.status,
+            errText: error.errText,
+            ok: error.ok
+        };
     }
 
+
 }
+
+

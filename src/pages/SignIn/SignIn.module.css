@@ -21,6 +21,13 @@
   background-color: white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
+.wrapper .signIn .errMsgPanel {
+  background-color: rgb(255, 226, 226);
+  color: rgb(247, 82, 82);
+  padding: 10px;
+  font-family: Manrope-Medium;
+  border-radius: 8px;
+}
 .wrapper .signIn .header {
   font-family: Manrope-Medium;
   font-size: 18px;

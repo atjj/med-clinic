@@ -67,4 +67,18 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+}
+
+.instructions {
+  display: block;
+  background-color: rgb(255, 226, 226);
+  color: rgb(247, 82, 82);
+  padding: 10px;
+  border-radius: 9px;
+  margin-bottom: 10px;
+  font-family: Manrope-Medium;
+}
+
+.offscreen {
+  display: none;
 }/*# sourceMappingURL=SignUp.module.css.map */

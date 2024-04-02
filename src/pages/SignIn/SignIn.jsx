@@ -7,14 +7,11 @@ import styles from './SignIn.module.scss';
 import { useState,useRef,useEffect, useContext } from 'react';
 import  AuthContext from '../../context/AuthProvider.jsx';
 
-import { signIn } from '../../services/network.js';
+import { fetchAuthData } from '../../services/network.js';
 
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-
-/* const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
- */
 
 
 const SignIn = () => {
@@ -51,10 +48,16 @@ const SignIn = () => {
 
         console.log('Отправка данных на сервер:', { email, password });
 
-        const res = await signIn(email, password);
-        if (res) {
+        const res = await fetchAuthData({email, password},'sign-in');
+        console.log(res);
 
+
+        if(!res.ok){
+            setErrorMsg(res.errText);
+            return;
+        } else {
             console.log('success',res);
+
             const email = res.email;
             localStorage.setItem('site',res.token);
             const token = res.token;
@@ -68,23 +71,17 @@ const SignIn = () => {
             }));
             setEmail('');
             setPassword('');
-            navigate('/dashboard');
+            navigate('/');
 
-        } else {
-            setErrorMsg('Invalid email or password')
-            console.log(res);
-            errRef.current.focus();
         }
     };
     
     const handleLoginChange = (e) => {
-        setEmail(e.target.value);
-        /* console.log(email); */
+        setEmail(e.target.value)
     };
 
     const handlePasswordChange = (e) => {
-        setPassword(e.target.value);
-       /*  console.log(password); */
+        setPassword(e.target.value); 
     };
 
 
@@ -95,9 +92,14 @@ const SignIn = () => {
 
     return (
         <div className= {styles.wrapper}>
+
             <form onSubmit={handleSubmit} className= {styles.signIn}>
 
-                <p ref = {errRef} aria-live = "assertive">{errorMsg}</p>
+                <p 
+                    ref = {errRef} 
+                    aria-live = "assertive"
+                    className = {errorMsg ? `${styles.errMsgPanel}`: ``} 
+                    >{errorMsg}</p>
 
                 <h1 className= {styles.header}>Войти</h1>
 
@@ -123,8 +125,8 @@ const SignIn = () => {
 
                 <Button 
                     text = "ВОЙТИ" 
-                    radius = 'small' 
-                    />
+                    radius = 'small'
+                />
                 
 
                 <div className = {styles.forgot}><a href='#'>Забыли пароль?</a></div>
@@ -134,7 +136,7 @@ const SignIn = () => {
                 <button 
                     className= {styles.signinwithgoogle}><img src={google} alt='google' />Продолжить с Google</button>
 
-                <div className= {styles.signup}>Нет аккаунта? <a href="#">Зарегистрироваться</a></div>
+                <div className= {styles.signup}>Нет аккаунта? <Link to = "/signup">Зарегистрироваться</Link></div>
 
             </form>
         </div>
