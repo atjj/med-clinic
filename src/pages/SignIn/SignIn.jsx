@@ -52,7 +52,7 @@ const SignIn = () => {
         console.log(res);
 
 
-        if(!res.ok){
+        if(res.ok == false){
             setErrorMsg(res.errText);
             return;
         } else {
@@ -62,7 +62,7 @@ const SignIn = () => {
             localStorage.setItem('site',res.token);
             const token = res.token;
             const roles = res.roles;
-
+    
             setAuth((prev) => ({
                 ...prev,
                 email,
@@ -72,8 +72,9 @@ const SignIn = () => {
             setEmail('');
             setPassword('');
             navigate('/');
-
         }
+
+        
     };
     
     const handleLoginChange = (e) => {

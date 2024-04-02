@@ -131,7 +131,7 @@ const SignUp = () => {
 
         console.log(res);
 
-        if(!res.ok) {
+        if(res.ok == false) {
             setErrorMsg(res.errText);
             return;
         } else {
