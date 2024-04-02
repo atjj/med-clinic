@@ -1,7 +1,5 @@
 import styles from './Doctorsinfo.module.scss';
 import container from '../../../styles/ContainerStyles.module.scss'
-// import vector from '../../assets/icons/Vector.svg';
-// import vector from '../../assets/icons/Vector.svg';
 import DB from './db.json';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link  from '@mui/material/Link';
@@ -23,7 +21,7 @@ const Doctorsinfo = () =>{
                 </Link>
                 <Typography color="text.primary">Гаталуский Артур</Typography>
                 </Breadcrumbs>
-            {DB.map((item,index)=>(
+                {DB.map((item,index)=>(
                 <div className={styles.doctorInfo} key={index}>
                 <h2>{item.name}</h2>
                 <p className={styles.title}>Попасть в команду медицинской клиники «Medical Clinic» могут только лучшие специалисты с многолетней практикой и доказанным опытом.</p>
@@ -38,12 +36,22 @@ const Doctorsinfo = () =>{
                     </div>
                 </div>
 
-                <div>{item.data.map((el, index)=>(
-                    <div key={index}><h3>{el.facePlastic}</h3>
-                    <ul className={styles.listTitle}>{el.facePlasticItem.map((item1)=><li>{item1}</li>)}</ul>
-                    </div>
-                    
-                ))}</div>
+                <p className={styles.listParagraph}>Преимущественно эстетическая хирургия лица:</p>
+                <ul>
+                    <li>эндоскопический лифтинг лица ( лоб, височные зоны, брови, верхние 2/3 лица )</li>
+                    <li>SMAS-лифтинг лица с перемещением комков Биша, боковой или медиальной платизмопластикой</li>
+                    <li>блефаропластика ( трансконъюнктивальная; расширенная с перераспределением тканей ,ревизионная )</li>
+                    <li>повторные и ревизионные лифтинги лица </li>
+                    <li>кантопексия</li>
+                    <li>миопексия</li>
+                    <li>липофилинг</li>
+                    <li>отопластика</li>
+                    <li>хейлопластика</li>
+                </ul>
+
+
+
+               
                
                 <div className={styles.infoFooter}>
                     <span><a href=""> Список сотрудников</a></span>

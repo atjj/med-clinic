@@ -12,6 +12,7 @@ import logo from '../../assets/logos/medcheckLogo.svg'
 import container from '../../styles/ContainerStyles.module.scss'
 import { Link } from 'react-router-dom';
 import Button from '../../UI/Button/Button.jsx';
+import OnlineRegistration from '../../components/OnlineRegistration/OnlineRegistration.jsx'
 
 
 
@@ -58,7 +59,8 @@ const Header = () => {
                         </div>
                         
                         <div className={styles.cart}>
-                            <a href="#"><img src={cart} alt="" /></a>
+                            <Link to="/cart"><img src={cart} alt="cart" /></Link>
+                            <OnlineRegistration/>
                         </div>
                         <div className={styles.profile}> 
                             <a href = "#"><img src={profile} alt="profile" /></a>
@@ -86,7 +88,8 @@ const Header = () => {
 
                 <div className= {styles.buttons}>
                     <Button text = {'ПОЛУЧИТЬ РЕЗУЛЬТАТЫ'} radius= "medium" />
-                    <Button text = {'ЗАПИСЬ ОНЛАЙН'} radius= "medium" />
+                    <Button   text = {'ЗАПИСЬ ОНЛАЙН'} radius= "medium" />
+
                 </div>
 
 

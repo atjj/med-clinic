@@ -3,12 +3,14 @@ import form from '../../../assets/images/form.png'
 import user from '../../../assets/icons/Users.svg';
 import phone2 from '../../../assets/icons/phone2.svg';
 import FormButton from '../../../UI/FormButton/FormButton.jsx';
+import { Application } from '../Modal/Application.jsx';
 const Form = () =>{
     return (
         <div className={styles.formSection}>
+           
 
                 <div className={styles.form}>
-
+                
                                         
                 <h1>Оставьте заявку</h1>
 

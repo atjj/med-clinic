@@ -10,7 +10,7 @@ import App from '../App/App.jsx'
 import Doctorsinfo from '../components/DoctorsPage/DocotorsInfo/Doctorsinfo.jsx';
 import Analize from '../pages/Analize/Analize.jsx';
 import AnalizeInfo from '../components/Analizepage/AnalizeInfo/AnalizeInfo.jsx';
-
+import Cart from '../pages/Cart/Cart.jsx';
 
 export default new createBrowserRouter([
     {
@@ -47,6 +47,11 @@ export default new createBrowserRouter([
           {
             path: '/analize',
             element: <Analize/>,
+            errorElement: <div>404 Not Found</div>
+          },
+          {
+            path: '/cart',
+            element: <Cart/>,
             errorElement: <div>404 Not Found</div>
           },
           {

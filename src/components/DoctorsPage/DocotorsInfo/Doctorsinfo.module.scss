@@ -66,15 +66,22 @@
             background: #346EFB;
             color: #fff;
         }
-    }
+      }
         .special{
             list-style: none;
+        }
+        .listParagraph{
+            font-family: Manrope-SemiBold;
+            font-size: 18px;
+            padding: 20px 0;
+
         }
         ul{
             li{
                 font-size: 16px;
                 font-family: Manrope-Regular;
                 color: #222222;
+                margin-left:20px;
             }
         }
         .listTitle{

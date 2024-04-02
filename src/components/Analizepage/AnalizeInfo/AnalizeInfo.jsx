@@ -1,51 +1,94 @@
-import styles from './AnalizeInfo.module.scss'
-import container from '../../../styles/ContainerStyles.module.scss'
-import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Link  from '@mui/material/Link';
-import Typography from '@mui/material/Typography';
-import Line from '../../../UI/Line/Line.jsx'
-const AnalizeInfo =()=>{
+import React from 'react';
+import styles from './AnalizeInfo.module.scss';
+import container from '../../../styles/ContainerStyles.module.scss';
+import DB from './analize.json';
+import { useTable } from 'react-table';
+import { useMemo } from 'react';
+
+const AnalizeInfo = () => {
+    const data = useMemo(() => DB, []);
+    const columns = useMemo(() => [
+        {
+            Header: "Название",
+            accessor: "name",
+            Cell: ({ row }) => (
+                <div>
+                    <span>{row.original.name}</span>
+                    <button className={styles.addToCart} onClick={() => handleClick(row.index)}>Добавить в корзину</button>
+                </div>
+            )
+        },
+        {
+            Header: "Цена",
+            accessor: "price"
+        },
+        {
+            Header: "Материал",
+            accessor: "material"
+        },
+        {
+            Header: "Условия подготовки к анализам *",
+            accessor: "conditions"
+        },
+        {
+            Header: "Время забора материала *",
+            accessor: "timeMaterial"
+        },
+        {
+            Header: "Время выдачи результатов *",
+            accessor: "mainTime"
+        }
+    ], []);
+
+    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({ columns, data });
+
+    const handleClick = (index) => {
+        const analyzeData = localStorage.getItem('analyze');
+        const currentAnalyzes = analyzeData ? JSON.parse(analyzeData) : [];
+        const newAnalyze = data[index];
+    
+        const updatedAnalyzes = Array.from(currentAnalyzes);
+        updatedAnalyzes.push(newAnalyze);
+        localStorage.setItem('analyze', JSON.stringify(updatedAnalyzes));
+        console.log(updatedAnalyzes);
+    }
+
     return (
         <div className={container.container}>
             <div className={styles.AnalizeInfo}>
-            <Line/>
+                <div className={styles.tables}>
+                    <table {...getTableProps}>
+                        <thead>
+                            {headerGroups.map((headerGroup) => (
+                                <tr {...headerGroup.getHeaderGroupProps()}>
+                                    {headerGroup.headers.map((column) => (
+                                        <th {...column.getHeaderProps()}>
+                                            {column.render("Header")}
+                                        </th>
+                                    ))}
+                                </tr>
+                            ))}
+                        </thead>
 
-                <Breadcrumbs style={{marginTop: "30px"}} aria-label="breadcrumb">
-                    <Link underline="hover" color="#346EFB" href="/">
-                        Главная
-                    </Link>
-                    <Link underline="hover" color="#346EFB" href="/analize">
-                        Анализы
-                    </Link>
-                    <Typography  color="text.primary">Общий анализ крови</Typography>
-                </Breadcrumbs>
-
-                <h2>Общий анализ крови (венозная кровь,СОЭ по Вестергрену)</h2>
-                <h3>Описание</h3>
-                <p>Клинический анализ крови: общий анализ, лейкоцитарная формула, СОЭ (с микроскопией мазка крови при выявлении патологических изменений) – это один из наиболее часто выполняемых анализов в медицинской практике. Сегодня это исследование автоматизировано и позволяет получить подробную информацию о количестве и качестве клеток крови: эритроцитов, лейкоцитов и тромбоцитов.</p>
-                <h3>Подготовка</h3>
-                <ul>
-                    <li>По возможности, рекомендуется сдавать кровь утром,  натощак , питье – вода, в обычном режиме, накануне избегать пищевых перегрузок.</li>
-                    <li>Нет особых преаналитических требований по подготовке к исследованию  общего клинического анализа крови  у детей .</li>
-                </ul>
-                <p>Показатели крови могут существенно меняться в течение дня, для утренних часов рассчитаны референсные интервалы многих лабораторных показателей.    </p>
-                <h3>Показания</h3>
-                <ul>
-                    <li>Во время профилактического осмотра</li>
-                    <li>при наличии у пациента жалоб или симптомов какого-либо заболевания.</li>
-                </ul>
-                <h3>Интерпретация результатов</h3>
-                <ul>
-                    <li>Оценить данные общего анализа крови возможно только при наличии данных объективного осмотра пациента, а также других диагностических критериев.</li>
-                    <li>Результаты теста должны интерпретироваться в контексте индивидуальных обычных показателей каждого конкретного человека;</li>
-                    <li>наиболее точная информация может быть получена при динамическом наблюдении изменений показателей крови;</li>
-                    <li>результаты теста следует интерпретировать с учетом всех анамнестических, клинических и других лабораторных данных.</li>
-                    <li>*Результат лабораторных исследований не является единственным параметром для постановки диагноза. За интерпретацией результатов необходимо обратиться к лечащему врачу.</li>
-                </ul>
-        
+                        <tbody {...getTableBodyProps}>
+                            {rows.map((row) => {
+                                prepareRow(row);
+                                return (
+                                    <tr {...row.getRowProps()}>
+                                        {row.cells.map((cell) => (
+                                            <td {...cell.getCellProps()}>
+                                                {cell.render("Cell")}
+                                            </td>
+                                        ))}
+                                    </tr>
+                                );
+                            })}
+                        </tbody>
+                    </table>
                 </div>
+            </div>
         </div>
-    )
+    );
 }
 
-export default AnalizeInfo
+export default AnalizeInfo;
