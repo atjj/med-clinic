@@ -21,7 +21,7 @@ const About =()=>{
             <div className={container.container}>
             <Line/>
             <Breadcrumbs style={{marginTop: "30px"}} aria-label="breadcrumb">
-                <Link underline="hover" color="rgb(4, 135, 65)" href="/">
+                <Link underline="hover" color="rgb(52, 110, 251)" href="/">
                 Главная
                 </Link>
                 <Typography color="text.primary">О клинике</Typography>
@@ -44,7 +44,7 @@ const About =()=>{
             </div>
 
             <div className={styles.aboutUs}>
-                <h2>О нашей клинике <span>“MedCheck”</span></h2>
+                <h2>О нашей клинике <span>“MedClinic”</span></h2>
                 <div className= {styles.wrapper}>
                     <div className={styles.info}>
                         <p>

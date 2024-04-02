@@ -3,15 +3,19 @@ import styles from './Poster.module.scss'
 import doctorImage from '../../../assets/images/doctor.jpg'
 
 import Button from '../../../UI/Button/Button.jsx';
+import { useTranslation } from 'react-i18next';
 
 const Poster = () =>{
+
+    const {t} = useTranslation();
+
     return(
         <div className={styles.poster}>
             <div className= {styles.title}>
-                <h1>Добро пожаловать в клинику  MedCheck</h1>
-                <p>Международный Медицинская клиника «MedCheck — это клиника, в которой применяются новейшие диагностические и лечебные технологии и ведут прием лучшие специалисты.</p>
+                <h1>{t('home.poster.title')}</h1>
+                <p>{t('home.poster.subtitle')}</p>
                 <div>
-                    <Button text = {"ОСТАВЬТЕ ЗАЯВКУ"} radius= "medium"/>
+                    <Button text = {t('home.poster.request')} radius= "medium"/>
                 </div>
             </div>
 
