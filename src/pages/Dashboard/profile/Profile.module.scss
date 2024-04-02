@@ -17,7 +17,15 @@
         li{
             cursor: pointer;
             font-family: Manrope-Semi-Bold;
-            font-size: 12px;
+            font-size: 15px;
+
+            a {
+                &:focus {
+                    color:#346EFB;
+                    border-bottom: 1px solid #346EFB;
+                    transition: .5s;
+                }
+            }
         }
     }
 
@@ -54,4 +62,5 @@
 
         
     }
+
 }
