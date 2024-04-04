@@ -2,39 +2,53 @@ import styles from'./Header.module.css';
 import insta from '../../assets/icons/instagram.svg';
 import tele from '../../assets/icons/telegram.svg';
 import what from '../../assets/icons/whatsapp.svg';
-import profile from  '../../assets/icons/profile.svg';
 import map from  '../../assets/icons/map.svg';
 import time from  '../../assets/icons/time.svg';
 import phone from  '../../assets/icons/phone.svg';
-import cart from '../../assets/icons/cart.svg';
-import language from '../../assets/icons/language.svg'
-import logo from '../../assets/logos/medcheckLogo.svg'
+import cart from '../../assets/icons/cart.svg'
+import logo from '../../assets/logos/medcliniclogo.svg'
 import container from '../../styles/ContainerStyles.module.scss'
 import { Link } from 'react-router-dom';
 import Button from '../../UI/Button/Button.jsx';
 import OnlineRegistration from '../../components/OnlineRegistration/OnlineRegistration.jsx'
-
-
-
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher.jsx';
+import Profile from '../Profile/Profile.jsx';
+import { useState } from 'react';
 const Header = () => {
 
+
+
+    const {t} = useTranslation();
+    const [isDoctorDrawerOpen, setIsDoctorDrawerOpen] = useState(false);
+
+    const openDoctorDrawer = () => {
+        setIsDoctorDrawerOpen(true);
+    };
+
+    const closeDoctorDrawer = () => {
+        setIsDoctorDrawerOpen(false);
+    };
+
+
+    
     return (
         <div className={container.container}>
         <div className={styles.header}>
             
-            <div className={styles.searchPart} >
+            <div className={styles.searchPart}>
                     <div className={styles.geolocation}>
                         <div className={styles.map}>
                             <img src={map} alt="map" />
-                            <span > 106452, г. Бишкек, Гражданская 119 </span>
+                            <span > {t('header.address')} </span>
                         </div>
                         <div className={styles.time}>
                             <img src={time} alt="time" />
-                            <span>пн-сб 08:00 до 18:00</span>
+                            <span>{t('header.workdays')}</span>
                         </div>
                     </div>
                             
-                    <input className={styles.searchInput} type="search" placeholder="Поиск по сайту  "/>
+                    <input className={styles.searchInput} type="search" placeholder={t('header.search')}/>
                             
 
 
@@ -53,19 +67,9 @@ const Header = () => {
                     </div>
 
                     
-
-                        <div className={styles.language}>
-                            <a href="#"><img src={language} alt="" /></a>
-                        </div>
-                        
-                        <div className={styles.cart}>
-                            <Link to="/cart"><img src={cart} alt="cart" /></Link>
-                            <OnlineRegistration/>
-                        </div>
-                        <div className={styles.profile}> 
-                            <a href = "#"><img src={profile} alt="profile" /></a>
-                      
-                    </div>
+                    <LanguageSwitcher/>
+                    <Link to="/cart"><img src={cart} alt="" /></Link>
+                    <Profile />
             </div>
 
 
@@ -77,20 +81,26 @@ const Header = () => {
 
                 <div className= {styles.nav}>
                     <ul>
-                        <li><Link to ='/about'>О клинике</Link></li>
-                        <li><Link to ='/services'>Услуги</Link></li>
-                        <li><Link to ='/doctors'>Врачи</Link></li>
-                        <li><Link to ='/price'>Прайс</Link></li>
-                        <li><Link to ='/analize'>Анализы</Link></li>
-                        <li><Link to ='/contacts'>Контакты</Link></li>
+                        <li><Link to ='/about'>{t('header.about')}</Link></li>
+                        <li><Link to ='/services'>{t('header.services')}</Link></li>
+                        <li><Link to ='/doctors'>{t('header.doctors')}</Link></li>
+                        <li><Link to ='/price'>{t('header.price')}</Link></li>
+                        <li><Link to="/analize">{t('header.analize')}</Link></li>
+                        <li><Link to ='/contacts'>{t('header.contacts')}</Link></li>
+
                     </ul>
                 </div>
 
                 <div className= {styles.buttons}>
-                    <Button text = {'ПОЛУЧИТЬ РЕЗУЛЬТАТЫ'} radius= "medium" />
-                    <Button   text = {'ЗАПИСЬ ОНЛАЙН'} radius= "medium" />
-
+                    <Button text = {t('header.getresults')} radius= "medium" />
+                    {/* <Button text = {t('header.online-recording')} radius= "medium" /> */}
+                    <button onClick={openDoctorDrawer}>lksam</button>
+                    {/* <OnlineRegistration/> */}
+                    {isDoctorDrawerOpen && (
+                        <OnlineRegistration onClose={closeDoctorDrawer} />
+                    )}
                 </div>
+                {/* <div><OnlineRegistration/></div> */}
 
 
 

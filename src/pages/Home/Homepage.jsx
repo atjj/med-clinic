@@ -8,7 +8,6 @@ import Cards from '../../components/HomePage/Cards/Cards.jsx';
 import container from '../../styles/ContainerStyles.module.scss'
 import OnlineRegistration from '../../components/OnlineRegistration/OnlineRegistration.jsx';
 
-
 const Homepage = () => {
     
    
@@ -29,6 +28,7 @@ const Homepage = () => {
                 </div>
 
 
+
                 <div className={styles.bestDoctorsSection}>
                     <BestDoctors/>     
                 </div>
@@ -36,6 +36,7 @@ const Homepage = () => {
                 
                 <Form/>
                
+
 
                 </div>
         </div>

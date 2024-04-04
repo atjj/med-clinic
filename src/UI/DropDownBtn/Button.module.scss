@@ -1,0 +1,11 @@
+.btn{
+    font-size: 20px;
+    font-family: Manrope-Regular;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    transition: .4s;
+    &:hover{
+        color:rgba(142, 153, 153, 0.737)
+    }
+}

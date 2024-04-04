@@ -1,8 +1,10 @@
 import styles from './Button.module.scss';
 import cn from 'classnames';
-const Button = ({text,radius}) => {
+const Button = ({text,radius,handle,disabled}) => {
 
     let btnClass = '';
+
+     
     
     switch (radius) {
         case 'small':
@@ -21,7 +23,12 @@ const Button = ({text,radius}) => {
 
     return(
         <>
-            <button className = { cn(styles.btn,btnClass)}>{text}</button>
+            <button 
+                className = {cn(styles.btn,btnClass)} 
+                onClick   =  {handle}
+                disabled  = {disabled}>
+                    {text}
+            </button>
         </>
     )
 }

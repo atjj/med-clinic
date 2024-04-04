@@ -1,1 +1,1 @@
-{"version":3,"sources":["PricePage.module.scss","PricePage.module.css"],"names":[],"mappings":"AAAA;EACI,8BAAA;EACA,eAAA;EACA,gBAAA;ACCJ;ADAI;EACI,sBAAA;ACER;;ADEA;EACI,gBAAA;EACA,sBAAA;EACA,4BAAA;EACA,eAAA;EACA,YAAA;ACCJ;;ADGA;EACI,sBAAA;ACAJ","file":"PricePage.module.css"}
+{"version":3,"sources":["PricePage.module.scss","PricePage.module.css"],"names":[],"mappings":"AAAA;EACI,8BAAA;EACA,eAAA;EACA,gBAAA;ACCJ;ADAI;EACI,cAAA;ACER;;ADEA;EACI,gBAAA;EACA,sBAAA;EACA,4BAAA;EACA,eAAA;EACA,YAAA;ACCJ;;ADGA;EACI,sBAAA;ACAJ","file":"PricePage.module.css"}

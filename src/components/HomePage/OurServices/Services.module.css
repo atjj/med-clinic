@@ -1,36 +1,33 @@
-h2 {
+.services h2 {
   font-family: Manrope-Semi-Bold;
   font-size: 36px;
 }
-h2 span {
-  color: rgb(4, 135, 65);
+.services h2 span {
+  color: #346EFB;
 }
-
-h3 {
+.services h3 {
   margin-top: 34px;
   font-family: Manrope-Regular;
   font-size: 18px;
 }
-
-.services {
+.services .services {
   display: flex;
   justify-content: space-between;
   margin-top: 60px;
 }
-.services .wrapper .icon {
+.services .services .wrapper .icon {
   width: 102px;
   height: 106px;
   border: 1px solid rgb(222, 222, 222);
   border-radius: 18px;
   padding: 23px 26px;
 }
-.services .wrapper .desc {
+.services .services .wrapper .desc {
   margin-top: 20px;
   font-family: Manrope-Light;
   text-align: center;
 }
-
-.btnPanel {
+.services .btnPanel {
   margin-top: 48px;
   text-align: center;
   display: flex;

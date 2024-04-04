@@ -15,7 +15,7 @@ import Button from '../../../UI/Button/Button.jsx';
 
 const Services = () =>{
     return (
-        <>
+        <div className= {styles.services}>
             <h2>Наши <span>услуги</span></h2>
 
             <h3>За все время работы клиника приняла более 1 млн. пациентов.</h3>
@@ -90,7 +90,7 @@ const Services = () =>{
                 <Button text = 'Смотреть все' radius = 'small'/>
             </div>
         
-        </>
+        </div>
     )
 }
 

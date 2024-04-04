@@ -19,7 +19,7 @@ const Contacts = () => {
       <Line/>
 
       <Breadcrumbs style={{marginTop: "30px"}} aria-label="breadcrumb">
-        <Link underline="hover" color="#346EFB" href="/">
+        <Link underline="hover" color = "rgb(52, 110, 251)"  href="/">
             Главная
         </Link>
       <Typography color="text.primary">Контакты</Typography>
@@ -37,7 +37,7 @@ const Contacts = () => {
         <li> <p>Режим работы клиники: </p>
           <a href="">Понедельник - суббота с 08:00 до 18:00.</a></li>
         <li><p>Электронная почта :  </p>
-          <a href="">medchek.kg </a></li>
+          <a href="">medclinic.kg </a></li>
       </ul>
      
      

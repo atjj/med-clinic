@@ -30,7 +30,7 @@ const ServicesPage = () => {
 
 
                 <Breadcrumbs style={{marginTop: "30px"}} aria-label="breadcrumb">
-                    <Link underline="hover" color="#346EFB" href="/">
+                    <Link underline="hover" color="rgb(52, 110, 251)" href="/">
                         Главная
                     </Link>
                 <Typography color="text.primary">Услуги</Typography>
@@ -64,10 +64,10 @@ const ServicesPage = () => {
                     }}>
                     <AccordionSummary
                     style={{ 
-                            border: '1px solid "#346EFB"',
+                            border: '1px solid rgb(52, 110, 251)',
                             borderRadius: '10px', 
                             boxShadow: '1px 1px 5px 0px rgba(0, 0, 0, 0.15)',
-                            background: "#346EFB",
+                            background: 'rgb(52, 110, 251)',
                             color: 'white',
                             fontFamily: 'Manrope-Semi-Bold'
                         }}
@@ -94,10 +94,10 @@ const ServicesPage = () => {
                     }}>
                     <AccordionSummary
                     style={{ 
-                            border: '1px solid rgb(4, 135, 65)',
+                            border: '1px solid rgb(52, 110, 251)',
                             borderRadius: '10px', 
                             boxShadow: '1px 1px 5px 0px rgba(0, 0, 0, 0.15)',
-                            background: 'rgb(4, 135, 65)',
+                            background: 'rgb(52, 110, 251)',
                             color: 'white',
                             fontFamily: 'Manrope-Semi-Bold'
                         }}
@@ -125,10 +125,10 @@ const ServicesPage = () => {
                     }}>
                     <AccordionSummary
                     style={{ 
-                            border: '1px solid rgb(4, 135, 65)',
+                            border: '1px solid rgb(52, 110, 251)',
                             borderRadius: '10px', 
                             boxShadow: '1px 1px 5px 0px rgba(0, 0, 0, 0.15)',
-                            background: 'rgb(4, 135, 65)',
+                            background: 'rgb(52, 110, 251)',
                             color: 'white'
                         }}
                         expandIcon={<ArrowDownwardIcon style = {{backgroundColor: 'white',borderRadius: '100%',color:'rgb(4, 135, 65)'}} />}
@@ -156,10 +156,10 @@ const ServicesPage = () => {
                     }}>
                     <AccordionSummary
                     style={{ 
-                            border: '1px solid rgb(4, 135, 65)',
+                            border: '1px solid rgb(52, 110, 251)',
                             borderRadius: '10px', 
                             boxShadow: '1px 1px 5px 0px rgba(0, 0, 0, 0.15)',
-                            background: 'rgb(4, 135, 65)',
+                            background: 'rgb(52, 110, 251)',
                             color: 'white',
                             fontFamily: 'Manrope-Semi-Bold'
                         }}
@@ -188,10 +188,10 @@ const ServicesPage = () => {
                     }}>
                     <AccordionSummary
                     style={{ 
-                            border: '1px solid rgb(4, 135, 65)',
+                            border: '1px solid rgb(52, 110, 251)',
                             borderRadius: '10px', 
                             boxShadow: '1px 1px 5px 0px rgba(0, 0, 0, 0.15)',
-                            background: 'rgb(4, 135, 65)',
+                            background: 'rgb(52, 110, 251)',
                             color: 'white',
                             fontFamily: 'Manrope-Semi-Bold'
                         }}

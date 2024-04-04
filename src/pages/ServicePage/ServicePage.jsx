@@ -27,10 +27,10 @@ const ServicePage = () => {
                     <Line/>
 
                     <Breadcrumbs style={{marginTop: "30px"}} aria-label="breadcrumb">
-                        <Link underline="hover" color="#346EFB" href="/">
+                        <Link underline="hover" color="rgb(52, 110, 251)" href="/">
                             Главная
                         </Link>
-                        <Link underline="hover" color="#346EFB" href="/services">
+                        <Link underline="hover" color="rgb(52, 110, 251)" href="/services">
                             Услуги
                         </Link>
                     <Typography color="text.primary">{id}</Typography>

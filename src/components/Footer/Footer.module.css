@@ -1,7 +1,7 @@
 .footer {
-  background-color: rgb(33, 37, 41);
+  background-color: #000000;
   color: #fff;
-  box-shadow: 0 0 0 100vmax rgb(33, 37, 41);
+  box-shadow: 0 0 0 100vmax #000000;
   -webkit-clip-path: inset(0 -100vmax);
           clip-path: inset(0 -100vmax);
 }
