@@ -2,37 +2,44 @@ import styles from'./Header.module.css';
 import insta from '../../assets/icons/instagram.svg';
 import tele from '../../assets/icons/telegram.svg';
 import what from '../../assets/icons/whatsapp.svg';
-import profile from  '../../assets/icons/profile.svg';
+/* import profile from  '../../assets/icons/profile.svg'; */
 import map from  '../../assets/icons/map.svg';
 import time from  '../../assets/icons/time.svg';
 import phone from  '../../assets/icons/phone.svg';
 
-import logo from '../../assets/logos/medcheckLogo.svg'
+import logo from '../../assets/logos/medcliniclogo.svg'
 import container from '../../styles/ContainerStyles.module.scss'
 import { Link } from 'react-router-dom';
 import Button from '../../UI/Button/Button.jsx';
 
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher.jsx';
 
+import Profile from '../Profile/Profile.jsx';
 
 const Header = () => {
 
+
+    const {t} = useTranslation();
+
+    
     return (
         <div className={container.container}>
         <div className={styles.header}>
             
-            <div className={styles.searchPart} >
+            <div className={styles.searchPart}>
                     <div className={styles.geolocation}>
                         <div className={styles.map}>
                             <img src={map} alt="map" />
-                            <span > 106452, г. Бишкек, Гражданская 119 </span>
+                            <span > {t('header.address')} </span>
                         </div>
                         <div className={styles.time}>
                             <img src={time} alt="time" />
-                            <span>пн-сб 08:00 до 18:00</span>
+                            <span>{t('header.workdays')}</span>
                         </div>
                     </div>
                             
-                    <input className={styles.searchInput} type="search" placeholder="Поиск по сайту  "/>
+                    <input className={styles.searchInput} type="search" placeholder={t('header.search')}/>
                             
 
 
@@ -50,9 +57,10 @@ const Header = () => {
                         <div className={styles.number2}>+996(505) 000 000</div> 
                     </div>
 
-                    <div className={styles.profile}> 
-                        <a href = "#"><img src={profile} alt="profile" /></a>
-                    </div>
+                    
+                    <LanguageSwitcher/>
+        
+                    <Profile />
             </div>
 
 
@@ -64,17 +72,17 @@ const Header = () => {
 
                 <div className= {styles.nav}>
                     <ul>
-                        <li><Link to ='/about'>О клинике</Link></li>
-                        <li><Link to ='/services'>Услуги</Link></li>
-                        <li><Link to ='/doctors'>Врачи</Link></li>
-                        <li><Link to ='/price'>Прайс</Link></li>
-                        <li><Link to ='/contacts'>Контакты</Link></li>
+                        <li><Link to ='/about'>{t('header.about')}</Link></li>
+                        <li><Link to ='/services'>{t('header.services')}</Link></li>
+                        <li><Link to ='/doctors'>{t('header.doctors')}</Link></li>
+                        <li><Link to ='/price'>{t('header.price')}</Link></li>
+                        <li><Link to ='/contacts'>{t('header.contacts')}</Link></li>
                     </ul>
                 </div>
 
                 <div className= {styles.buttons}>
-                    <Button text = {'ПОЛУЧИТЬ РЕЗУЛЬТАТЫ'} radius= "medium" />
-                    <Button text = {'ЗАПИСЬ ОНЛАЙН'} radius= "medium" />
+                    <Button text = {t('header.getresults')} radius= "medium" />
+                    <Button text = {t('header.online-recording')} radius= "medium" />
                 </div>
 
 

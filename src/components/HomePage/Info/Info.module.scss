@@ -1,10 +1,11 @@
-h2 {
+.info{
+  h2 {
     font-family: Manrope-Semi-Bold;
     font-size: 36px;
     margin-bottom: 60px;
 
     span {
-      color: rgb(4, 135, 65);
+      color:rgb(52, 110, 251);
     }
   }
 
@@ -23,7 +24,7 @@ h2 {
       }
 
       a {
-        color: rgb(4, 135, 65);
+        color: rgb(52, 110, 251);
         font-family: Manrope-Regular;
         text-decoration: none;
       }
@@ -35,3 +36,4 @@ h2 {
       margin-top: 26px;
     }
   }
+}

@@ -7,7 +7,7 @@ import instag from '../../assets/icons/insta.svg';
 import teleg from '../../assets/icons/teleg.svg';
 import whats from '../../assets/icons/what.svg';
 
-import medcheckLogowhite from '../../assets/logos/medcheckLogowhite.svg'
+import logo from '../../assets/logos/medcliniclogo2.svg';
 
 
 
@@ -22,7 +22,7 @@ const Footer = () =>{
             <div className={styles.footerCol}>
             <div className={styles.about}>
                 <div className={styles.logo}>
-                    <Link to = '/'><img src = {medcheckLogowhite}/></Link>
+                    <Link to = '/'><img src = {logo}/></Link>
                 </div>
                 <div className={styles.text}>
                     <div className={styles.text1}>
@@ -51,7 +51,7 @@ const Footer = () =>{
                         <p>+996(800) 000 000 </p>
                         <p>+996(505) 000 000</p></div>
                         </li>
-                        <li><div><img src={post} alt="" /></div><div>medchek.kg</div></li>
+                        <li><div><img src={post} alt="" /></div><div>medclinic.kg</div></li>
                     </ul>
                 </div>
 
@@ -80,7 +80,7 @@ const Footer = () =>{
                 </div>
             
                 <div className={styles.footerDown}> 
-                    ©  MedCheck 2023 | Все права защищены
+                    ©  MedClinic 2023 | Все права защищены
                 </div>
         </div> 
         

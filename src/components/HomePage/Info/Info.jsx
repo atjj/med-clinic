@@ -11,7 +11,7 @@ import clinic4 from '../../../assets/images/clinic/clinic4.jpeg';
 
 const Info = () => {
     return(
-        <>
+        <div className= {styles.info}>
                 <h2>О нашей клинике <span>“MedCheck”</span></h2>
                 <div className= {styles.wrapper}>
                     <div className={styles.info}>
@@ -45,7 +45,7 @@ const Info = () => {
                 </div>
 
         
-        </>
+        </div>
     )
 }
 

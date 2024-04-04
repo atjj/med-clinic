@@ -6,7 +6,7 @@
   margin-top: 26px;
 }
 .about h2 span {
-  color: rgb(4, 135, 65);
+  color: rgb(52, 110, 251);
 }
 .about .health {
   display: flex;
@@ -63,7 +63,7 @@
   margin-bottom: 60px;
 }
 .about .aboutUs h2 span {
-  color: rgb(4, 135, 65);
+  color: rgb(52, 110, 251);
 }
 .about .aboutUs .wrapper {
   display: flex;

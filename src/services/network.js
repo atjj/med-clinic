@@ -10,7 +10,7 @@ class HttpError extends Error {
 
 
 
-export const fetchAuthData = async (data,auth) => {
+export const fetchAuthData = async (data,auth) =>{
 
     try {
         
