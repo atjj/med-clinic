@@ -87,7 +87,7 @@ export default new createBrowserRouter([
                 errorElement: <div>404 Not Found</div>,
                 children: [
                   {
-                    path: '/dashboard/profile/personalInfo',
+                    path: '/dashboard/profile',
                     element: <PersonalData/>,
                     errorElement: <div>404 Not Found</div>,
                   },

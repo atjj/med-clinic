@@ -52,7 +52,7 @@ const SignIn = () => {
         console.log(res);
 
 
-        if(res.ok == false){
+        if(res.ok == false || !res) {
             setErrorMsg(res.errText);
             return;
         } else {
