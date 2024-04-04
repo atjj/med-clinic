@@ -131,22 +131,21 @@ const SignUp = () => {
 
         console.log(res);
 
-        if(res.ok == false) {
+        if(res.ok == false || !res) {
             setErrorMsg(res.errText);
             return;
         } else {
             console.log("success",res);
          
-            const email = res.email;
-            localStorage.setItem('site',res.token);
-            const token = res.token;
-            const roles = res.roles;
+            localStorage.setItem('site',res.accessToken);
+        
 
             setAuth((prev) => ({
                 ...prev,
-                email,
-                roles,
-                token
+                email: res.email,
+                roles: res.roles,
+                accessToken: res.accessToken,
+                refreshToken: res.refreshToken
             }));
 
             setInput({

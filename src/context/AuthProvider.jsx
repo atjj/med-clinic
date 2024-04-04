@@ -9,7 +9,8 @@ export const AuthProvider = ({children}) => {
     const [auth,setAuth] = useState({
         email: '',
         roles: '',
-        token: localStorage.getItem('site') || ''
+        accessToken: localStorage.getItem('site') || '',
+        refreshToken: ''
     });
     
     console.log(auth);

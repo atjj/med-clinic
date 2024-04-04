@@ -58,16 +58,16 @@ const SignIn = () => {
         } else {
             console.log('success',res);
 
-            const email = res.email;
-            localStorage.setItem('site',res.token);
-            const token = res.token;
-            const roles = res.roles;
+
+            localStorage.setItem('site',res.accessToken);
+          
     
             setAuth((prev) => ({
                 ...prev,
-                email,
-                roles,
-                token
+                email: res.email,
+                roles: res.roles,
+                accessToken: res.accessToken,
+                refreshToken: res.refreshToken
             }));
             setEmail('');
             setPassword('');

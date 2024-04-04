@@ -19,7 +19,7 @@ const Profile = () => {
     
     const [isOpen,setOpen] = useState(false);
 
-    const loggedin = localStorage.getItem('site') ? true : false;
+    const loggedin = auth.accessToken ? true : false;
 
 
     let menuRef = useRef();
@@ -42,7 +42,7 @@ const Profile = () => {
 
 
     const logout = () => {
-        const newObj = {...auth, email: '', roles: '', token: ""};
+        const newObj = {...auth, email: '', roles: '', accessToken: "",refreshToken: ""};
         setAuth(newObj);
         navigate('/signin');
         localStorage.removeItem('site');
