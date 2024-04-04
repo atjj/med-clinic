@@ -37,13 +37,10 @@ export const fetchAuthData = async (data,auth) =>{
     } catch(error){
     
         console.error(`message: ${error.message} status: ${error.status} errText: ${error.errText}`)
-
         return {
-
             status: error.status,
             errText: error.errText,
             ok: error.ok
-            
         };
     }
 

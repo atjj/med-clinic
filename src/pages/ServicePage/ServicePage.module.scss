@@ -1,6 +1,6 @@
 .services{
     .header{
-        color: rgb(52, 110, 251);
+        color: #346EFB;
         font-family: Manrope-Semi-Bold;
         font-size: 36px;
         margin-top: 26px;
@@ -35,6 +35,7 @@
             margin: 15px 0;
             &::marker{
                 color:rgb(52, 110, 251);
+                color:rgb(52, 110, 251);
             } 
     
         }
@@ -47,11 +48,13 @@
             font-size: 36px;
             span{
                 color:rgb(52, 110, 251);
+                color:rgb(52, 110, 251);
             }
     
         }
 
         .pricetitle{
+                background-color: rgb(219, 235, 255);
                 background-color: rgb(219, 235, 255);
                 display: flex;
                 padding: 16px 38px 20px 30px;

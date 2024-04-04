@@ -1,0 +1,80 @@
+@charset "UTF-8";
+.analize {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 40px;
+}
+.analize .searchBlock {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  border-radius: 8px;
+  padding: 0 13px;
+  position: relative;
+  background: #DBEBFF;
+  align-items: center;
+}
+.analize .searchBlock .autocomplete {
+  position: absolute;
+  left: 0;
+  top: 48px;
+  width: 100%;
+  background: #DBEBFF;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 111;
+  max-height: 240px;
+  height: auto;
+  overflow: clip;
+  border-radius: 10px;
+  font-family: Manrope-Regular;
+}
+.analize .searchBlock .autocompleteItem {
+  padding: 10px;
+}
+.analize .searchBlock .autocompleteItem:hover {
+  background: rgb(180, 180, 180);
+  cursor: pointer;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s all;
+}
+.analize .searchBlock input {
+  background: #DBEBFF;
+  border-radius: 20px;
+  border: 1px #DBEBFF;
+  padding: 15px 120px 15px 15px;
+  width: 100%;
+}
+.analize .searchBlock .close {
+  position: absolute;
+  right: 30px;
+  top: 37%;
+  cursor: pointer;
+}
+.analize input:focus {
+  outline: none;
+}
+.analize .Allanalize {
+  width: 100%;
+  margin: 40px 10px;
+}
+.analize .Allanalize .twoColumn {
+  display: grid;
+  grid-template-columns: 700px 750px; /* Создание двух колонок с равными ширинами */
+  grid-gap: 10px; /* Расстояние между элементами списка */
+  padding: 0;
+}
+.analize .Allanalize .twoColumn li {
+  font-family: Manrope-Regular;
+  margin-bottom: 18px;
+  font-size: 18px;
+  list-style: none;
+  color: #000;
+  width: 50%;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+.analize .Allanalize .twoColumn li:hover {
+  color: #346EFB;
+}/*# sourceMappingURL=Analize.module.css.map */

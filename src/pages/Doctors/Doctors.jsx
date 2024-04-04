@@ -1,4 +1,4 @@
-import DoctorProf from '../../components/DoctorsPage/DoctorProf';
+import DoctorProf from '../../components/DoctorsPage/DoctorsProf/DoctorProf.jsx';
 import styles from './Doctors.module.scss';
 import DB from './doctors.json';
 import container from '../../styles/ContainerStyles.module.scss'
