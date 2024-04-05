@@ -1,0 +1,73 @@
+.globalCart {
+  display: flex;
+  align-items: start;
+  padding: 30px 0 30px 0;
+  gap: 40px;
+}
+.globalCart .leftCart {
+  display: flex;
+  border: 2px solid #EBF2FC;
+  border-radius: 24px;
+  padding: 10px;
+  text-align: start;
+  padding: 28px;
+  margin-bottom: 20px;
+}
+.globalCart .leftCart .name {
+  font-size: 28px;
+  font-family: Manrope-Bold;
+  padding-bottom: 10px;
+}
+.globalCart .leftCart .result {
+  font-family: Manrope-Regular;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: dimgray;
+}
+.globalCart .leftCart .price {
+  font-size: 24px;
+  font-family: Manrope-Bold;
+}
+.globalCart .leftCart .footerCartItem {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+}
+.globalCart .leftCart .footerCartItem .delete {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.globalCart .leftCart .footerCartItem .delete .deleteItem {
+  font-family: Manrope-Bold;
+}
+.globalCart .leftCart .footerCartItem .delete:hover {
+  color: #346EFB;
+}
+.globalCart .rightCart {
+  text-align: center;
+  margin-top: 30px;
+}
+.globalCart .rightCart h4 {
+  font-size: 28px;
+  font-family: Manrope-Regular;
+  margin-bottom: 15px;
+}
+.globalCart .rightCart .print {
+  padding: 10px 20px;
+  color: #000;
+  font-family: Manrope-Regular;
+  background-color: #EBF2FC;
+  border: 1px solid #346EFB;
+  border-radius: 18px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.globalCart .rightCart .print:hover {
+  background: #346EFB;
+  color: #fff;
+}/*# sourceMappingURL=Cart.module.css.map */

@@ -1,0 +1,20 @@
+h1 {
+  font-family: Manrope-Semi-Bold;
+  font-size: 36px;
+  margin-top: 26px;
+}
+h1 span {
+  color: #346EFB;
+}
+
+.desc {
+  margin-top: 34px;
+  color: rgb(77, 78, 81);
+  font-family: Manrope-Regular;
+  font-size: 18px;
+  width: 691px;
+}
+
+.priceSection {
+  margin: 40px 0 120px 0;
+}/*# sourceMappingURL=PricePage.module.css.map */

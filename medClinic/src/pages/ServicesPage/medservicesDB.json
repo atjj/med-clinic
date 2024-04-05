@@ -1,0 +1,136 @@
+{
+    "medservices":[
+        {
+            "id": "allergology",
+            "img":"/src/assets/images/medservices/allergology.svg",
+            "title": "Аллергология",
+            "alt": "image"
+        },
+        {
+            "id": "anesthesiology",
+            "img":"/src/assets/images/medservices/anesthesiology.svg",
+            "title": "Анестезиология",
+            "alt":"image"
+        },
+        {
+            "id": "cardiology",
+            "img":"src/assets/images/medservices/cardiology.svg",
+            "title": "Кардиология",
+            "alt":"image"
+        },
+        {
+            "id": "dermatology",
+            "img":"src/assets/images/medservices/dermatology.svg",
+            "title": "Дерматология",
+            "alt":"image"
+        },
+        {
+            "id": "endokrinology",
+            "img":"src/assets/images/medservices/endokrinology.svg",
+            "title": "Эндокринология",
+            "alt":"image"
+        },
+        {
+            "id": "flebology",
+            "img":"src/assets/images/medservices/flebology.svg",
+            "title": "Флебология",
+            "alt":"image"
+        },
+        {
+            "id": "gastroenterology",
+            "img":"src/assets/images/medservices/gastroenterology.svg",
+            "title": "Гастроэнтерология",
+            "alt":"image"
+        },
+        {
+            "id": "gematology",
+            "img":"src/assets/images/medservices/gematology.svg",
+            "title": "Вакцинация",
+            "alt":"image"
+        },
+        {
+            "id": "ginekology",
+            "img":"src/assets/images/medservices/ginekology.svg",
+            "title": "Гинекология",
+            "alt":"image"
+        },
+        {
+            "id": "neurosurgery",
+            "img":"src/assets/images/medservices/neurosurgery.svg",
+            "title": "Нейрохирургия",
+            "alt":"image"
+        },
+        {
+            "id": "nevrology",
+            "img":"src/assets/images/medservices/nevrology.svg",
+            "title": "Неврология",
+            "alt":"image"
+        },
+        {
+            "id": "oftalmology",
+            "img":"src/assets/images/medservices/oftalmology.svg",
+            "title": "Офтальмология",
+            "alt":"image"
+        },
+        {
+            "id": "onkology",
+            "img":"src/assets/images/medservices/onkology.svg",
+            "title": "Онкология",
+            "alt":"image"
+        },
+        {
+            "id": "orthopedy",
+            "img":"src/assets/images/medservices/orthopedy.svg",
+            "title": "Ортопедия",
+            "alt":"image"
+        },
+        {
+            "id": "otorinolaringology",
+            "img":"src/assets/images/medservices/otorinolaringology.svg",
+            "title": "Оториноларингология",
+            "alt":"image"
+        },
+        {
+            "id": "physiotherapy",
+            "img":"src/assets/images/medservices/physiotherapy.svg",
+            "title": "Физиотерапия",
+            "alt":"image"
+        },
+        {
+            "id": "proktology",
+            "img":"src/assets/images/medservices/proktology.svg",
+            "title": "Проктология",
+            "alt":"image"
+        },
+        {
+            "id": "psychotherapy",
+            "img":"src/assets/images/medservices/psychotherapy.svg",
+            "title": "Психтерапия",
+            "alt":"image"
+        },
+        {
+            "id": "pulmonology",
+            "img":"src/assets/images/medservices/pulmonology.svg",
+            "title": "Пульмонология",
+            "alt":"image"
+        },
+        {
+            "id": "revmatology",
+            "img":"src/assets/images/medservices/revmatology.svg",
+            "title": "Ревмотология",
+            "alt":"image"
+        },
+        {
+            "id": "therapy",
+            "img":"src/assets/images/medservices/therapy.svg",
+            "title": "Терапия",
+            "alt":"image"
+        },
+        {
+            "id": "urology",
+            "img":"src/assets/images/medservices/urology.svg",
+            "title": "Урология",
+            "alt":"image"
+        }
+    ]
+}

@@ -1,0 +1,129 @@
+.footer {
+  background-color: #000000;
+  color: #fff;
+  box-shadow: 0 0 0 100vmax #000000;
+  -webkit-clip-path: inset(0 -100vmax);
+          clip-path: inset(0 -100vmax);
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footerCol {
+  display: flex;
+  justify-content: space-between;
+}
+.footerCol .about {
+  width: 35%;
+}
+.footerCol .about .logo img {
+  height: 79px;
+}
+.footerCol .about .text .text1 {
+  margin-top: 26px;
+}
+.footerCol .info {
+  display: flex;
+  width: 55%;
+  justify-content: space-between;
+}
+.footerCol .info .social .text {
+  font-family: Manrope-Medium;
+}
+
+.text {
+  font-family: Manrope-Regular;
+  font-size: 16px;
+}
+
+.text2 {
+  padding-top: 20px;
+  font-weight: 400;
+  color: #CCCCCC;
+}
+
+.contact {
+  color: #fff;
+  font-family: Manrope-Regular;
+}
+.contact ul {
+  display: flex;
+  flex-direction: column;
+  margin-top: 19px;
+  justify-content: center;
+  list-style-type: none;
+  color: #CCCCCC;
+}
+.contact li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.contact li img {
+  width: 22px;
+  height: 22px;
+  margin-right: 2px;
+}
+
+.links {
+  margin-top: 19px;
+}
+.links img {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+
+.nav ul {
+  display: flex;
+  list-style-type: none;
+  gap: 36px;
+  margin-top: 46px;
+  font-family: Manrope-Regular;
+  font-size: 16px;
+  color: #CCCCCC;
+}
+.nav ul .liscContact {
+  display: flex;
+  flex-direction: column;
+}
+.nav ul .image {
+  margin-top: -15px;
+}
+
+.footerDown {
+  font-family: Manrope-Regular;
+}
+
+.footerMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 68px;
+}
+
+.footerMain::after {
+  content: "";
+  background: #6F7074;
+  height: 1px;
+  display: block;
+  width: 1200px;
+  margin-top: 45px;
+}
+
+.footerDown {
+  color: #959595;
+  /*     margin-top: 27.75px;
+   */
+  padding: 20px 0;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(204, 204, 204);
+}/*# sourceMappingURL=Footer.module.css.map */

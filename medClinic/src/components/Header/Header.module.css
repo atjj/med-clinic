@@ -1,0 +1,66 @@
+.header {
+  height: 182px;
+  padding: 20px 0 10.5px 0;
+}
+.header .searchPart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+  font-family: Manrope-Regular;
+}
+.header .searchPart .geolocation .map {
+  display: flex;
+  gap: 10px;
+}
+.header .searchPart .geolocation .time {
+  display: flex;
+  gap: 10px;
+  margin-top: 7px;
+}
+.header .searchPart .searchInput {
+  width: 367px;
+  height: 40px;
+  border: none;
+  border-radius: 24px;
+  background-color: rgb(243, 241, 241);
+  padding: 8px 18px 8px 18px;
+  font-family: Manrope-Medium;
+}
+.header .searchPart .links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header .searchPart .phoneNumbers .number1 {
+  display: flex;
+  gap: 6px;
+}
+.header .searchPart .phoneNumbers .number2 {
+  display: flex;
+  justify-content: end;
+  margin-top: 4px;
+}
+.header .navPart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 96.5px;
+  font-family: Manrope-Medium;
+  padding-top: 12.5px;
+  margin-top: 19.5px;
+  border-top: 1px solid rgb(217, 217, 217);
+}
+.header .navPart .nav ul {
+  display: flex;
+  list-style-type: none;
+  gap: 36px;
+}
+.header .navPart .nav ul li a {
+  text-decoration: none;
+  color: rgb(34, 34, 34);
+}
+.header .navPart .buttons {
+  display: flex;
+  gap: 16px;
+}/*# sourceMappingURL=Header.module.css.map */
