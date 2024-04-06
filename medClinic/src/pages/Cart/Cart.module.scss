@@ -1,0 +1,77 @@
+.globalCart{
+    display:flex;
+
+    align-items:start;
+    padding: 30px 0 30px 0;
+    gap: 40px;
+
+    .carts{
+    }
+    .leftCart{
+        display: flex;
+        border: 2px solid #EBF2FC;
+        border-radius: 24px;
+        padding: 10px;
+        text-align: start;
+        padding: 28px;
+        margin-bottom: 20px;
+        .name{
+            font-size: 28px;
+            font-family: Manrope-Bold;
+            padding-bottom: 10px;
+        }
+        .result{
+            font-family: Manrope-Regular;
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: dimgray;
+        }
+        .price{
+            font-size: 24px;
+            font-family: Manrope-Bold;
+        }
+        .footerCartItem{
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            justify-content: space-between;
+            .delete{
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                transition: .3s;
+                cursor: pointer;
+                .deleteItem{
+                    font-family: Manrope-Bold;
+                }
+            }
+            .delete:hover{
+                color: #346EFB;
+            }
+        }
+    }
+    .rightCart{
+        text-align:center;
+        margin-top: 30px;
+        h4{
+            font-size: 28px;
+            font-family: Manrope-Regular;
+            margin-bottom: 15px;
+        }
+        .print{
+            padding:10px  20px;
+            color: #000 ;
+            font-family: Manrope-Regular;
+            background-color: #EBF2FC ;
+            border: 1px solid #346EFB;
+            border-radius: 18px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .print:hover{
+            background: #346EFB;
+            color: #fff;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+h3 {
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  /* button{
+      margin-top: 10px;
+      font-family: Manrope-Regular;
+      color: rgb(2, 152, 71);
+      transition: .4s;
+      &:hover{
+          color: #fff;
+          background: linear-gradient(rgb(12, 187, 107),rgb(2, 123, 68));
+          border: none;
+      }
+  } */
+}
+.cards .card {
+  font-weight: 500;
+  font-family: Manrope-Medium;
+}
+.cards .card .imageDoctor {
+  width: 319px;
+  height: 349px;
+}
+.cards h4 {
+  font-size: 18px;
+  color: rgb(34, 34, 34);
+}
+.cards .profile {
+  font-size: 16px;
+  color: rgb(149, 149, 149);
+}
+.cards .btn {
+  margin-top: 10px;
+}/*# sourceMappingURL=DoctorProf.module.css.map */

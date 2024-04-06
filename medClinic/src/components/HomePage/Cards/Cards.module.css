@@ -1,0 +1,15 @@
+.cards {
+  margin-top: 20px;
+}
+.cards h2 {
+  font-family: Manrope-Semi-Bold;
+  font-size: 36px;
+}
+.cards h2 span {
+  color: #346EFB;
+}
+.cards .cardContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}/*# sourceMappingURL=Cards.module.css.map */

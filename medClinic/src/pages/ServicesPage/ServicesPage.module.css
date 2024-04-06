@@ -1,0 +1,28 @@
+.services h1 {
+  font-family: Manrope-Semi-Bold;
+  font-size: 36px;
+  margin-top: 26px;
+}
+.services h1 span {
+  color: rgb(52, 110, 251);
+}
+.services .servicesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  width: 886px;
+  margin-top: 60px;
+}
+.services .questionSection {
+  margin-top: 120px;
+}
+.services .questionSection h2 {
+  font-family: Manrope-Regular;
+  font-size: 36px;
+  margin-bottom: 34px;
+}
+.services .questionSection p {
+  font-family: Manrope-Regular;
+  font-size: 18px;
+  width: 816px;
+}/*# sourceMappingURL=ServicesPage.module.css.map */

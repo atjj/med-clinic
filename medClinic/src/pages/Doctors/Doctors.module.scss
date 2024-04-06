@@ -1,0 +1,40 @@
+.doctors{
+/*     margin-top: 75px;
+ */    padding-bottom: 120px;
+    h2{
+        font-family: Manrope-Semi-Bold;
+        font-size: 36px;
+        color: rgb(34, 34, 34);
+        margin-top: 26px;
+        margin-bottom: 34px;
+        span{
+            color: #346EFB;
+        }
+    }
+    .infoDoctors{
+        font-weight: 400;
+        font-family: Manrope-Regular;
+        color: rgb(77, 78, 81);
+        .paragraph1{
+            width: 664px;
+            margin-bottom: 20px;
+        }
+        .paragraph2{
+            width: 852px;
+        }
+    }
+    .cardsFooter{
+        padding-top:66px ;
+        text-align: center;
+        font-family: Manrope-Regular;
+        color: #4D4E51;
+        .number{
+            font-weight: 500;
+            font-size: 16px;
+            color: black;
+        }
+        .more{
+            color: #346EFB;
+        }
+    }
+}

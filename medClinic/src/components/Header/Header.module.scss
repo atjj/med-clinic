@@ -1,0 +1,99 @@
+.header{
+    height: 182px;
+    padding: 20px 0 10.5px 0;
+
+    .searchPart{
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+        height: 48px;
+        font-family: Manrope-Regular;
+
+        .geolocation{
+
+            .map{
+                display: flex;
+                gap: 10px;
+             }
+             .time{
+                display: flex;
+                gap: 10px;
+                margin-top: 7px;
+             }
+        
+        }
+
+        .searchInput {
+            width: 367px;
+            height: 40px;
+            border: none;
+            border-radius: 24px;
+            background-color: rgb(243, 241, 241);
+            padding: 8px 18px 8px 18px;
+            font-family: Manrope-Medium;
+        }
+
+        .links{
+            display: flex;
+            align-items:center;
+            gap: 10px;
+        }
+
+        .phoneNumbers{
+
+            .number1{
+                display: flex;
+                gap: 6px;
+             }
+            .number2{
+                display: flex;
+                justify-content: end;
+                margin-top: 4px;
+        
+             }
+
+        }
+         
+    }
+
+    .navPart {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 96.5px;
+        font-family: Manrope-Medium;
+        padding-top: 12.5px;
+        margin-top: 19.5px;
+        border-top: 1px solid rgb(217, 217, 217);
+      
+        .nav ul {
+          display: flex;
+          list-style-type: none;
+          gap: 36px;
+      
+          li a {
+            text-decoration: none;
+            color: rgb(34, 34, 34);
+          }
+        }
+      
+        .buttons {
+          display: flex;
+          gap: 16px;
+        }
+      }
+      
+}
+  
+
+
+   
+
+
+
+
+
+
+
+
+

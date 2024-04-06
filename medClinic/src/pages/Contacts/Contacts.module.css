@@ -1,0 +1,31 @@
+.contacts {
+  font-size: 18px;
+  font-family: Manrope-Regular;
+  max-width: 680px;
+}
+.contacts .title {
+  padding-bottom: 40px;
+  color: #4D4E51;
+}
+.contacts h2 {
+  font-family: Manrope-Semi-Bold;
+  margin-top: 26px;
+}
+.contacts h2 span {
+  color: #346EFB;
+}
+.contacts a {
+  color: #346EFB;
+}
+.contacts ul {
+  list-style-type: none;
+}
+.contacts ul li {
+  padding-bottom: 20px;
+}
+
+.mapContainer {
+  z-index: 4;
+  margin-left: -20%;
+  margin-top: 120px;
+}/*# sourceMappingURL=Contacts.module.css.map */
