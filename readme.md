@@ -1,25 +1,8 @@
-# General information
-## Course
-BIL-382
-## Educational year
-2023-2024
-## Semester
-Bahar
-## Students year level
-3
+# React + Vite
 
-# How to create a new repository
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-echo "# bil382-2024" >> README.md
+Currently, two official plugins are available:
 
-git init
-
-git add README.md
-
-git commit -m "first commit"
-
-git branch -M main
-
-git remote add origin https://github.com/kasymk/bil382-2024.git
-
-git push -u origin main
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
