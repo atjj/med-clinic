@@ -20,6 +20,7 @@ const Header = () => {
 
 
     const {t} = useTranslation();
+
     const [isDoctorDrawerOpen, setIsDoctorDrawerOpen] = useState(false);
 
     const openDoctorDrawer = () => {
@@ -94,13 +95,11 @@ const Header = () => {
                 <div className= {styles.buttons}>
                     <Button text = {t('header.getresults')} radius= "medium" />
                     {/* <Button text = {t('header.online-recording')} radius= "medium" /> */}
-                    <button onClick={openDoctorDrawer}>lksam</button>
-                    {/* <OnlineRegistration/> */}
+                    <button  onClick={openDoctorDrawer}>{t('header.online-recording')}</button>
                     {isDoctorDrawerOpen && (
                         <OnlineRegistration onClose={closeDoctorDrawer} />
                     )}
                 </div>
-                {/* <div><OnlineRegistration/></div> */}
 
 
 

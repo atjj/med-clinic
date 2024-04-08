@@ -1,21 +1,15 @@
-
-import {useState}  from 'react';
+import React from 'react';
 import remove from '../../assets/icons/close.svg';
 import styles from './OnlineRegistration.module.scss';
-import doctorsImage from '../../assets/icons/doctorsImage.svg';
-import Calendar from './Calendar.jsx'
-import DoctorsDrawer from './DoctorsDrawer.jsx';
+import ServiceDb from './ServiceDb.json';
+import { useState } from 'react';
+import DoctorsDrawer from './DoctorsDrawer/DoctorsDrawer';
 const OnlineRegistration = ({ onClose }) => {
-    const [isDoctorDrawerOpen, setIsDoctorDrawerOpen] = useState(false);
+    const [isDoctorsDrawerOpen, setIsDoctorsDrawerOpen] = useState(false); 
 
-    const openDoctorDrawer = () => {
-        setIsDoctorDrawerOpen(true);
+    const openDoctorsDrawer = () => {
+        setIsDoctorsDrawerOpen(true); 
     };
-
-    const closeDoctorDrawer = () => {
-        setIsDoctorDrawerOpen(false);
-    };
-
     return (
         <>
             <div className={styles.overlay} onClick={onClose}>
@@ -24,33 +18,23 @@ const OnlineRegistration = ({ onClose }) => {
                         <img className={styles.remove} onClick={onClose} src={remove} alt="" />
                         <p className={styles.headerTitle}>Online запись</p>
                     </div>
-                    <div>
-                        <div className={styles.box}>
-                            <select>
-                                <option>Выбрать услуги</option>
-                                <option>Кардиология</option>
-                                <option>Option 3</option>
-                                <option>Option 4</option>
-                                <option>Option 5</option>
-                            </select>
-                        </div>
-                    </div>
-                   
-                    <div className={styles.selectDoctor} onClick={openDoctorDrawer}>
-                        <img src={doctorsImage} alt="doctorsImage" />
-                        <p className={styles.selectDoctorTitle}>Выбрать дату и время</p>
-                    </div>
-                    {isDoctorDrawerOpen && (
-                        <Calendar onClose={closeDoctorDrawer} />
-                        
-                    )}
                     
-
+                    <div className={styles.items}>
+                    {ServiceDb.map((item, index) => (
+                            <div className={styles.listServices} key={index} onClick={openDoctorsDrawer}>
+                               
+                                <ul>
+                                    <li className={styles.services}>{item.service}</li>
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
+            
+            {isDoctorsDrawerOpen && <DoctorsDrawer onClose={() => setIsDoctorsDrawerOpen(false)} />}
         </>
     );
 };
 
 export default OnlineRegistration;
-

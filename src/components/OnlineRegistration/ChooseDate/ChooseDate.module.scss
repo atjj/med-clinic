@@ -1,0 +1,108 @@
+.overlay{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  .drawer{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    height: 100%;
+    background:#fFF;
+    right: 0;
+    box-shadow: -10px 4px 24px rgba(0,0,0,0.1);
+    gap: 5px;
+    .headerRegistration{
+        display: flex;
+        align-items: center;
+        background-color: #fFF;
+        width: 100%;
+        height: 56px;
+        .remove{
+          margin-right: 65px;
+          cursor: pointer;
+          margin-left: 4px;
+        }
+       }
+      .headerTitle{
+        color:#346EFB;
+        font-size: 16px;
+        font-family: Manrope-Bold;
+      }
+
+
+      .selectDoctorList{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        .selectDoctor{
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            .doctorSelectedImage{
+                border-radius: 50%;
+            }
+            .doctorInfo{
+                .doctorName{
+                    font-family: Manrope-Regular;
+                    font-size: 16px;
+                }
+                .doctorProf{
+                    font-family: Manrope-Regular;
+                    font-size: 14px;
+                    color: #959595;
+                }
+            }
+            
+        }
+    
+    .timeSlotsContainer{
+        margin-left: 30px;
+        margin-top: -33px;
+        .timeSlotsTitle{
+            font-size: 18px;
+            font-family: Manrope-Medium;
+            margin-bottom: 20px;
+        }
+        .timeSlotsList{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            .time{
+                background: #fff;
+                padding: 8px 15px;
+                border-radius: 16px;
+                color: #000;
+                font-family: Manrope-Regular;
+                font-size: 16px;
+                border :1px solid #D9D9D9;
+                cursor: pointer;
+                transition: .2s;
+            }
+            .time:hover{
+                background:#346EFB;
+                color: #fFF;
+            }
+        }
+
+    }
+    .continueButton{
+        color: #fff;
+        background: #346EFB;
+        width: 315px;
+        font-family: Manrope-Medium;
+        font-size: 18px;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #D9D9D9;
+        cursor: pointer;
+        margin-top: 30px;
+    }
+    
+}
+}}
