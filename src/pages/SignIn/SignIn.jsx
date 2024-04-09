@@ -12,6 +12,8 @@ import { fetchAuthData } from '../../services/network.js';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
+import show from '../../assets/icons/show_eye_icon_183818.svg';
+import hide from '../../assets/icons/hide_icon_183794.svg';
 
 
 const SignIn = () => {
@@ -28,6 +30,8 @@ const SignIn = () => {
     const [errorMsg,setErrorMsg] = useState('');
     const navigate = useNavigate();
    
+    const [visiblePwd,setVisiblePwd] = useState(false);
+
 
     useEffect(() =>{
         userRef.current.focus();
@@ -115,14 +119,22 @@ const SignIn = () => {
                        required
                        />
 
-                <input className = {styles.input}  
-                       type = "password" 
-                       id = "password"
-                       placeholder = "Пароль"
-                       value = {password}
-                       onChange = {handlePasswordChange}
-                       required
-                       />
+                <div className= {styles.inputWrapper}>
+
+                    <input className = {styles.pwdInput}  
+                            type = {visiblePwd ? "text" : "password"} 
+                            id = "password"
+                            placeholder = "Пароль"
+                            value = {password}
+                            onChange = {handlePasswordChange}
+                            required
+                            />
+
+                    <label 
+                        className = {styles.visiblePwdIcon}
+                        onClick = {() => { setVisiblePwd(!visiblePwd) }}
+                    ><img src = {visiblePwd ? hide : show}/></label>
+                </div>
 
                 <Button 
                     text = "ВОЙТИ" 
@@ -135,7 +147,8 @@ const SignIn = () => {
                 <div className= {styles.lines}>или</div>
 
                 <button 
-                    className= {styles.signinwithgoogle}><img src={google} alt='google' />Продолжить с Google</button>
+                    className= {styles.signinwithgoogle}><img src={google} alt='google' />Продолжить с Google
+                </button>
 
                 <div className= {styles.signup}>Нет аккаунта? <Link to = "/signup">Зарегистрироваться</Link></div>
 

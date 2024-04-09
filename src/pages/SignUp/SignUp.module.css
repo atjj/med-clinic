@@ -41,6 +41,30 @@
   padding: 10px 8px 10px 16px;
   margin-bottom: 14px;
 }
+.wrapper .signUp .inputWrapper {
+  border: 1px solid rgb(217, 217, 217);
+  border-radius: 8px;
+  position: relative;
+  margin-bottom: 14px;
+}
+.wrapper .signUp .inputWrapper .pwdInput {
+  width: 100%;
+  padding: 10px 8px 10px 16px;
+  border: inherit;
+  border-radius: inherit;
+}
+.wrapper .signUp .inputWrapper .visiblePwdIcon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 9px;
+  right: 20px;
+  cursor: pointer;
+}
+.wrapper .signUp .inputWrapper .visiblePwdIcon img {
+  height: 100%;
+  width: 100%;
+}
 .wrapper .signUp .forgot {
   margin-top: 28px;
   text-align: center;

@@ -10,8 +10,8 @@ import { useState,useContext,useRef, useEffect } from 'react';
 import { USER_REGEX,PWD_REGEX,EMAIL_REGEX,PHONE_REGEX } from '../../utils/regex.js';
 import { Link } from 'react-router-dom';
 
-
-
+import hide from '../../assets/icons/hide_icon_183794.svg';
+import show from '../../assets/icons/show_eye_icon_183818.svg';
 const SignUp = () => {
 
     const userRef = useRef();
@@ -21,7 +21,10 @@ const SignUp = () => {
    
 
     const navigate = useNavigate();
-    
+
+    const [visiblePwd,setVisiblePwd] = useState(false);
+    const [visibleMatch,setVisibleMatch] = useState(false);
+
     const [input,setInput] = useState({
         name: "",
         surName: "",
@@ -253,18 +256,25 @@ const SignUp = () => {
                     </p>
 
 
-                <input 
-                    className= {styles.input}  
-                    type="password" 
-                    placeholder="Введите пароль"
-                    name = "password"
-                    onChange = {handleInput}
-                    aria-invalid = {validInput.validPassword ? 'false' : 'true'}
-                    aria-describedby = 'password'
-                    onFocus={() => setFocus(prev => ({ ...prev, pwdFocus:true }))}
-                    onBlur={() => setFocus(prev => ({...prev,pwdFocus: false}))}
-                    required
-                    />
+                    <div className= {styles.inputWrapper}>
+                        <input 
+                            className= {styles.pwdInput}  
+                            type = {visiblePwd ? 'text' : 'password'} 
+                            placeholder="Введите пароль"
+                            name = "password"
+                            onChange = {handleInput}
+                            aria-invalid = {validInput.validPassword ? 'false' : 'true'}
+                            aria-describedby = 'password'
+                            onFocus={() => setFocus(prev => ({ ...prev, pwdFocus:true }))}
+                            onBlur={() => setFocus(prev => ({...prev,pwdFocus: false}))}
+                            required
+                            />
+                        <label 
+                            className = {styles.visiblePwdIcon}
+                            onClick = {() => { setVisiblePwd(!visiblePwd) }}
+                            ><img src = {visiblePwd ? hide : show}/></label>
+                        
+                    </div>
 
                     <p id='password' className= {`${focus.pwdFocus && input.password && !validInput.validPassword ? styles.instructions :styles.offscreen}`}>
                         Длина пароля должна быть не менее 8 символов <br/> 
@@ -272,22 +282,31 @@ const SignUp = () => {
                     </p>
 
 
-                <input 
-                    className= {styles.input}  
-                    type="password" 
-                    placeholder="Повторите пароль"
-                    name = "password"
-                    onChange = {(e) => setMatch(e.target.value)}
-                    aria-invalid = {validMatch ? 'false' : 'true'}
-                    aria-describedby = 'confirm'
-                    onFocus={() => setMatchFocus(true)}
-                    onBlur={() => setMatchFocus(false)}
-                    required
-                    />
+                <div className= {styles.inputWrapper}>
+                    <input 
+                        className= {styles.pwdInput}  
+                        type = {visibleMatch ? 'text' : 'password'} 
+                        placeholder="Повторите пароль"
+                        name = "password"
+                        onChange = {(e) => setMatch(e.target.value)}
+                        aria-invalid = {validMatch ? 'false' : 'true'}
+                        aria-describedby = 'confirm'
+                        onFocus = {() => setMatchFocus(true)}
+                        onBlur = {() => setMatchFocus(false)}
+                        required
+                        />
+                    <label 
+                        className = {styles.visiblePwdIcon}
+                        onClick = {() => { setVisibleMatch(!visibleMatch) }}
+                        ><img src = {visibleMatch ? hide : show}/></label>
+                    
+                </div>
 
-                    <p id='confirm' className= {`${matchFocus && matchPassword && !validMatch ? styles.instructions :styles.offscreen}`}>
-                        Должно соответствовать первому поле ввода пароля.
-                    </p>
+
+
+                <p id='confirm' className= {`${matchFocus && matchPassword && !validMatch ? styles.instructions :styles.offscreen}`}>
+                    Должно соответствовать первому поле ввода пароля.
+                </p>
  
 
                 <Button text = "СОЗДАТЬ АККАУНТ" radius = 'small' disabled = {!validInput.validEmail || !validInput.validTelNumber || !validInput.validName || !validInput.validSurName || !validInput.validPassword || !validMatch ? true : false} />
