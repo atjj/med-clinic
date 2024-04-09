@@ -15,6 +15,7 @@
         font-weight: 400;
         font-family: Manrope-Regular;
         color: rgb(77, 78, 81);
+        margin-bottom: 60px;
         .paragraph1{
             width: 664px;
             margin-bottom: 20px;
@@ -23,18 +24,29 @@
             width: 852px;
         }
     }
+
+    .doctorsList {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+   /*      height: 1040px;
+        overflow: hidden; */
+        
+    }
+
+
     .cardsFooter{
         padding-top:66px ;
         text-align: center;
         font-family: Manrope-Regular;
         color: #4D4E51;
         .number{
-            font-weight: 500;
             font-size: 16px;
             color: black;
         }
         .more{
             color: #346EFB;
+            cursor: pointer;
         }
     }
 }

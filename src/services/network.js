@@ -23,6 +23,7 @@ export const fetchAuthData = async (data,auth) =>{
         });
 
 
+
         
         if(!res.ok) {
             console.log(res);

@@ -1,5 +1,7 @@
-h3{
+.header{
     margin-bottom: 30px;
+    font-family: Manrope-Semi-Bold;
+    font-size: 24px;
 }
 
 .cards{
@@ -10,22 +12,26 @@ h3{
     .card{
         font-weight: 500;
         font-family: Manrope-Medium;
+        
         .imageDoctor{
             width: 319px;
             height: 349px;
+            margin-bottom: 16px;
         }
     }
-    h4{
+    .docName{
        font-size: 18px;
-        color: rgb(34, 34, 34);
+       color: rgb(34, 34, 34);
+       font-family: Manrope-Medium;
     }
     .profile{
         font-size: 16px;
         color: rgb(149, 149, 149);
+        font-family: Manrope-Medium;
 
     }
-    .btn{
-        margin-top: 10px;
+    .btn {
+        margin-top: 18px;
     }
     /* button{
         margin-top: 10px;

@@ -1,103 +1,117 @@
-.doctorInfo {
+.Doctorsinfo {
+  margin-bottom: 120px;
+}
+.Doctorsinfo .doctorInfo {
+  margin-bottom: 120px;
   max-width: 852px;
   margin-top: 26px;
 }
-.doctorInfo .title {
+.Doctorsinfo .doctorInfo .header {
+  margin-top: 26px;
+}
+.Doctorsinfo .doctorInfo .title {
   max-width: 664px;
   color: #4D4E51;
   font-family: Manrope-Regular;
   font-size: 18px;
-  padding-bottom: 30px;
+  margin-top: 34px;
 }
-.doctorInfo .info__title {
+.Doctorsinfo .doctorInfo .info__title {
+  margin-top: 20px;
   color: #4D4E51;
   font-family: Manrope-Regular;
   font-size: 18px;
 }
-.doctorInfo .doctor {
+.Doctorsinfo .doctorInfo .doctor {
   display: flex;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 60px;
 }
-.doctorInfo .doctor .doctorImage {
+.Doctorsinfo .doctorInfo .doctor .doctorImage {
   width: 319px;
   height: 349px;
   margin-right: 50px;
 }
-.doctorInfo .titles .name {
+.Doctorsinfo .doctorInfo .titles .name {
   color: #346EFB;
   font-size: 24px;
   font-family: Manrope-Medium;
   padding-bottom: 40px;
 }
-.doctorInfo .titles .branch {
+.Doctorsinfo .doctorInfo .titles .branch {
   font-family: Manrope-Regular;
   color: #58595B;
   font-size: 18px;
 }
-.doctorInfo .titles .branch span {
+.Doctorsinfo .doctorInfo .titles .branch span {
   color: black;
   font-weight: 500;
   font-family: Manrope-Medium;
 }
-.doctorInfo .titles .jobTitle {
+.Doctorsinfo .doctorInfo .titles .jobTitle {
   font-family: Manrope-Regular;
   color: #58595B;
   font-size: 18px;
-  padding-bottom: 40px;
 }
-.doctorInfo .titles .jobTitle span {
+.Doctorsinfo .doctorInfo .titles .jobTitle span {
   color: black;
   font-weight: 500;
   font-family: Manrope-Medium;
 }
-.doctorInfo .titles button {
-  background: #DBEBFF;
-  color: #000;
-  font-family: Manrope-Medium;
-  font-size: 16px;
-  border: 0;
-  padding: 10px;
-  border-radius: 10px;
-  transition: 0.2s;
-}
-.doctorInfo .titles button:hover {
-  background: #346EFB;
-  color: #fff;
-}
-.doctorInfo .special {
-  list-style: none;
-}
-.doctorInfo .listParagraph {
-  font-family: Manrope-SemiBold;
+.Doctorsinfo .doctorInfo .titles .rating {
+  font-family: Manrope-Regular;
+  color: #58595B;
   font-size: 18px;
-  padding: 20px 0;
+  margin-bottom: 10px;
 }
-.doctorInfo ul li {
+.Doctorsinfo .doctorInfo .details {
+  margin-top: 34px;
+}
+.Doctorsinfo .doctorInfo .details .listParagraph {
+  font-family: Manrope-Semi-Bold;
+  font-size: 18px;
+}
+.Doctorsinfo .doctorInfo .details ul {
+  margin-top: 4px;
+}
+.Doctorsinfo .doctorInfo .details ul li {
   font-size: 16px;
   font-family: Manrope-Regular;
   color: #222222;
   margin-left: 20px;
 }
-.doctorInfo .listTitle {
-  margin-left: 20px;
-}
-.doctorInfo h3 {
-  padding-bottom: 8px;
-}
-.doctorInfo .infoFooter {
+.Doctorsinfo .doctorInfo .details .infoFooter {
   display: flex;
-  padding-top: 10px;
   align-items: center;
+  margin-top: 40px;
 }
-.doctorInfo .infoFooter .vector {
+.Doctorsinfo .doctorInfo .details .infoFooter .vector {
   margin-right: 8px;
 }
-.doctorInfo .infoFooter span {
+.Doctorsinfo .doctorInfo .details .infoFooter span {
   font-size: 16px;
 }
-.doctorInfo .infoFooter span a {
+.Doctorsinfo .doctorInfo .details .infoFooter span a {
   text-decoration: none;
   color: #346EFB;
   font-family: Manrope-Regular;
+}
+.Doctorsinfo .commentSection {
+  width: 100%;
+}
+.Doctorsinfo .commentSection h3 {
+  font-family: Manrope-Medium;
+}
+.Doctorsinfo .commentSection .commentField textarea {
+  width: 100%;
+  resize: none;
+  padding: 27px 20px;
+  height: 315px;
+  border-radius: 20px;
+  font-family: Manrope-Medium;
+}
+.Doctorsinfo .commentSection .btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
 }/*# sourceMappingURL=Doctorsinfo.module.css.map */

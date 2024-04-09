@@ -134,7 +134,7 @@ const SignUp = () => {
 
         console.log(res);
 
-        if(res.ok == false || !res) {
+        if(res.ok == false || !res || res.ok == undefined) {
             setErrorMsg(res.errText);
             return;
         } else {

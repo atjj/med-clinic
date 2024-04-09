@@ -1,110 +1,132 @@
-.doctorInfo{
-    
-    max-width: 852px ;
-    margin-top: 26px;
-    .title{
-     max-width:664px ;
-     color: #4D4E51;
-     font-family: Manrope-Regular;
-     font-size: 18px;
-     padding-bottom: 30px;
-    }
-    .info__title{
-     color: #4D4E51;
-     font-family: Manrope-Regular;
-     font-size: 18px;
-    }
-    .doctor{
-        display: flex;
-        align-items: center;
-        margin-top: 40px;
-        .doctorImage{
-            width: 319px;
-            height: 349px;
-            margin-right: 50px;
-        }
-    }
-    .titles{
-        .name{
-            color: #346EFB;
-            font-size: 24px;
-            font-family: Manrope-Medium;
-            padding-bottom: 40px;
-        }
-        .branch{
-            font-family: Manrope-Regular;
-            color: #58595B;
-            font-size: 18px;
-            span{
-                color: black;
-                font-weight: 500;
-                font-family: Manrope-Medium;
-            }
-        }
-        .jobTitle{
-            font-family: Manrope-Regular;
-            color: #58595B;
-            font-size: 18px;
-            padding-bottom: 40px;
-            span{
-                color: black;
-                font-weight: 500;
-                font-family: Manrope-Medium;
-            }
-        }
-        button{
-            background: #DBEBFF;
-            color: #000;
-            font-family: Manrope-Medium;
-            font-size: 16px;  
-            border: 0;
-            padding: 10px;
-            border-radius: 10px;
-            transition: .2s;
-        }
-        button:hover{
-            background: #346EFB;
-            color: #fff;
-        }
-      }
-        .special{
-            list-style: none;
-        }
-        .listParagraph{
-            font-family: Manrope-SemiBold;
-            font-size: 18px;
-            padding: 20px 0;
+.Doctorsinfo {
+    margin-bottom: 120px;
 
+
+    .doctorInfo {
+
+        margin-bottom: 120px;
+        .header {
+            margin-top: 26px;
         }
-        ul{
-            li{
-                font-size: 16px;
-                font-family: Manrope-Regular;
-                color: #222222;
-                margin-left:20px;
-            }
+        
+        max-width: 852px ;
+        margin-top: 26px;
+        .title{
+         max-width:664px ;
+         color: #4D4E51;
+         font-family: Manrope-Regular;
+         font-size: 18px;
+         margin-top: 34px;
         }
-        .listTitle{
-            margin-left: 20px;
+        .info__title{
+         margin-top: 20px;
+         color: #4D4E51;
+         font-family: Manrope-Regular;
+         font-size: 18px;
         }
-        h3{
-            padding-bottom: 8px;
-        }
-        .infoFooter{
+        .doctor{
             display: flex;
-            padding-top: 10px;
             align-items: center;
-            .vector{
-                margin-right: 8px;
+            margin-top: 60px;
+            .doctorImage{
+                width: 319px;
+                height: 349px;
+                margin-right: 50px;
             }
-            span{
-                font-size: 16px;
-                
-                a{
-                    text-decoration:none;
-                    color: #346EFB;
-                    font-family: Manrope-Regular;
+        }
+        .titles{
+            .name{
+                color: #346EFB;
+                font-size: 24px;
+                font-family: Manrope-Medium;
+                padding-bottom: 40px;
+            }
+            .branch{
+                font-family: Manrope-Regular;
+                color: #58595B;
+                font-size: 18px;
+                span{
+                    color: black;
+                    font-weight: 500;
+                    font-family: Manrope-Medium;
                 }
             }
+            .jobTitle{
+                font-family: Manrope-Regular;
+                color: #58595B;
+                font-size: 18px;
+                span{
+                    color: black;
+                    font-weight: 500;
+                    font-family: Manrope-Medium;
+                }
+            }
+            .rating {
+                font-family: Manrope-Regular;
+                color: #58595B;
+                font-size: 18px;
+                margin-bottom: 10px;
+                
+            }
+          }
+    
+          .details {
+    
+            margin-top: 34px;
+            .listParagraph {
+                font-family: Manrope-Semi-Bold;
+                font-size: 18px;
+               
+            }
+            ul{
+                margin-top: 4px;
+                li{
+                    font-size: 16px;
+                    font-family: Manrope-Regular;
+                    color: #222222;
+                    margin-left:20px;
+                }
+            }
+            .infoFooter{
+                display: flex;
+                align-items: center;
+                margin-top: 40px;
+                .vector{
+                    margin-right: 8px;
+                }
+                span{
+                    font-size: 16px;
+                    
+                    a{
+                        text-decoration:none;
+                        color: #346EFB;
+                        font-family: Manrope-Regular;
+                    }
+                }
+            }
+          }
+    }
+
+    .commentSection {
+        width: 100%;
+        h3 {
+            font-family: Manrope-Medium;
         }
+        .commentField {
+            textarea {
+                width: 100%;
+                resize: none;
+                padding: 27px 20px;
+                height: 315px;
+                border-radius: 20px;
+                font-family: Manrope-Medium;
+            }
+        }
+        .btn {
+           display: flex;
+           justify-content: center;
+           margin-top: 22px;
+        }
+    }
+    
 }
