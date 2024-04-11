@@ -20,6 +20,7 @@ const Header = () => {
 
 
     const {t} = useTranslation();
+
     const [isDoctorDrawerOpen, setIsDoctorDrawerOpen] = useState(false);
 
     const openDoctorDrawer = () => {
@@ -100,7 +101,6 @@ const Header = () => {
                         <OnlineRegistration onClose={closeDoctorDrawer} />
                     )}
                 </div>
-                {/* <div><OnlineRegistration/></div> */}
 
 
 
