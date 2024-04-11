@@ -13,6 +13,7 @@ import Line  from '../../UI/Line/Line.jsx';
 const Doctors = () => {
 
     const [showMore,setShowMore] = useState(false);
+    
     const db = showMore ? DB : [DB[0]];
 
 
@@ -38,12 +39,12 @@ const Doctors = () => {
 
 
             <div className= {styles.doctorsList}>
-                {db && db.map((item, index) => <DoctorProf key={index} data={item}/>)}
+                {db && db.map((item, index) => <DoctorProf key = {index} data = {item}/>)}
             </div>
 
 
             <div className={styles.cardsFooter}>
-                В нашей клинике работают: <span className={styles.number}> более 30 специалистов </span> 
+                В нашей клинике работают: <span className = {styles.number}> более 30 специалистов </span> 
                 <span 
                     className = {styles.more}
                     onClick = {() => setShowMore(!showMore)}

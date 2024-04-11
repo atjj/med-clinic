@@ -5,15 +5,14 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link  from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import Line from '../../../UI/Line/Line.jsx'
-
-import Rating from '@mui/material/Rating';
-import { useState } from 'react';
+import reviews from './reviews.json';
 import Button from '../../../UI/Button/Button.jsx';
+
+import CommentList from '../CommentList/CommentList.jsx';
+import CommentForm from '../CommentForm/CommentForm.jsx';
 
 const Doctorsinfo = () =>{
 
-    const [rating,setRating] = useState(0);
-    console.log(rating);
     return (
         <div className={styles.Doctorsinfo}>
 
@@ -43,7 +42,6 @@ const Doctorsinfo = () =>{
                                             <p className={styles.name}>{item.name}</p>
                                             <p className={styles.branch}>Отделение: <span> {item.branch} </span></p>
                                             <p className={styles.jobTitle}>Должность: <span>{item.jobtitle}</span> </p>
-                                            <p className={styles.rating}><Rating name="read-only" value={rating} readOnly /> </p>
                                             <Button text = {"Записаться на прием"} radius={'small'}/>
                                         </div>
                                     </div>
@@ -75,21 +73,12 @@ const Doctorsinfo = () =>{
 
 
                         <div className= {styles.commentSection}>
-                            <h3>Оставьте свой отзыв</h3>
-                            <Rating
-                                style={{marginLeft: "10px",marginTop: "20px"}}
-                                name="simple-controlled"
-                                value={rating}
-                                onChange={(event, newValue) => {
-                                    setRating(newValue);
-                                }}
-                                />
-                            <div className = {styles.commentField}>
-                                <textarea placeholder='Ваш отзыв'></textarea>
-                            </div>
-                            <div className= {styles.btn}>
-                                <Button text = {"ОТПРАВИТЬ ОТЗЫВ"} radius={'medium'}/>
-                            </div>
+
+                            <h2>Отзывы клиентов</h2>
+                            <CommentList items = {reviews}/>
+    
+                            <CommentForm/>
+
                         </div>
 
 

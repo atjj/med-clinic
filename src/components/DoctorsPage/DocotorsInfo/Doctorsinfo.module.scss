@@ -55,19 +55,14 @@
                 font-family: Manrope-Regular;
                 color: #58595B;
                 font-size: 18px;
+                margin-bottom: 10px;
                 span{
                     color: black;
                     font-weight: 500;
                     font-family: Manrope-Medium;
                 }
             }
-            .rating {
-                font-family: Manrope-Regular;
-                color: #58595B;
-                font-size: 18px;
-                margin-bottom: 10px;
-                
-            }
+
           }
     
           .details {
@@ -109,24 +104,7 @@
 
     .commentSection {
         width: 100%;
-        h3 {
-            font-family: Manrope-Medium;
-        }
-        .commentField {
-            textarea {
-                width: 100%;
-                resize: none;
-                padding: 27px 20px;
-                height: 315px;
-                border-radius: 20px;
-                font-family: Manrope-Medium;
-            }
-        }
-        .btn {
-           display: flex;
-           justify-content: center;
-           margin-top: 22px;
-        }
+     
     }
     
 }

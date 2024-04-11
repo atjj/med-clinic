@@ -52,17 +52,12 @@
   font-family: Manrope-Regular;
   color: #58595B;
   font-size: 18px;
+  margin-bottom: 10px;
 }
 .Doctorsinfo .doctorInfo .titles .jobTitle span {
   color: black;
   font-weight: 500;
   font-family: Manrope-Medium;
-}
-.Doctorsinfo .doctorInfo .titles .rating {
-  font-family: Manrope-Regular;
-  color: #58595B;
-  font-size: 18px;
-  margin-bottom: 10px;
 }
 .Doctorsinfo .doctorInfo .details {
   margin-top: 34px;
@@ -98,20 +93,4 @@
 }
 .Doctorsinfo .commentSection {
   width: 100%;
-}
-.Doctorsinfo .commentSection h3 {
-  font-family: Manrope-Medium;
-}
-.Doctorsinfo .commentSection .commentField textarea {
-  width: 100%;
-  resize: none;
-  padding: 27px 20px;
-  height: 315px;
-  border-radius: 20px;
-  font-family: Manrope-Medium;
-}
-.Doctorsinfo .commentSection .btn {
-  display: flex;
-  justify-content: center;
-  margin-top: 22px;
 }/*# sourceMappingURL=Doctorsinfo.module.css.map */

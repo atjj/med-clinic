@@ -1,0 +1,30 @@
+ [
+        {
+            "rating": 5,
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum amet eligendi,fugblanditiis eos a praesentium harum, suscipit odio sapiente consectetur cum aspernatur. Voluptates nulla harum, facilis qui magnam obcaecati!"
+
+        },
+    
+        {
+            "rating": 4,
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum amet eligendi,fugblanditiis eos a praesentium harum, suscipit odio sapiente consectetur cum aspernatur. Voluptates nulla harum, facilis qui magnam obcaecati!"
+        },
+    
+        {
+            "id": 3,
+            "rating": 3,
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum amet eligendi,fugblanditiis eos a praesentium harum, suscipit odio sapiente consectetur cum aspernatur. Voluptates nulla harum, facilis qui magnam obcaecati!"
+        },
+    
+        {
+            "id": 4,
+            "rating": 2,
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum amet eligendi,fugblanditiis eos a praesentium harum, suscipit odio sapiente consectetur cum aspernatur. Voluptates nulla harum, facilis qui magnam obcaecati!"
+        },
+    
+        {
+            "id": 5,
+            "rating": 1,
+            "text":"Super doctor"
+        }
+    ]
