@@ -23,10 +23,11 @@ import Records from '../pages/Dashboard/records/Records.jsx';
 
 import PersonalData from '../components/Dashboard/profile/PersonalData/PersonalData.jsx';
 import ChangePassword from '../components/Dashboard/profile/ChangePassword/ChangePassword.jsx';
+import Unauthorized from '../components/Unauthorized/Unauthorized.jsx';
 
 export default new createBrowserRouter([
     {
-      path: '/',
+   /*    path: '/', */
       element: <App/>,
       errorElement: <div>404 Not Found</div>,
       children:[
@@ -86,6 +87,7 @@ export default new createBrowserRouter([
             element: <Doctorsinfo/>,
             errorElement: <div>404 Not Found</div>
           },
+
           {
             path: '/signup',
             element: <SignUp/>,
@@ -101,17 +103,20 @@ export default new createBrowserRouter([
           },
 
           {
-            path: '/dashboard',
             element: <Dashboard/>,
             errorElement: <div>404 Not Found</div>,
             children: [
               {
                 path: '/dashboard/profile',
-                element: <Profile/>,
+                element: (
+                  <Unauthorized>
+                    <Profile/>,
+                  </Unauthorized>
+                ),
                 errorElement: <div>404 Not Found</div>,
                 children: [
                   {
-                    path: '/dashboard/profile',
+                    path: '/dashboard/profile/personaldata',
                     element: <PersonalData/>,
                     errorElement: <div>404 Not Found</div>,
 
@@ -126,7 +131,11 @@ export default new createBrowserRouter([
               },
               {
                 path: '/dashboard/records',
-                element: <Records/>,
+                element: (
+                  <Unauthorized>
+                    <Records/>
+                  </Unauthorized>
+                ),
                 errorElement: <div>404 Not Found</div>
     
               }

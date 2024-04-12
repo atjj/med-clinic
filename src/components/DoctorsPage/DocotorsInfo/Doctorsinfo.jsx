@@ -11,7 +11,7 @@ import Button from '../../../UI/Button/Button.jsx';
 import CommentList from '../CommentList/CommentList.jsx';
 import CommentForm from '../CommentForm/CommentForm.jsx';
 
-const Doctorsinfo = () =>{
+const Doctorsinfo = () => {
 
     return (
         <div className={styles.Doctorsinfo}>
@@ -77,7 +77,9 @@ const Doctorsinfo = () =>{
                             <h2>Отзывы клиентов</h2>
                             <CommentList items = {reviews}/>
     
+                    
                             <CommentForm/>
+                    
 
                         </div>
 

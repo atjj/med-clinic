@@ -4,8 +4,7 @@ import google from '../../assets/icons/google.svg';
 
 import styles from './SignIn.module.scss';
 
-import { useState,useRef,useEffect, useContext } from 'react';
-import  AuthContext from '../../context/AuthProvider.jsx';
+import { useState,useRef,useEffect } from 'react';
 
 import { fetchAuthData } from '../../services/network.js';
 
@@ -15,11 +14,12 @@ import { Link } from 'react-router-dom';
 import show from '../../assets/icons/show_eye_icon_183818.svg';
 import hide from '../../assets/icons/hide_icon_183794.svg';
 
+import useAuth from '../../hooks/useAuth.jsx';
 
 const SignIn = () => {
 
 
-    const {setAuth} = useContext(AuthContext);
+    const {setAuth} = useAuth();
     const userRef = useRef();
     const errRef = useRef();
 
@@ -56,23 +56,30 @@ const SignIn = () => {
         console.log(res);
 
 
-        if(res.ok == false || !res || res.ok == undefined) {
+        if(res.ok == false || !res ) {
             setErrorMsg(res.errText);
             return;
         } else {
             console.log('success',res);
 
-
+/* 
             localStorage.setItem('site',res.accessToken);
-          
+           */
+
+            setAuth({
+                email: res.email,
+                roles: res.roles,
+                accessToken: res.accessToken,
+                refreshToken: res.refreshToken
+            });
     
-            setAuth((prev) => ({
+/*             setAuth((prev) => ({
                 ...prev,
                 email: res.email,
                 roles: res.roles,
                 accessToken: res.accessToken,
                 refreshToken: res.refreshToken
-            }));
+            })); */
             setEmail('');
             setPassword('');
             navigate('/');

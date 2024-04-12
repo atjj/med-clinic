@@ -13,8 +13,7 @@ class HttpError extends Error {
 export const fetchAuthData = async (data,auth) =>{
 
     try {
-        
-        const res = await fetch(`http://medcheck-415904.ey.r.appspot.com/api/v1/auth/${auth}`,{
+        const res = await fetch(`http://medclinic-420017.uc.r.appspot.com/api/v1/auth/${auth}`,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -29,7 +28,7 @@ export const fetchAuthData = async (data,auth) =>{
             console.log(res);
             const handledRes = await res.json();
             const errText = res.status == '500' ? handledRes.error : handledRes.message
-            throw new HttpError(`Could not fetch http://medcheck-415904.ey.r.appspot.com/api/v1/auth/sign-in`,res.status,errText,false);
+            throw new HttpError(`Could not fetch http://medclinic-420017.uc.r.appspot.com/api/v1/auth/${auth}`,res.status,errText,false);
         }
         
         return  await res.json();

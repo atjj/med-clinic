@@ -2,23 +2,34 @@ import styles from './CommentForm.module.scss';
 import Rating from '@mui/material/Rating';
 import Button from '../../../UI/Button/Button.jsx';
 import { useState } from 'react';
-const CommentForm = () => {
+import { useNavigate } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth.jsx';
+
+const CommentForm = ({doctor_id}) => {
 
     const [rating,setRating] = useState(0);
     const [inputText,setInputText] = useState('');
-
+    const {auth} = useAuth();
+    const navigate = useNavigate();
     
     const sendComment = async (e) => {
         e.preventDefault();
-        const res =  await fetch('comment',{
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({rating,inputText})
-        });
 
-        console.log(res);
+        if(auth.email) {
+            const res =  await fetch('http://medclinic-420017.uc.r.appspot.com/api/v1/reviews/add-review',{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({doctor_id,rating,inputText})
+            });
+
+            console.log(res);
+
+        } else { 
+            navigate('/signin');
+        }
+
     } 
 
 
