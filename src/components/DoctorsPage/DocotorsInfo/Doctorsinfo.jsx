@@ -1,6 +1,5 @@
 import styles from './Doctorsinfo.module.scss';
 import container from '../../../styles/ContainerStyles.module.scss'
-import DB from './db.json';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link  from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
@@ -10,9 +9,27 @@ import Button from '../../../UI/Button/Button.jsx';
 
 import CommentList from '../CommentList/CommentList.jsx';
 import CommentForm from '../CommentForm/CommentForm.jsx';
+import { useEffect, useState } from 'react';
+
+import { useParams } from 'react-router-dom';
 
 const Doctorsinfo = () => {
 
+    let {id} = useParams();
+    
+    const [info,setInfo] = useState({});
+
+    useEffect(() =>{
+        const getDoctor = async () => {
+            const res = await fetch(`http://medclinic-420017.uc.r.appspot.com/api/v1/doctor/get-doctor-by-id/${id}`);
+            const data = await res.json();
+            setInfo(data);
+
+        }
+        getDoctor();
+    },[]);
+
+    const {image,name,surName,service,description,grade,position} = info;
     return (
         <div className={styles.Doctorsinfo}>
 
@@ -27,47 +44,35 @@ const Doctorsinfo = () => {
                             <Link underline="hover" color="#346EFB" href="/doctors">
                                 Врачи
                             </Link>
-                            <Typography color="text.primary">Гаталуский Артур</Typography>
+                            <Typography color="text.primary">{`${name} ${surName}`}</Typography>
                         </Breadcrumbs>
 
 
-                        {DB.map((item,index) => (
-                            <div className={styles.doctorInfo} key={index}>
-                                    <h2 className= {styles.header}>{item.name}</h2>
-                                    <p className={styles.title}>Попасть в команду медицинской клиники «Medical Clinic» могут только лучшие специалисты с многолетней практикой и доказанным опытом.</p>
-                                    <p className={styles.info__title}>Мы развиваемся, учимся и оттачиваем мастерство, стажируемся в ведущих университетах Европы, чтобы еще на шаг стать ближе к совершенству.</p>
-                                    <div className={styles.doctor}>
-                                        <div className={styles.doctorImage}><img width="100%" height='100%' src={item.img} alt="" /></div>
-                                        <div className={styles.titles}>
-                                            <p className={styles.name}>{item.name}</p>
-                                            <p className={styles.branch}>Отделение: <span> {item.branch} </span></p>
-                                            <p className={styles.jobTitle}>Должность: <span>{item.jobtitle}</span> </p>
-                                            <Button text = {"Записаться на прием"} radius={'small'}/>
-                                        </div>
-                                    </div>
+            <div className={styles.doctorInfo}>
+                    <h2 className= {styles.header}>{`${name} ${surName}`}</h2>
+                    <p className={styles.title}>Попасть в команду медицинской клиники «Medical Clinic» могут только лучшие специалисты с многолетней практикой и доказанным опытом.</p>
+                    <p className={styles.info__title}>Мы развиваемся, учимся и оттачиваем мастерство, стажируемся в ведущих университетах Европы, чтобы еще на шаг стать ближе к совершенству.</p>
+                    <div className={styles.doctor}>
+                        <div className={styles.doctorImage}><img width="100%" height='100%' src={image} alt = {`${name} ${surName}`} /></div>
+                        <div className={styles.titles}>
+                            <p className={styles.name}>{`${name} ${surName}`}</p>
+                            <p className={styles.branch}>Отделение: <span> {service} </span></p>
+                            <p className={styles.jobTitle}>Должность: <span>{position}</span> </p>
+                            <Button text = {"Записаться на прием"} radius={'small'}/>
+                        </div>
+                    </div>
 
-                                    <div className = {styles.details}>
-                                        <p className = {styles.listParagraph}>Преимущественно эстетическая хирургия лица:</p>
-                                        <ul>
-                                            <li>эндоскопический лифтинг лица ( лоб, височные зоны, брови, верхние 2/3 лица )</li>
-                                            <li>SMAS-лифтинг лица с перемещением комков Биша, боковой или медиальной платизмопластикой</li>
-                                            <li>блефаропластика ( трансконъюнктивальная; расширенная с перераспределением тканей ,ревизионная )</li>
-                                            <li>повторные и ревизионные лифтинги лица </li>
-                                            <li>кантопексия</li>
-                                            <li>миопексия</li>
-                                            <li>липофилинг</li>
-                                            <li>отопластика</li>
-                                            <li>хейлопластика</li>
-                                        </ul>
+                    <div className = {styles.details}>
+                        {description}
 
 
-                                        <div className={styles.infoFooter}>
-                                            <span><a href=''> Список сотрудников</a></span>
-                                        </div>
+                        <div className={styles.infoFooter}>
+                            <span><a href=''> Список сотрудников</a></span>
+                        </div>
 
-                                    </div>
-                            </div>
-                        ))}
+                    </div>
+            </div>
+                        
 
 
 

@@ -1,20 +1,65 @@
 import DoctorProf from '../../components/DoctorsPage/DoctorsProf/DoctorProf.jsx';
 import styles from './Doctors.module.scss';
-import DB from './doctors.json';
 import container from '../../styles/ContainerStyles.module.scss'
 
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link  from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Line  from '../../UI/Line/Line.jsx';
 const Doctors = () => {
+    const [doctors,setDoctors] = useState([]);
+
+    useEffect(() =>{
+        const getDoctors = async () => {
+            const res = await fetch('http://medclinic-420017.uc.r.appspot.com/api/v1/doctor/get-doctors');
+            const data = await res.json();
+            setDoctors(data);
+        }
+
+        getDoctors();
+    },[]);
+
+    
+    function groupDoctorsByService(doctors) {
+        let groupedDoctors = {};
+        
+        
+        doctors.forEach(doctor => {
+            let service = doctor.service;
+    
+  
+            if (!groupedDoctors[service]) {
+                groupedDoctors[service] = {
+                    profName: service,
+                    data: []
+                };
+            }
+    
+       
+            groupedDoctors[service].data.push({
+                doctor_id: doctor.doctor_id,
+                img: doctor.image,
+                name: `${doctor.name} ${doctor.surName}`,
+                prof: doctor.position
+            });
+
+            
+        });
+    
+        return Object.values(groupedDoctors);
+    }
+    
+
+    const groupedDoctors = groupDoctorsByService(doctors);
+    
+   
+    console.log(groupedDoctors);
 
     const [showMore,setShowMore] = useState(false);
-    
-    const db = showMore ? DB : [DB[0]];
+    const db = showMore ? groupedDoctors : [groupedDoctors[0]];
 
 
     return (
