@@ -8,14 +8,23 @@ import Typography from '@mui/material/Typography';
 
 import { useEffect, useState } from 'react';
 
+
+import { groupDoctorsByService } from '../../utils/functions.js';
+
 import Line  from '../../UI/Line/Line.jsx';
+
 const Doctors = () => {
+
     const [doctors,setDoctors] = useState([]);
 
     useEffect(() =>{
+
         const getDoctors = async () => {
-            const res = await fetch('http://medclinic-420017.uc.r.appspot.com/api/v1/doctor/get-doctors');
+
+            const res = await fetch('http://medclinic-420017.uc.r.appspot.com/api/v1/doctor/get-all-doctors');
             const data = await res.json();
+
+
             setDoctors(data);
         }
 
@@ -23,40 +32,10 @@ const Doctors = () => {
     },[]);
 
     
-    function groupDoctorsByService(doctors) {
-        let groupedDoctors = {};
-        
-        
-        doctors.forEach(doctor => {
-            let service = doctor.service;
-    
-  
-            if (!groupedDoctors[service]) {
-                groupedDoctors[service] = {
-                    profName: service,
-                    data: []
-                };
-            }
-    
-       
-            groupedDoctors[service].data.push({
-                doctor_id: doctor.doctor_id,
-                img: doctor.image,
-                name: `${doctor.name} ${doctor.surName}`,
-                prof: doctor.position
-            });
-
-            
-        });
-    
-        return Object.values(groupedDoctors);
-    }
-    
-
     const groupedDoctors = groupDoctorsByService(doctors);
     
    
-    console.log(groupedDoctors);
+    /* console.log(groupedDoctors); */
 
     const [showMore,setShowMore] = useState(false);
     const db = showMore ? groupedDoctors : [groupedDoctors[0]];

@@ -7,10 +7,13 @@ import useAuth from '../../../hooks/useAuth.jsx';
 
 const CommentForm = ({doctor_id}) => {
 
-    const [rating,setRating] = useState(0);
-    const [inputText,setInputText] = useState('');
+    const [grade,setGrade] = useState(0);
+    const [comment,setComment] = useState('');
     const {auth} = useAuth();
     const navigate = useNavigate();
+
+    const isDisabled = (grade == 0) || (comment == '') ? true : false;
+
     
     const sendComment = async (e) => {
         e.preventDefault();
@@ -19,11 +22,14 @@ const CommentForm = ({doctor_id}) => {
             const res =  await fetch('http://medclinic-420017.uc.r.appspot.com/api/v1/reviews/add-review',{
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${auth?.accessToken}` 
                 },
-                body: JSON.stringify({doctor_id,rating,inputText})
+                body: JSON.stringify({doctor_id,grade,comment})
             });
 
+            setComment('');
+            setGrade(0);
             console.log(res);
 
         } else { 
@@ -44,18 +50,19 @@ const CommentForm = ({doctor_id}) => {
             <Rating
                 style={{marginLeft: "10px",marginTop: "15px"}}
                 name="simple-controlled"
-                value={rating}
+                value={grade}
                 onChange={(event, newValue) => {
-                    setRating(newValue);
+                    setGrade(newValue);
                 }}
                 />
             <div className = {styles.commentField}>
                 <textarea 
                     placeholder='Ваш отзыв'
-                    onChange = {(e) => { setInputText(e.target.value)}}></textarea>
+                    value = {comment}
+                    onChange = {(e) => { setComment(e.target.value)}}></textarea>
             </div>
             <div className= {styles.btn}>
-                <Button text = {"ОТПРАВИТЬ ОТЗЫВ"} radius={'medium'}/>
+                <Button text = {"ОТПРАВИТЬ ОТЗЫВ"} radius={'medium'} disabled={isDisabled}/>
             </div>
         
         </form>

@@ -129,6 +129,7 @@ export default new createBrowserRouter([
                 ]
     
               },
+              
               {
                 path: '/dashboard/records',
                 element: (

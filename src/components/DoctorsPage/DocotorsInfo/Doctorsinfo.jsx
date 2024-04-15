@@ -4,7 +4,6 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link  from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import Line from '../../../UI/Line/Line.jsx'
-import reviews from './reviews.json';
 import Button from '../../../UI/Button/Button.jsx';
 
 import CommentList from '../CommentList/CommentList.jsx';
@@ -18,6 +17,7 @@ const Doctorsinfo = () => {
     let {id} = useParams();
     
     const [info,setInfo] = useState({});
+    const [reviews,setReviews] = useState([]);
 
     useEffect(() =>{
         const getDoctor = async () => {
@@ -26,10 +26,19 @@ const Doctorsinfo = () => {
             setInfo(data);
 
         }
+
+        const getReviews = async () => {
+            const res = await fetch('http://medclinic-420017.uc.r.appspot.com/api/v1/reviews/get-reviews');
+            const data = await res.json();
+            setReviews(data);
+        }
         getDoctor();
+        getReviews();
     },[]);
 
-    const {image,name,surName,service,description,grade,position} = info;
+    const filteredReviews = reviews.filter((item) => item.doctor_id == id);
+    console.log(filteredReviews);
+    const {image,name,surName,service,description,/* grade, */position} = info;
     return (
         <div className={styles.Doctorsinfo}>
 
@@ -65,7 +74,6 @@ const Doctorsinfo = () => {
                     <div className = {styles.details}>
                         {description}
 
-
                         <div className={styles.infoFooter}>
                             <span><a href=''> Список сотрудников</a></span>
                         </div>
@@ -83,7 +91,7 @@ const Doctorsinfo = () => {
                             <CommentList items = {reviews}/>
     
                     
-                            <CommentForm/>
+                            <CommentForm doctor_id = {id}/>
                     
 
                         </div>

@@ -62,9 +62,7 @@ const SignIn = () => {
         } else {
             console.log('success',res);
 
-/* 
-            localStorage.setItem('site',res.accessToken);
-           */
+
 
             setAuth({
                 email: res.email,
@@ -73,13 +71,7 @@ const SignIn = () => {
                 refreshToken: res.refreshToken
             });
     
-/*             setAuth((prev) => ({
-                ...prev,
-                email: res.email,
-                roles: res.roles,
-                accessToken: res.accessToken,
-                refreshToken: res.refreshToken
-            })); */
+
             setEmail('');
             setPassword('');
             navigate('/');

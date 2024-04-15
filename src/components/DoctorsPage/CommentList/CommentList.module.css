@@ -3,6 +3,9 @@
   flex-direction: column;
   gap: 20px;
 }
+.commentsList .patientName {
+  font-family: Manrope-Regular;
+}
 .commentsList .body {
   font-size: 18px;
   padding: 10px 10px;
