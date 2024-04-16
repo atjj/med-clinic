@@ -6,7 +6,6 @@ import Info from '../../components/HomePage/Info/Info.jsx';
 import Form from '../../components/commonComponents/Form/Form.jsx';
 import Cards from '../../components/HomePage/Cards/Cards.jsx';
 import container from '../../styles/ContainerStyles.module.scss'
-import OnlineRegistration from '../../components/OnlineRegistration/OnlineRegistration.jsx';
 
 const Homepage = () => {
     

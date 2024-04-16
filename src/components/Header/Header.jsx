@@ -10,7 +10,7 @@ import logo from '../../assets/logos/medcliniclogo.svg'
 import container from '../../styles/ContainerStyles.module.scss'
 import { Link } from 'react-router-dom';
 import Button from '../../UI/Button/Button.jsx';
-import OnlineRegistration from '../../components/OnlineRegistration/OnlineRegistration.jsx'
+import ServiceListDrawer from '../OnlineRegistration/ServiceListDrawer/ServiceListDrawer.jsx'
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher.jsx';
 import Profile from '../Profile/Profile.jsx';
@@ -95,10 +95,8 @@ const Header = () => {
                 <div className= {styles.buttons}>
                     <Button text = {t('header.getresults')} radius= "medium" />
                     <Button text = {t('header.online-recording')} handle = {openDoctorDrawer} radius= "medium" />
-                    {/* <button onClick={openDoctorDrawer}>lksam</button> */}
-                    {/* <OnlineRegistration/> */}
                     {isDoctorDrawerOpen && (
-                        <OnlineRegistration onClose={closeDoctorDrawer} />
+                        <ServiceListDrawer onClose={closeDoctorDrawer} />
                     )}
                 </div>
 
