@@ -61,27 +61,11 @@
 }
 .Doctorsinfo .doctorInfo .details {
   margin-top: 34px;
-}
-.Doctorsinfo .doctorInfo .details .listParagraph {
-  font-family: Manrope-Semi-Bold;
+  font-family: Manrope-Regular;
   font-size: 18px;
 }
-.Doctorsinfo .doctorInfo .details ul {
-  margin-top: 4px;
-}
-.Doctorsinfo .doctorInfo .details ul li {
-  font-size: 16px;
-  font-family: Manrope-Regular;
-  color: #222222;
-  margin-left: 20px;
-}
 .Doctorsinfo .doctorInfo .details .infoFooter {
-  display: flex;
-  align-items: center;
   margin-top: 40px;
-}
-.Doctorsinfo .doctorInfo .details .infoFooter .vector {
-  margin-right: 8px;
 }
 .Doctorsinfo .doctorInfo .details .infoFooter span {
   font-size: 16px;

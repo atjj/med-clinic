@@ -16,6 +16,8 @@ import hide from '../../assets/icons/hide_icon_183794.svg';
 
 import useAuth from '../../hooks/useAuth.jsx';
 
+import Loading from '../../components/Loading/Loading.jsx';
+
 const SignIn = () => {
 
 
@@ -32,7 +34,7 @@ const SignIn = () => {
    
     const [visiblePwd,setVisiblePwd] = useState(false);
 
-
+    const [isLoading,setLoading] = useState(false);
     useEffect(() =>{
         userRef.current.focus();
     },[])
@@ -48,7 +50,7 @@ const SignIn = () => {
 
         e.preventDefault();
 
-
+        setLoading(true);
 
         console.log('Отправка данных на сервер:', { email, password });
 
@@ -57,11 +59,13 @@ const SignIn = () => {
 
 
         if(res.ok == false || !res ) {
+            
             setErrorMsg(res.errText);
+            setLoading(false);
             return;
         } else {
             console.log('success',res);
-
+            setLoading(false);
 
 
             setAuth({
@@ -105,6 +109,7 @@ const SignIn = () => {
                     className = {errorMsg ? `${styles.errMsgPanel}`: ``} 
                     >{errorMsg}</p>
 
+                
                 <h1 className= {styles.header}>Войти</h1>
 
                 <input className = {styles.input}  
@@ -135,10 +140,8 @@ const SignIn = () => {
                     ><img src = {visiblePwd ? hide : show}/></label>
                 </div>
 
-                <Button 
-                    text = "ВОЙТИ" 
-                    radius = 'small'
-                />
+
+                {isLoading ? <Loading/> :  <Button text = "ВОЙТИ" radius = 'small'/>}
                 
 
                 <div className = {styles.forgot}><a href='#'>Забыли пароль?</a></div>

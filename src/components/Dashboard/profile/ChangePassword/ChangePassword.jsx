@@ -1,7 +1,7 @@
 import styles from "./ChangePassword.module.scss";
 
 import Button from "../../../../UI/Button/Button";
-const ChangePassword = () =>{
+const ChangePassword = () => {
     return(
         <>
             <h3 className= {styles.header}>Смена пароля</h3>
