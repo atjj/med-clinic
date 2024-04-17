@@ -1,10 +1,10 @@
 import React from 'react';
-import remove from '../../assets/icons/close.svg';
-import styles from './OnlineRegistration.module.scss';
-import ServiceDb from './ServiceDb.json';
+import remove from '../../../assets/icons/close.svg';
+import styles from './ServiceListDrawer.module.scss';
+import ServiceDb from'./ServiceDb.json';
 import { useState } from 'react';
-import DoctorsDrawer from './DoctorsDrawer/DoctorsDrawer';
-const OnlineRegistration = ({ onClose }) => {
+import DoctorsDrawer from '../DoctorsDrawer/DoctorsDrawer';
+const ServiceListDrawer = ({ onClose }) => {
     const [isDoctorsDrawerOpen, setIsDoctorsDrawerOpen] = useState(false); 
 
     const openDoctorsDrawer = () => {
@@ -37,4 +37,4 @@ const OnlineRegistration = ({ onClose }) => {
     );
 };
 
-export default OnlineRegistration;
+export default ServiceListDrawer;
