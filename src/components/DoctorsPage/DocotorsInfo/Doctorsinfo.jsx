@@ -20,20 +20,19 @@ const Doctorsinfo = () => {
     const [reviews,setReviews] = useState([]);
 
     useEffect(() =>{
-        const getDoctor = async () => {
-            const res = await fetch(`http://medclinic-420017.uc.r.appspot.com/api/v1/doctor/get-doctor-by-id/${id}`);
-            const data = await res.json();
-            setInfo(data);
+        
+        (async () =>{
 
-        }
+            const res1 = await fetch(`http://medclinic-420017.uc.r.appspot.com/api/v1/doctor/get-doctor-by-id/${id}`);
+            const info = await res1.json();
+            setInfo(info);
+    
+        
+            const res2 = await fetch(`http://medclinic-420017.uc.r.appspot.com/api/v1/reviews/get-reviews/${id}`);
+            const review = await res2.json();
+            setReviews(review);
+        })();
 
-        const getReviews = async () => {
-            const res = await fetch('http://medclinic-420017.uc.r.appspot.com/api/v1/reviews/get-reviews');
-            const data = await res.json();
-            setReviews(data);
-        }
-        getDoctor();
-        getReviews();
     },[]);
 
     const filteredReviews = reviews.filter((item) => item.doctor_id == id);
@@ -57,29 +56,29 @@ const Doctorsinfo = () => {
                         </Breadcrumbs>
 
 
-            <div className={styles.doctorInfo}>
-                    <h2 className= {styles.header}>{`${name} ${surName}`}</h2>
-                    <p className={styles.title}>Попасть в команду медицинской клиники «Medical Clinic» могут только лучшие специалисты с многолетней практикой и доказанным опытом.</p>
-                    <p className={styles.info__title}>Мы развиваемся, учимся и оттачиваем мастерство, стажируемся в ведущих университетах Европы, чтобы еще на шаг стать ближе к совершенству.</p>
-                    <div className={styles.doctor}>
-                        <div className={styles.doctorImage}><img width="100%" height='100%' src={image} alt = {`${name} ${surName}`} /></div>
-                        <div className={styles.titles}>
-                            <p className={styles.name}>{`${name} ${surName}`}</p>
-                            <p className={styles.branch}>Отделение: <span> {service} </span></p>
-                            <p className={styles.jobTitle}>Должность: <span>{position}</span> </p>
-                            <Button text = {"Записаться на прием"} radius={'small'}/>
+                        <div className={styles.doctorInfo}>
+                                <h2 className= {styles.header}>{`${name} ${surName}`}</h2>
+                                <p className={styles.title}>Попасть в команду медицинской клиники «Medical Clinic» могут только лучшие специалисты с многолетней практикой и доказанным опытом.</p>
+                                <p className={styles.info__title}>Мы развиваемся, учимся и оттачиваем мастерство, стажируемся в ведущих университетах Европы, чтобы еще на шаг стать ближе к совершенству.</p>
+                                <div className={styles.doctor}>
+                                    <div className={styles.doctorImage}><img width="100%" height='100%' src={image} alt = {`${name} ${surName}`} /></div>
+                                    <div className={styles.titles}>
+                                        <p className={styles.name}>{`${name} ${surName}`}</p>
+                                        <p className={styles.branch}>Отделение: <span> {service} </span></p>
+                                        <p className={styles.jobTitle}>Должность: <span>{position}</span> </p>
+                                        <Button text = {"Записаться на прием"} radius={'small'}/>
+                                    </div>
+                                </div>
+
+                                <div className = {styles.details}>
+                                    {description}
+
+                                    <div className={styles.infoFooter}>
+                                        <span><a href=''> Список сотрудников</a></span>
+                                    </div>
+
+                                </div>
                         </div>
-                    </div>
-
-                    <div className = {styles.details}>
-                        {description}
-
-                        <div className={styles.infoFooter}>
-                            <span><a href=''> Список сотрудников</a></span>
-                        </div>
-
-                    </div>
-            </div>
                         
 
 
@@ -90,7 +89,6 @@ const Doctorsinfo = () => {
                             <h2>Отзывы клиентов</h2>
                             <CommentList items = {reviews}/>
     
-                    
                             <CommentForm doctor_id = {id}/>
                     
 

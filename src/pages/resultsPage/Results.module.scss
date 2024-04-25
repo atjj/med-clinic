@@ -1,0 +1,41 @@
+.wrapper {
+    margin-bottom: 120px;
+    .getresults {
+        display: flex;
+        gap: 20px;
+        width: 780px;
+        margin-top: 70px;
+/*         border: 1px solid black;
+ */        padding: 40px 30px;
+        border-radius: 20px;
+        flex-direction: column;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        .header {
+            font-size: 24px;
+            font-family: Manrope-Medium;
+            text-align: center;
+
+        }
+        .inputs {
+            display: flex;
+            
+            flex-wrap: wrap;
+            gap: 20px;
+
+            width: 660px;
+           
+            .input {
+                padding: 8px 10px;
+                border-radius: 10px;
+                width: 300px;
+                font-size: 16px;
+    
+            }
+
+        }
+
+        .btn {
+            width: 230px;
+        }
+    }
+}

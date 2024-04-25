@@ -6,7 +6,7 @@ import clinic2 from '../../../assets/images/clinic/clinic2.jpeg';
 import clinic3 from '../../../assets/images/clinic/clinic3.jpeg';
 import clinic4 from '../../../assets/images/clinic/clinic4.jpeg';
 
-
+import {Link} from 'react-router-dom'
 
 
 const Info = () => {
@@ -27,7 +27,7 @@ const Info = () => {
                             Уже 20 лет мы работаем на уровне лучших мировых стандартов, внедряя и развивая передовые методы лечения для сохранения здоровья наших пациентов.
                         </p>
 
-                        <a href='#'>Читать подробнее о клинике </a>
+                        <Link to = '/about'>Читать подробнее о клинике </Link>
                     </div>
 
                     <div className= {styles.clinicImages}>

@@ -18,7 +18,7 @@ const CommentForm = ({doctor_id}) => {
     const sendComment = async (e) => {
         e.preventDefault();
 
-        if(auth.email) {
+        if(auth.accessToken) {
             const res =  await fetch('http://medclinic-420017.uc.r.appspot.com/api/v1/reviews/add-review',{
                 method: 'POST',
                 headers: {
@@ -27,6 +27,8 @@ const CommentForm = ({doctor_id}) => {
                 },
                 body: JSON.stringify({doctor_id,grade,comment})
             });
+
+            console.log(res);
 
             setComment('');
             setGrade(0);

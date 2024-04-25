@@ -93,7 +93,7 @@ const Header = () => {
                 </div>
 
                 <div className= {styles.buttons}>
-                    <Button text = {t('header.getresults')} radius= "medium" />
+                    <Link to = '/results' ><Button text = {t('header.getresults')} radius= "medium" /></Link>
                     <Button text = {t('header.online-recording')} handle = {openDoctorDrawer} radius= "medium" />
                     {isDoctorDrawerOpen && (
                         <ServiceListDrawer onClose={closeDoctorDrawer} />

@@ -13,7 +13,7 @@
   flex-direction: column;
   width: 380px;
   height: 100%;
-  background: #fff;
+  background: #F3F1F1;
   right: 0;
   box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
   gap: 5px;
@@ -36,20 +36,20 @@
   font-family: Manrope-Bold;
 }
 .overlay .drawer .doctorsList {
-  padding: 5px 15px;
+  padding: 1px 10px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 .overlay .drawer .doctorsList .doctor {
   display: flex;
-  padding: 5px;
+  align-items: start;
+  padding: 8px;
   gap: 18px;
   background: #fff;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: pointer;
   transition: 0.3s;
-  border-radius: 10px;
+  border-radius: 16px;
 }
 .overlay .drawer .doctorsList .doctor .doctorImage {
   border-radius: 50%;

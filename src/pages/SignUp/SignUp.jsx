@@ -12,12 +12,16 @@ import { Link } from 'react-router-dom';
 import hide from '../../assets/icons/hide_icon_183794.svg';
 import show from '../../assets/icons/show_eye_icon_183818.svg';
 import useAuth from '../../hooks/useAuth.jsx';
+
+import Loading from '../../components/Loading/Loading.jsx';
+
+
 const SignUp = () => {
 
     const userRef = useRef();
     const errRef = useRef();
 
-    const {setAuth} = useAuth();
+    const {setSignUpConfirm} = useAuth();
    
 
     const navigate = useNavigate();
@@ -55,9 +59,10 @@ const SignUp = () => {
 
 
     const [errMsg,setErrorMsg] = useState('');
-/*     const [success,setSuccess] = useState('');
- */
 
+    const [isLoading,setLoading] = useState(false);
+  
+    
     
     useEffect(() =>{
         userRef.current.focus();
@@ -128,35 +133,27 @@ const SignUp = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log('Отправка данных на сервер:', input );
-
+       
+        
+        setLoading(true);
         const res = await fetchAuthData(input,'sign-up');
+
 
         console.log(res);
 
         if(res.ok == false || !res) {
             setErrorMsg(res.errText);
+
+            setLoading(false);
+
             return;
         } else {
-            console.log("success",res);
-         
-/*             localStorage.setItem('site',res.accessToken);
-         */
+            console.log("confirm",res);
 
-            setAuth({
-                email: res.email,
-                roles: res.roles,
-                accessToken: res.accessToken,
-                refreshToken: res.refreshToken
-            });
+            setLoading(false);
 
-/*             setAuth((prev) => ({
-                ...prev,
-                email: res.email,
-                roles: res.roles,
-                accessToken: res.accessToken,
-                refreshToken: res.refreshToken
-            })); */
+            setSignUpConfirm({...res});
+
 
             setInput({
                 name: "",
@@ -165,7 +162,8 @@ const SignUp = () => {
                 email: "",
                 password: "",
             })
-            navigate('/');
+
+            navigate('/signupconfirm');
             
         }
     };
@@ -175,7 +173,6 @@ const SignUp = () => {
     return (
 
         <div className = {styles.wrapper}>
-
 
 
             <form  onSubmit={handleSubmit} className= {styles.signUp}>
@@ -311,13 +308,12 @@ const SignUp = () => {
 
 
 
-                <p id='confirm' className= {`${matchFocus && matchPassword && !validMatch ? styles.instructions :styles.offscreen}`}>
+                <p id = 'confirm' className = {`${matchFocus && matchPassword && !validMatch ? styles.instructions :styles.offscreen}`}>
                     Должно соответствовать первому поле ввода пароля.
                 </p>
  
-
-                <Button text = "СОЗДАТЬ АККАУНТ" radius = 'small' disabled = {!validInput.validEmail || !validInput.validTelNumber || !validInput.validName || !validInput.validSurName || !validInput.validPassword || !validMatch ? true : false} />
-
+                {isLoading ? <Loading/>:  <Button text = "СОЗДАТЬ АККАУНТ" radius = 'small' disabled = {!validInput.validEmail || !validInput.validTelNumber || !validInput.validName || !validInput.validSurName || !validInput.validPassword || !validMatch ? true : false} />}
+              
 
 
                 <div className = {styles.lines}>или</div>
@@ -327,6 +323,10 @@ const SignUp = () => {
                 <div className = {styles.signin}> У вас уже есть аккаунт? <Link to="/signin">Войти</Link></div>
                
 
+                
+            
+            
+            
 
 
 
@@ -334,6 +334,9 @@ const SignUp = () => {
         </div>
     )
 }
+
+
+
 
 
 

@@ -8,13 +8,14 @@ export const AuthProvider = ({children}) => {
 
 
     const [auth,setAuth] = useState({});
+    const [signUpConfirm,setSignUpConfirm] = useState({});
     
     console.log(auth);
 
 
     
     return (
-        <AuthContext.Provider value={{auth,setAuth}}>
+        <AuthContext.Provider value={{auth,setAuth,signUpConfirm,setSignUpConfirm}}>
             {children}
         </AuthContext.Provider>
     )

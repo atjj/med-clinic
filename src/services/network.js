@@ -1,4 +1,4 @@
-class HttpError extends Error {
+export class HttpError extends Error {
     constructor(message,status,errText,ok) {
         super(message);
         this.status = status;
@@ -9,10 +9,11 @@ class HttpError extends Error {
 
 
 
-
 export const fetchAuthData = async (data,auth) =>{
 
+
     try {
+        
         const res = await fetch(`http://medclinic-420017.uc.r.appspot.com/api/v1/auth/${auth}`,{
             method: 'POST',
             headers: {
@@ -46,5 +47,6 @@ export const fetchAuthData = async (data,auth) =>{
 
 
 }
+
 
 

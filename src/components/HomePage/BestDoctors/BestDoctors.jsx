@@ -1,6 +1,9 @@
 import DB from './db.json';
 import styles from './BestDoctors.module.scss';
 import Button from '../../../UI/Button/Button.jsx';
+
+import {Link} from 'react-router-dom';
+
 const BestDoctors = () =>{
     console.log(DB[0].name)
     return(
@@ -29,7 +32,7 @@ const BestDoctors = () =>{
 
 
             <div className={styles.btn}>
-                <Button text= "Все врачи клиники" radius = "small"/>
+                <Link to = '/doctors'><Button text= "Все врачи клиники" radius = "small"/></Link>
             </div>
         </>
     )

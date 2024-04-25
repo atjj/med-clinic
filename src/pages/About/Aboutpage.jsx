@@ -15,14 +15,16 @@ import Typography from '@mui/material/Typography';
 import Line from '../../UI/Line/Line.jsx';
 import Button from '../../UI/Button/Button.jsx';
 
-const About =()=>{
+const About =()=> {
+
+    
     return(
         <div className={styles.about}>
             <div className={container.container}>
             <Line/>
             <Breadcrumbs style={{marginTop: "30px"}} aria-label="breadcrumb">
-                <Link underline="hover" color="rgb(52, 110, 251)" href="/">
-                Главная
+                <Link underline="hover" color="rgb(52, 110, 251)" href = "/">
+                    Главная
                 </Link>
                 <Typography color="text.primary">О клинике</Typography>
             </Breadcrumbs>

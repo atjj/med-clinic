@@ -24,10 +24,11 @@ import Records from '../pages/Dashboard/records/Records.jsx';
 import PersonalData from '../components/Dashboard/profile/PersonalData/PersonalData.jsx';
 import ChangePassword from '../components/Dashboard/profile/ChangePassword/ChangePassword.jsx';
 import Unauthorized from '../components/Unauthorized/Unauthorized.jsx';
+import SignUpConfirm from '../pages/SignUpConfrim/SignUpConfirm.jsx';
+import Results from '../pages/resultsPage/Results.jsx';
 
 export default new createBrowserRouter([
     {
-   /*    path: '/', */
       element: <App/>,
       errorElement: <div>404 Not Found</div>,
       children:[
@@ -100,6 +101,19 @@ export default new createBrowserRouter([
             element: <SignIn/>,
             errorElement: <div>404 Not Found</div>
 
+          },
+
+          {
+            path: '/signupconfirm',
+            element: <SignUpConfirm/>,
+            errorElement: <div>404 Not Found</div>
+
+          },
+
+          { 
+            path: '/results',
+            element: <Results/>,
+            errorElement: <div>404 Not Found</div>
           },
 
           {

@@ -1,0 +1,61 @@
+.overlay {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  z-index: 1;
+}
+.overlay .drawer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  height: 100%;
+  background: #fFF;
+  right: 0;
+  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+  gap: 5px;
+}
+.overlay .drawer .headerRegistration {
+  display: flex;
+  align-items: center;
+  background-color: #fFF;
+  width: 100%;
+  height: 56px;
+}
+.overlay .drawer .headerRegistration .remove {
+  margin-right: 85px;
+  cursor: pointer;
+  margin-left: 4px;
+}
+.overlay .drawer .headerRegistration .headerTitle {
+  color: #346EFB;
+  font-size: 16px;
+  font-family: Manrope-Bold;
+}
+.overlay .drawer .items {
+  padding: 2px 20px;
+}
+.overlay .drawer .items .listServices {
+  display: flex;
+}
+.overlay .drawer .items .listServices ul {
+  list-style: none;
+  border-radius: 10px;
+}
+.overlay .drawer .items .listServices ul .services {
+  background: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  width: 340px;
+  transition: 0.2s;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: Manrope-Medium;
+}
+.overlay .drawer .items .listServices ul .services:hover {
+  background-color: #DBEBFF;
+}/*# sourceMappingURL=ServiceListDrawer.module.css.map */

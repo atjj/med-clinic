@@ -2,7 +2,12 @@ import styles from './PersonalData.module.scss';
 import Button from '../../../../UI/Button/Button';
 import { useEffect, useState } from 'react';
 import useAuth from '../../../../hooks/useAuth.jsx';
+import { HttpError } from '../../../../services/network.js';
+import useRefreshToken from '../../../../hooks/useRefreshToken.jsx';
+
 const PersonalData = () =>{
+
+    const refresh = useRefreshToken();
 
     const {auth} = useAuth();
     const [personalInfo,setInfo] = useState({
@@ -43,28 +48,44 @@ const PersonalData = () =>{
 
     }
 
-    const cancelEdit = () =>{
+    const cancelEdit = () => {
         setText('Редактировать')
         setDisabled(true);
     }
 
     useEffect(() => {
 
-        (async () =>{
-            const response = await fetch('http://medclinic-420017.uc.r.appspot.com/api/v1/profile',{
-                method: 'GET',
-                headers: {
-                    "Authorization": `Bearer ${auth.accessToken}`   
-                },
+        (async () => {
+            try {
+                const res = await fetch('http://medclinic-420017.uc.r.appspot.com/api/v1/profile',{
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',  
+                        "Authorization": `Bearer ${auth.accessToken}`   
+                    },
+                })
 
-            })
-            .then(data => data.json())
-            .then(res => res);
+                if(!res.ok) {
+                    throw new HttpError(`Could not fetch http://medclinic-420017.uc.r.appspot.com/api/v1/profile`,res.status,res.message,res.ok);
+                }
+                
+                const data = await res.json();
 
-            setInfo(prev => ({
-                ...prev,
-                ...response
-            }));
+                setInfo(prev => ({
+                    ...prev,
+                    ...data
+                }));
+            }
+            catch(error){
+                console.error(error);
+                if(error.status == 403){
+                    await refresh();
+                }
+            }
+            
+            
+
+
         
         })();
     },[]);
@@ -80,13 +101,13 @@ const PersonalData = () =>{
                 <div>
                     <input 
                         type='text'   
-                        value = {name ? name : 'loading...'} 
+                        value = {name } 
                         onChange = {(e) => setInfo(prev => ({...prev,name: e.target.value}))}
                         disabled = {disabled}
                     />
                     <input 
                         type='text'   
-                        value = {email ? email : 'loading...'} 
+                        value = {email } 
                         onChange = {(e) => setInfo(prev => ({...prev,email: e.target.value}))}
                         disabled = {disabled}
                         />
@@ -95,13 +116,13 @@ const PersonalData = () =>{
                 <div>
                     <input 
                         type='text' 
-                        value = {surName ? surName : 'loading...'} 
+                        value = {surName } 
                         onChange = {(e) => setInfo(prev => ({...prev,surName: e.target.value}))}
                         disabled = {disabled}
                         />
                     <input  
                         type='text' 
-                        value = {telNumber ? telNumber: 'loading...'} 
+                        value = {telNumber } 
                         onChange = {(e) => setInfo(prev => ({...prev,telNumber: e.target.value}))}
                         disabled = {disabled}
                         />
@@ -111,7 +132,7 @@ const PersonalData = () =>{
             <Button text = "НАЗАД" radius = "small" handle={cancelEdit} />
             <Button text = {`${text.toUpperCase()}`} radius = "small" handle={editProfile} />
             </div>
-        
+            <button onClick = {() => { console.log(refresh()) }}>refrsh</button>
         </>
     )
 }

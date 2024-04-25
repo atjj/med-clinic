@@ -12,6 +12,7 @@ import terapy from '../../../assets/images/medservices/therapy.svg'
 import uro from '../../../assets/images/medservices/urology.svg'
 
 import Button from '../../../UI/Button/Button.jsx';
+import { Link } from 'react-router-dom';
 
 const Services = () =>{
     return (
@@ -87,7 +88,7 @@ const Services = () =>{
 
 
             <div className= {styles.btnPanel}>
-                <Button text = 'Смотреть все' radius = 'small'/>
+                <Link to = "/services"><Button text = 'Смотреть все' radius = 'small'/></Link>
             </div>
         
         </div>

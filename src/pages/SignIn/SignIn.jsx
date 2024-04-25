@@ -15,16 +15,14 @@ import show from '../../assets/icons/show_eye_icon_183818.svg';
 import hide from '../../assets/icons/hide_icon_183794.svg';
 
 import useAuth from '../../hooks/useAuth.jsx';
-
 import Loading from '../../components/Loading/Loading.jsx';
 
 const SignIn = () => {
 
-
     const {setAuth} = useAuth();
     const userRef = useRef();
     const errRef = useRef();
-
+    
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -57,13 +55,20 @@ const SignIn = () => {
         const res = await fetchAuthData({email, password},'sign-in');
         console.log(res);
 
+        if(res.ok && res.ok == undefined) {
+            setErrorMsg('Something went wrong!');
+            setLoading(false);
+            return;
+        }
 
-        if(res.ok == false || !res ) {
-            
+        if(res.ok == false || !res) {
+            console.log(res);
             setErrorMsg(res.errText);
             setLoading(false);
             return;
+
         } else {
+            
             console.log('success',res);
             setLoading(false);
 
