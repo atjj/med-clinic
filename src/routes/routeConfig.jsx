@@ -103,7 +103,6 @@ export default new createBrowserRouter([
             errorElement: <div>404 Not Found</div>
 
           },
-
           {
             path: '/signupconfirm',
             element: <SignUpConfirm/>,

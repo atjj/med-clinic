@@ -1,31 +1,24 @@
+import Cancel from './Cancel';
+import Canceled from './Canceled';
 import styles from './CanceledModal.module.scss';
 import { useState } from 'react';
-const CanceledModal = () => {
-    const [isOpen, setIsOpen] = useState(true);
-    const [isCancelled, setIsCancelled] = useState(false);
 
-    const closeModal = () => {
-        setIsOpen(false);
-    };
+const CanceledModal = ({ onClose }) => {
+    const [cancelState, setCancelState] = useState(true);
+    const [canceledState, setCanceledModal] = useState(false);
 
-    const cancelRegistration = () => {
-        setIsCancelled(true);
+    const handleClose = () => {
+        onClose(); // Закрыть модальное окно
     };
 
     return (
         <>
-           
-                <div className={styles.overlay}>
-                    <div className={styles.content}>
-                        <p className={styles.message}>Отмена записи</p>
-                        <p className={styles.title}>После отмены запись будет невозможно восстановить</p>
-                        <div className={styles.actions}>
-                            <button className={styles.cancelButton} onClick={cancelRegistration}>Отменить запись</button>
-                            <button className={styles.confirmButton} onClick={closeModal}>Закрыть</button>
-                        </div>
-                    </div>
+            <div className={styles.overlay}>
+                <div className={styles.content} onClick={(e) => { e.stopPropagation() }}>
+                    {cancelState && <Cancel onClose={handleClose} setCancelState={setCancelState} setCanceledModal={setCanceledModal} />}
+                    {canceledState && <Canceled onClose={handleClose} />}
                 </div>
-         
+            </div>
         </>
     );
 };

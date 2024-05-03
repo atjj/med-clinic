@@ -5,6 +5,7 @@ import doneReg from '../../../assets/icons/doneRegistration.svg';
 import CanceledModal from '../CanceledModal/CanceledModal';
 import dayjs from 'dayjs';
 const DoneRegistrationModal = ({ doctor, selectedDate, selectedTime, onClose }) => {
+    
     const [showCancelModal, setShowCancelModal] = useState(false);
 
     const handleCancel = () => {
