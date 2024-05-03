@@ -132,7 +132,7 @@ const PersonalData = () =>{
             <Button text = "НАЗАД" radius = "small" handle={cancelEdit} />
             <Button text = {`${text.toUpperCase()}`} radius = "small" handle={editProfile} />
             </div>
-            <button onClick = {() => { console.log(refresh()) }}>refrsh</button>
+{/*             <button onClick = {() => { console.log(refresh()) }}>refrsh</button> */}
         </>
     )
 }

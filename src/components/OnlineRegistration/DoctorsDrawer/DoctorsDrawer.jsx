@@ -1,14 +1,28 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './DoctorsDrawer.module.scss';
 import remove from '../../../assets/icons/next.svg';
-import DoctorsDrawerDB from './DoctorsDrawer.json';
 import ChooseDateDrawer from '../ChooseDateDrawer/ChooseDateDrawer'; 
 import rewies from '../../../assets/icons/rewies.svg';
-const DoctorsDrawer = ({ onClose }) => {
-    const [selectedDoctor, setSelectedDoctor] = useState(null);
+
+const DoctorsDrawer = ({id, onClose }) => {
+
+    const [doctor, setDoctor] = useState(null);
+    const [doctorsList,setDoctorsList] = useState([]);
+
+    useEffect(() => {
+
+        (async () => {
+            const res = await fetch(`http://medclinic-420017.uc.r.appspot.com/api/v1/doctor/get-doctors-by-service/${id}`);
+            const data = await res.json();
+            console.log(data);
+            setDoctorsList(data);
+        })();
+    },[])
+
+
 
     const handleDoctorClick = (doctor) => {
-        setSelectedDoctor(doctor);
+        setDoctor(doctor);
     };
     
     return (
@@ -20,22 +34,23 @@ const DoctorsDrawer = ({ onClose }) => {
                 </div>
 
                 <div className={styles.doctorsList}>
-                    {DoctorsDrawerDB.map((item, index) => (
-                        <div key={index} className={styles.doctor} onClick={()=>handleDoctorClick(item)}>
+                    {doctorsList.map((item, index) => (
+                        <div key = {index} className = {styles.doctor} onClick = {()=>handleDoctorClick(item)}>
                             <div>
                                 <img className={styles.doctorImage} style={{width: "36px", height: "36px"}} src={item.image} alt="doctor" />
                             </div>
                             <div className={styles.doctorInfo}>
-                                <p className={styles.doctorName}>{item.doctorName}</p>
-                                <p className={styles.doctorProf}>{item.doctorProf}</p>
-                                <div className={styles.rewieList}><img src={rewies} alt="rewie" /><p className={styles.rewies}> 166</p></div>
+
+                                <p className={styles.doctorName}>{`${item.name} ${item.surname}`}</p>
+                                <p className={styles.doctorProf}>{item.position}</p>
+                                <div className={styles.rewieList}><img src={rewies} alt="review" /><p className={styles.rewies}>{item.review}</p></div>
                                 
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
-            {selectedDoctor &&  <ChooseDateDrawer onClose={onClose} doctor={selectedDoctor} />} 
+            {doctor &&  <ChooseDateDrawer onClose = {onClose} doctor = {doctor} serviceId = {id} />} 
         </div>
     );
 };

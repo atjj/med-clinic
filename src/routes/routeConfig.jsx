@@ -26,6 +26,7 @@ import ChangePassword from '../components/Dashboard/profile/ChangePassword/Chang
 import Unauthorized from '../components/Unauthorized/Unauthorized.jsx';
 import SignUpConfirm from '../pages/SignUpConfrim/SignUpConfirm.jsx';
 import Results from '../pages/resultsPage/Results.jsx';
+import AdminPage from '../pages/AdminPage/AdminPage.jsx';
 
 export default new createBrowserRouter([
     {
@@ -160,6 +161,35 @@ export default new createBrowserRouter([
 
       ]
     },
+
+    {
+      path: '/admin',
+      element: <AdminPage/>,
+      errorElement: <div>404 Not Found</div>,
+      children:[
+        {
+          path: '/admin/online-reg',
+          element: <div>Online-registration</div>,
+          errorElement: <div>404 Not Found</div>,
+        },
+        {
+          path: '/admin/applications',
+          element: <div>application</div>,
+          errorElement: <div>404 Not Found</div>,
+        },       
+        {
+          path: '/admin/specialists',
+          element: <div>specialists</div>,
+          errorElement: <div>404 Not Found</div>,
+        },
+        {
+          path: '/admin/analyzes',
+          element: <div>Analyzes</div>,
+          errorElement: <div>404 Not Found</div>,
+        }
+      ]
+
+    }
 
   ]);
 

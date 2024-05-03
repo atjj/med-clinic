@@ -1,10 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './RegistrationDrawer.module.scss';
 import remove from '../../../assets/icons/next.svg';
 import calendar from '../../../assets/icons/calendar.svg';
 import DoneRegistration from '../DoneRegistartionDrawer/DoneRegistration';
 import dayjs from 'dayjs';
-const RegistrationDrawer = ({ onClose, doctor, selectedDate, selectedTime }) => {
+
+import useAuth from '../../../hooks/useAuth';
+const RegistrationDrawer = ({ onClose, doctor, selectedDate, selectedTime,serviceId }) => {
+
+
+
+
+    const {auth} = useAuth();
+    console.log("selectedDate:",selectedDate)
+    console.log("selectedTime:",selectedTime)
+    console.log("serviceId:",serviceId)
     const [formValues, setFormValues] = useState({
         fullName: '',
         phoneNumber: '',
@@ -20,6 +30,51 @@ const RegistrationDrawer = ({ onClose, doctor, selectedDate, selectedTime }) => 
 
     const handleSubmit = (e) => {
         e.preventDefault();
+    
+
+        console.log('sending:',{
+            service_id: serviceId,
+            doctor_id: doctor.doctor_id,
+            date: selectedDate && dayjs(selectedDate).format('YYYY-MM-DD'),
+            time: selectedTime,
+            fullName: formValues.fullName,
+            phoneNumber: formValues.phoneNumber,
+            email: formValues.email
+        });
+
+
+    
+
+
+        
+        (async () => {
+            const res = await fetch(`http://medclinic-420017.uc.r.appspot.com/api/v1/appointment/add`,{
+                method: 'POST',
+                headers:{
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${auth.accessToken}`
+                },
+                body: JSON.stringify(
+                    {
+                        service_id: serviceId,
+                        doctor_id: doctor.doctor_id,
+                        date: selectedDate && dayjs(selectedDate).format('YYYY-MM-DD'),
+                        time: selectedTime,
+                        fullName: formValues.fullName,
+                        phoneNumber: formValues.phoneNumber,
+                        email: formValues.email
+                      }
+                )
+            });
+            const data = await res.json();
+
+            
+            console.log(data);
+        })();
+
+
+        
+
         setShowConfirmationModal(true);
     };
 
@@ -31,6 +86,8 @@ const RegistrationDrawer = ({ onClose, doctor, selectedDate, selectedTime }) => 
             setAllFieldsFilled(false);
         }
     }, [formValues]);
+
+
 
     return (
         <>
@@ -54,8 +111,8 @@ const RegistrationDrawer = ({ onClose, doctor, selectedDate, selectedTime }) => 
                                 <div className={styles.selectDoctor}>
                                     <img className={styles.doctorImage} style={{ width: '70px', height: '71px' }} src={doctor.image} alt="" />
                                     <div>
-                                        <p className={styles.doctorName}>{doctor.doctorName}</p>
-                                        <p className={styles.doctorProf}>{doctor.doctorProf}</p>
+                                        <p className={styles.doctorName}>{`${doctor.name} ${doctor.surname}`}</p>
+                                        <p className={styles.doctorProf}>{doctor.positions}</p>
                                     </div>
                                 </div>
                                 <div className={styles.calendar}>
@@ -63,7 +120,7 @@ const RegistrationDrawer = ({ onClose, doctor, selectedDate, selectedTime }) => 
                                     <div>
                                     <p>{selectedDate && dayjs(selectedDate).format('DD/MM/YYYY')}</p>
 
-                                        <p>{selectedTime}</p>
+                                        <p>{selectedTime.substring(0,5)}</p>
                                     </div>
                                 </div>
                             </div>

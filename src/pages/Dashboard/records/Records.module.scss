@@ -19,11 +19,13 @@
     list-style-type: none;
     margin-bottom: 120px;
     .listItem {
+
         
         display: flex;
         justify-content: space-between;
         border-top: 0.5px solid rgb(217, 217, 217);
         margin-top: 23px;
+        padding: 20px 0;
         .img {
             display: flex;
             gap: 10px;
@@ -46,6 +48,18 @@
         .status {
             font-family: Manrope-Regular;
             font-size: 16px;
+
+            .confirmed {
+                color: #048741;
+            }
+            .canceled {
+                color: #F91515;
+            }
+            .completed {
+                color: #1F6ED4;
+            
+            }
         }
     }
 }
+

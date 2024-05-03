@@ -25,10 +25,13 @@ const Header = () => {
 
     const openDoctorDrawer = () => {
         setIsDoctorDrawerOpen(true);
+        document.body.style.overflow = 'hidden';
     };
 
     const closeDoctorDrawer = () => {
         setIsDoctorDrawerOpen(false);
+        document.body.style.overflow = '';
+
     };
 
 

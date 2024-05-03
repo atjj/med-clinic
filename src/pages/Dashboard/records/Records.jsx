@@ -7,6 +7,7 @@ const Records = () =>{
     const {auth} = useAuth();
 
     useEffect(() => {
+
         (async () => {
 
             const res = await fetch('http://medclinic-420017.uc.r.appspot.com/api/v1/appointment/myAppointments',{
@@ -25,9 +26,6 @@ const Records = () =>{
     },[]);
 
 
-
-
-    
 
     return(
         <>
@@ -57,7 +55,15 @@ const Records = () =>{
                                 </div>
 
                                 <div className= {styles.status}>
-                                    <span>{status}</span>
+                                    <span 
+                                        className = {`
+                                        
+                                            ${status == 'Подтверждён' && styles.confirmed}
+                                            ${status == 'Отменён' && styles.canceled}
+                                            ${status == 'Завершён' && styles.canceled}
+                                    `}> 
+                                        {status}
+                                    </span>
                                 </div>
                             </li>                    
                     
