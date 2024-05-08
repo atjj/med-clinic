@@ -18,7 +18,7 @@ import Dashboard from '../pages/Dashboard/Dashboard.jsx';
 import Profile from '../pages/Dashboard/profile/Profile.jsx';
 import Records from '../pages/Dashboard/records/Records.jsx';
 
-
+import AdminApplication from '../pages/AdminApplications/AdminApplications.jsx'
 
 
 import PersonalData from '../components/Dashboard/profile/PersonalData/PersonalData.jsx';
@@ -173,7 +173,7 @@ export default new createBrowserRouter([
         },
         {
           path: '/admin/applications',
-          element: <div>application</div>,
+          element: <div><AdminApplication/></div>,
           errorElement: <div>404 Not Found</div>,
         },       
         {
