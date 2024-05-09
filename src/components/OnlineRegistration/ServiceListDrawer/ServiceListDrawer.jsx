@@ -12,7 +12,7 @@ const ServiceListDrawer = ({ onClose }) => {
 
         (async () => {
 
-            const res = await fetch('http://medclinic-420017.uc.r.appspot.com/api/v1/schedule/services');
+            const res = await fetch('https://medclinic-422605.uc.r.appspot.com/api/v1/schedule/services');
 
             const data = await res.json();
             setServices(data);

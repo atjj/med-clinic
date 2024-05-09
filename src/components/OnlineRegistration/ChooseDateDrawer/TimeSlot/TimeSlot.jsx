@@ -12,7 +12,7 @@ const TimeSlot = ({id,selectedDate,handleTimeSelect}) => {
     console.log(selectedDate)
     useEffect(() =>{
         (async () => {
-            const res = await fetch(`http://medclinic-420017.uc.r.appspot.com/api/v1/appointment/times?date=${selectedDate[0]}-${selectedDate[1] < 10 ? `0${selectedDate[1]}`: selectedDate[1]}-${selectedDate[2]}&scheduleId=${id}`,{
+            const res = await fetch(`https://medclinic-422605.uc.r.appspot.com/api/v1/appointment/times?date=${selectedDate[0]}-${selectedDate[1] < 10 ? `0${selectedDate[1]}`: selectedDate[1]}-${selectedDate[2]}&scheduleId=${id}`,{
                 method: "GET",
                 headers:{
                     'Content-Type': 'application/json',

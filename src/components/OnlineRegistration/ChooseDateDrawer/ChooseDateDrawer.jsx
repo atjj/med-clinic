@@ -31,7 +31,7 @@ const ChooseDate = ({ doctor, onClose ,serviceId}) => {
     useEffect(() =>{
         (async () => {
 
-            const res = await fetch(`http://medclinic-420017.uc.r.appspot.com/api/v1/appointment/${doctor.doctor_id}`,{
+            const res = await fetch(`https://medclinic-422605.uc.r.appspot.com/api/v1/appointment/${doctor.doctor_id}`,{
                 method: "GET",
                 headers:{
                     'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const ChooseDate = ({ doctor, onClose ,serviceId}) => {
         })();
 
         (async () => {
-            const res = await fetch(`http://medclinic-420017.uc.r.appspot.com/api/v1/appointment/dates/${doctor.doctor_id}`,{
+            const res = await fetch(`https://medclinic-422605.uc.r.appspot.com/api/v1/appointment/dates/${doctor.doctor_id}`,{
                 method: "GET",
                 headers:{
                     'Content-Type': 'application/json',

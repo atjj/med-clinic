@@ -10,7 +10,7 @@ const Records = () =>{
 
         (async () => {
 
-            const res = await fetch('http://medclinic-420017.uc.r.appspot.com/api/v1/appointment/myAppointments',{
+            const res = await fetch('https://medclinic-422605.uc.r.appspot.com/api/v1/appointments/myAppointments',{
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',   

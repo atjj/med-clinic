@@ -23,12 +23,12 @@ const Doctorsinfo = () => {
         
         (async () =>{
 
-            const res1 = await fetch(`http://medclinic-420017.uc.r.appspot.com/api/v1/doctor/get-doctor-by-id/${id}`);
+            const res1 = await fetch(`https://medclinic-422605.uc.r.appspot.com/api/v1/doctor/get-doctor-by-id/${id}`);
             const info = await res1.json();
             setInfo(info);
     
         
-            const res2 = await fetch(`http://medclinic-420017.uc.r.appspot.com/api/v1/reviews/get-reviews/${id}`);
+            const res2 = await fetch(`https://medclinic-422605.uc.r.appspot.com/api/v1/reviews/get-reviews/${id}`);
             const review = await res2.json();
             setReviews(review);
         })();

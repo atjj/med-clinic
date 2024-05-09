@@ -24,6 +24,7 @@
   justify-content: space-between;
   border-top: 0.5px solid rgb(217, 217, 217);
   margin-top: 23px;
+  padding: 20px 0;
 }
 .list .listItem .img {
   display: flex;
@@ -45,4 +46,13 @@
 .list .listItem .status {
   font-family: Manrope-Regular;
   font-size: 16px;
+}
+.list .listItem .status .confirmed {
+  color: #048741;
+}
+.list .listItem .status .canceled {
+  color: #F91515;
+}
+.list .listItem .status .completed {
+  color: #1F6ED4;
 }/*# sourceMappingURL=Records.module.css.map */

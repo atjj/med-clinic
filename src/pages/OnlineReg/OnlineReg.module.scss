@@ -1,0 +1,63 @@
+.onlineReg{
+    .header {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .head {
+            font-family: Manrope-Regular;
+            font-size: 22px;
+        }
+        .btnGroup {
+            display: flex;
+            gap: 14px;
+        }
+
+
+    }
+
+    .subheader {
+        margin-top: 34px;
+        font-size: 12px;
+        font-family: Manrope-Semi-Bold;
+        ul {
+            display: flex;
+            gap: 30px;
+
+            li{
+                position: relative;
+                cursor: pointer;
+                &:hover{ 
+                    color: #346EFB; 
+    
+                     &::after {   
+                        content: '';  
+                        position: absolute;  
+                        bottom: 0;  
+                        left: 0;   
+                        width: 100%;  
+                        height: 2px;  
+                        background-color: #346EFB; 
+                     }
+                }
+
+            }
+        }
+
+    }
+
+    .search {
+        margin-top: 34px;
+        .searchPanel {
+            border-radius: 24px;
+            background: rgb(255, 255, 255);
+            width: 600px;
+            height: 40px;
+            padding: 11px 18px;
+            font-size: 14px;
+            font-family: Manrope-Regular;
+        }
+        
+    }
+
+}

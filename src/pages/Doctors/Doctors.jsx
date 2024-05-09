@@ -21,7 +21,7 @@ const Doctors = () => {
 
         (async () =>{
             
-            const res = await fetch('http://medclinic-420017.uc.r.appspot.com/api/v1/doctor/get-all-doctors');
+            const res = await fetch('https://medclinic-422605.uc.r.appspot.com/api/v1/doctor/get-all-doctors');
             const data = await res.json();
 
 

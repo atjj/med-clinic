@@ -7,7 +7,7 @@ const useRefreshToken =  () => {
     const {auth,setAuth} = useAuth();
 
     const refresh = async () => {
-        const response = await fetch('http://medclinic-420017.uc.r.appspot.com/api/v1/auth/refreshToken',{
+        const response = await fetch('https://medclinic-422605.uc.r.appspot.com/api/v1/auth/refreshToken',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json', 

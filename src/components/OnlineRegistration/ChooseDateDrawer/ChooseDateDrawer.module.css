@@ -8,6 +8,8 @@
   z-index: 3;
 }
 .overlay .drawer {
+  overflow-y: scroll;
+  overflow-x: hidden;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -75,37 +77,44 @@
   gap: 10px;
 }
 .overlay .drawer .selectDoctorList .soonTime {
-  background: #fff;
+  /*          background: #fff;
+   */
   border-radius: 10px;
   padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
-.overlay .drawer .selectDoctorList .soonTime .soonTimeTitle {
+.overlay .drawer .selectDoctorList .soonTime .soon {
+  background: #fff;
+  padding: 20px;
+}
+.overlay .drawer .selectDoctorList .soonTime .soon .soonTimeTitle {
   font-family: Manrope-Regular;
   color: #4D4E51;
   font-size: 14px;
-  width: 324px;
+  width: 350px;
+  text-align: center;
 }
-.overlay .drawer .selectDoctorList .timeSlotsContainer {
+.overlay .drawer .selectDoctorList .soonTime .soon .timeSlotsContainer {
+  margin-top: 20px;
   background: #fff;
   padding: 8px;
   border-radius: 16px;
 }
-.overlay .drawer .selectDoctorList .timeSlotsContainer .timeSlotsTitle {
+.overlay .drawer .selectDoctorList .soonTime .soon .timeSlotsContainer .timeSlotsTitle {
   font-size: 18px;
   font-family: Manrope-Medium;
   margin-bottom: 20px;
 }
-.overlay .drawer .selectDoctorList .timeSlotsContainer .timeSlotsList {
+.overlay .drawer .selectDoctorList .soonTime .soon .timeSlotsContainer .timeSlotsList {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
 }
-.overlay .drawer .selectDoctorList .timeSlotsContainer .timeSlotsList .time {
+.overlay .drawer .selectDoctorList .soonTime .soon .timeSlotsContainer .timeSlotsList .time {
   background: #fff;
   padding: 8px 15px;
   width: 75px;
@@ -117,7 +126,7 @@
   cursor: pointer;
   transition: 0.2s;
 }
-.overlay .drawer .selectDoctorList .timeSlotsContainer .timeSlotsList .time:hover {
+.overlay .drawer .selectDoctorList .soonTime .soon .timeSlotsContainer .timeSlotsList .time:hover {
   background: #346EFB;
   color: #fFF;
 }

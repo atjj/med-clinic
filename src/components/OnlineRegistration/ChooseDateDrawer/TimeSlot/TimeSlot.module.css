@@ -1,0 +1,22 @@
+.timeSlotsList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.timeSlotsList .time {
+  background: #fff;
+  padding: 8px 15px;
+  width: 75px;
+  border-radius: 16px;
+  color: #000;
+  font-family: Manrope-Regular;
+  font-size: 16px;
+  border: 1px solid #D9D9D9;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.timeSlotsList .time:hover {
+  background: #346EFB;
+  color: #fFF;
+}/*# sourceMappingURL=TimeSlot.module.css.map */

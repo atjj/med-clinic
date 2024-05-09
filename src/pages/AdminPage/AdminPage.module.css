@@ -1,0 +1,46 @@
+.admin {
+  background-color: #F5F5F5;
+  box-shadow: 0 0 0 100vmax #F5F5F5;
+  -webkit-clip-path: inset(-100vmax 0);
+          clip-path: inset(-100vmax 0);
+}
+.admin .header {
+  background-color: #ffffff;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  box-shadow: 0 0 0 100vmax #ffffff;
+  -webkit-clip-path: inset(0 -100vmax);
+          clip-path: inset(0 -100vmax);
+}
+.admin .header .imgPanel {
+  width: 180px;
+  height: 60px;
+}
+.admin .header .imgPanel img {
+  width: 100%;
+  height: 100%;
+}
+.admin .header .nav {
+  font-family: Manrope-Medium;
+}
+.admin .header .nav ul {
+  display: flex;
+  gap: 46px;
+  list-style-type: none;
+  margin-top: 30px;
+  padding-bottom: 30px;
+}
+.admin .header .nav ul li {
+  color: #707070;
+}
+.admin .header .nav ul li :hover {
+  color: black;
+  border-bottom: 2px solid #346EFB;
+}
+.admin .header .nav ul li :focus {
+  color: black;
+  border-bottom: 2px solid #346EFB;
+}/*# sourceMappingURL=AdminPage.module.css.map */

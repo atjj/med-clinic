@@ -12,7 +12,7 @@ const DoctorsDrawer = ({id, onClose }) => {
     useEffect(() => {
 
         (async () => {
-            const res = await fetch(`http://medclinic-420017.uc.r.appspot.com/api/v1/doctor/get-doctors-by-service/${id}`);
+            const res = await fetch(`https://medclinic-422605.uc.r.appspot.com/api/v1/doctor/get-doctors-by-service/${id}`);
             const data = await res.json();
             console.log(data);
             setDoctorsList(data);

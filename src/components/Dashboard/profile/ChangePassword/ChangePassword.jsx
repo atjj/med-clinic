@@ -16,7 +16,7 @@ const ChangePassword = () => {
 
     const changePassword = async () =>{
         
-        const res = await fetch(`http://medclinic-420017.uc.r.appspot.com/api/v1/change-password`,{
+        const res = await fetch(`https://medclinic-422605.uc.r.appspot.com/api/v1/change-password`,{
             method: 'PUT',
             headers: {
                 'Content-Type':'application/json',

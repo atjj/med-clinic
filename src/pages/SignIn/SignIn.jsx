@@ -19,7 +19,7 @@ import Loading from '../../components/Loading/Loading.jsx';
 
 const SignIn = () => {
 
-    const {setAuth} = useAuth();
+    const {auth,setAuth} = useAuth();
     const userRef = useRef();
     const errRef = useRef();
     
@@ -83,7 +83,10 @@ const SignIn = () => {
 
             setEmail('');
             setPassword('');
+
+            
             navigate('/');
+            
         }
 
         

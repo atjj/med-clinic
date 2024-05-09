@@ -32,7 +32,7 @@ const PersonalData = () =>{
             setText('Редактировать')
             setDisabled(true);
 
-            const res = await fetch(`http://medclinic-420017.uc.r.appspot.com/api/v1/profile/edit`,{
+            const res = await fetch(`https://medclinic-422605.uc.r.appspot.com/api/v1/profile/edit`,{
                 method: 'PUT',
                 headers:{
                     'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ const PersonalData = () =>{
 
         (async () => {
             try {
-                const res = await fetch('http://medclinic-420017.uc.r.appspot.com/api/v1/profile',{
+                const res = await fetch('https://medclinic-422605.uc.r.appspot.com/api/v1/profile',{
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',  
@@ -66,7 +66,7 @@ const PersonalData = () =>{
                 })
 
                 if(!res.ok) {
-                    throw new HttpError(`Could not fetch http://medclinic-420017.uc.r.appspot.com/api/v1/profile`,res.status,res.message,res.ok);
+                    throw new HttpError(`Could not fetch https://medclinic-422605.uc.r.appspot.com/api/v1/profile`,res.status,res.message,res.ok);
                 }
                 
                 const data = await res.json();

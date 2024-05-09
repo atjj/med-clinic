@@ -19,7 +19,7 @@ const CommentForm = ({doctor_id}) => {
         e.preventDefault();
 
         if(auth.accessToken) {
-            const res =  await fetch('http://medclinic-420017.uc.r.appspot.com/api/v1/reviews/add-review',{
+            const res =  await fetch('https://medclinic-422605.uc.r.appspot.com/api/v1/reviews/add-review',{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -9,6 +9,7 @@
   z-index: 1;
 }
 .overlay .drawer {
+  overflow-y: scroll;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -41,12 +42,10 @@
 }
 .overlay .drawer .items .listServices {
   display: flex;
-}
-.overlay .drawer .items .listServices ul {
   list-style: none;
   border-radius: 10px;
 }
-.overlay .drawer .items .listServices ul .services {
+.overlay .drawer .items .listServices .services {
   background: #fff;
   padding: 8px;
   border-radius: 5px;
@@ -56,6 +55,6 @@
   font-size: 16px;
   font-family: Manrope-Medium;
 }
-.overlay .drawer .items .listServices ul .services:hover {
+.overlay .drawer .items .listServices .services:hover {
   background-color: #DBEBFF;
 }/*# sourceMappingURL=ServiceListDrawer.module.css.map */

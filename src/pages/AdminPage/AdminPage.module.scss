@@ -1,5 +1,7 @@
 .admin {
     background-color: #F5F5F5;
+    box-shadow: 0 0 0 100vmax #F5F5F5;
+    clip-path: inset(-100vmax 0);
     .header {
         background-color: #ffffff;
         display: flex;
