@@ -12,16 +12,25 @@ const RegistrationDrawer = ({ onClose, doctor, selectedDate, selectedTime,servic
 
 
     const {auth} = useAuth();
-    console.log("selectedDate:",selectedDate)
+
+    console.log("selectedDate:", selectedDate);
+    console.log("selectedDate:",dayjs(selectedDate).format('YYYY-MM-DD'))
     console.log("selectedTime:",selectedTime)
     console.log("serviceId:",serviceId)
+
+
+
+
     const [formValues, setFormValues] = useState({
         fullName: '',
         phoneNumber: '',
         email: ''
     });
+
     const [allFieldsFilled, setAllFieldsFilled] = useState(false);
     const [showConfirmationModal, setShowConfirmationModal] = useState(false);
+
+    const [appointmentRes,setAppointmentRes] = useState({});
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -48,7 +57,7 @@ const RegistrationDrawer = ({ onClose, doctor, selectedDate, selectedTime,servic
 
         
         (async () => {
-            const res = await fetch(`https://medclinic-422605.uc.r.appspot.com/api/v1/appointment/add`,{
+            const res = await fetch(`https://medclinic-422605.uc.r.appspot.com/api/v1/appointments/add`,{
                 method: 'POST',
                 headers:{
                     'Content-Type': 'application/json',
@@ -67,14 +76,11 @@ const RegistrationDrawer = ({ onClose, doctor, selectedDate, selectedTime,servic
                 )
             });
             const data = await res.json();
-
-            
-            console.log(data);
+            setAppointmentRes(data);
         })();
 
 
         
-
         setShowConfirmationModal(true);
     };
 
@@ -87,12 +93,14 @@ const RegistrationDrawer = ({ onClose, doctor, selectedDate, selectedTime,servic
         }
     }, [formValues]);
 
+    console.log(appointmentRes);
 
 
     return (
         <>
             {showConfirmationModal ? (
                 <DoneRegistration
+                    appointmentRes = {appointmentRes}
                     doctor={doctor}
                     selectedDate={selectedDate}
                     selectedTime={selectedTime}

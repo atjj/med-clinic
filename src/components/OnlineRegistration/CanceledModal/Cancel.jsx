@@ -1,6 +1,7 @@
 import styles from './CanceledModal.module.scss';
 
 const Cancel = ({ setCancelState, setCanceledModal, onClose }) => {
+    
     const handleClick = () => {
         setCancelState(false);
         setCanceledModal(true);

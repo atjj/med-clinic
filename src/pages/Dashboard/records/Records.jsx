@@ -22,9 +22,9 @@ const Records = () =>{
 
             setAppointments(data);
         })();
-        console.log(appointments)
     },[]);
 
+    console.log(appointments)
 
 
     return(

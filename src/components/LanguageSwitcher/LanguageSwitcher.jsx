@@ -25,7 +25,7 @@ const LanguageSwitcher = () => {
         };
 
         document.addEventListener('mousedown',handler);
-    })
+    },[])
 
 
 

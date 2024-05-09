@@ -26,12 +26,12 @@ const ChooseDate = ({ doctor, onClose ,serviceId}) => {
 
     const [doctorResponse,setDoctorResponse] = useState({});
     const [soon,setSoon] = useState([]);
-    const [/* freedates */,setFreeDates] = useState({});
+    const [freedates,setFreeDates] = useState({});
 
     useEffect(() =>{
         (async () => {
 
-            const res = await fetch(`https://medclinic-422605.uc.r.appspot.com/api/v1/appointment/${doctor.doctor_id}`,{
+            const res = await fetch(`https://medclinic-422605.uc.r.appspot.com/api/v1/appointments/${doctor.doctor_id}`,{
                 method: "GET",
                 headers:{
                     'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const ChooseDate = ({ doctor, onClose ,serviceId}) => {
         })();
 
         (async () => {
-            const res = await fetch(`https://medclinic-422605.uc.r.appspot.com/api/v1/appointment/dates/${doctor.doctor_id}`,{
+            const res = await fetch(`https://medclinic-422605.uc.r.appspot.com/api/v1/appointments/dates/${doctor.doctor_id}`,{
                 method: "GET",
                 headers:{
                     'Content-Type': 'application/json',
@@ -62,15 +62,10 @@ const ChooseDate = ({ doctor, onClose ,serviceId}) => {
 
 
     },[])
-   /*  console.log(freedates); */
- /*    console.log(soon);
-    console.log(doctorResponse)
-    console.log(selectedDate) */
- /*    console.log(selectedTime)
-    console.log(dates);
-    console.log(times) */
-    console.log(selectedDate)
-    console.log(soon);
+
+/*     console.log(doctorResponse);
+    console.log(freedates); */
+
     const handleDateSelect = (date) => {
         const {$D,$M,$y} = date;
         const arr = [];

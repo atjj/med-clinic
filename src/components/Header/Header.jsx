@@ -14,7 +14,7 @@ import ServiceListDrawer from '../OnlineRegistration/ServiceListDrawer/ServiceLi
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher.jsx';
 import Profile from '../Profile/Profile.jsx';
-import { useState } from 'react';
+import {useState } from 'react';
 const Header = () => {
 
 
@@ -28,6 +28,7 @@ const Header = () => {
         document.body.style.overflow = 'hidden';
     };
 
+    
     const closeDoctorDrawer = () => {
         setIsDoctorDrawerOpen(false);
         document.body.style.overflow = '';
@@ -99,7 +100,7 @@ const Header = () => {
                     <Link to = '/results' ><Button text = {t('header.getresults')} radius= "medium" /></Link>
                     <Button text = {t('header.online-recording')} handle = {openDoctorDrawer} radius= "medium" />
                     {isDoctorDrawerOpen && (
-                        <ServiceListDrawer onClose={closeDoctorDrawer} />
+                        <ServiceListDrawer onClose = {closeDoctorDrawer} />                    
                     )}
                 </div>
 

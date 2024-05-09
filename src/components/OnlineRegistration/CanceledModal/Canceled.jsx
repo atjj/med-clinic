@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './CanceledModal.module.scss';
 import close from '../../../assets/icons/cancel.svg';
-import ServiceListDrawer from '../ServiceListDrawer/ServiceListDrawer'; // Подставьте путь к вашему компоненту
-
+import ServiceListDrawer from '../ServiceListDrawer/ServiceListDrawer'; 
 const Canceled = ( {onClose}) => {
     const [showAnotherComponent, setShowAnotherComponent] = useState(false);
 
+
     const handleButtonClick = () => {
-        setShowAnotherComponent(true);
+            setShowAnotherComponent(true);
     };
     const handleClose = () => {
         onClose(); // Закрыть модальное окно

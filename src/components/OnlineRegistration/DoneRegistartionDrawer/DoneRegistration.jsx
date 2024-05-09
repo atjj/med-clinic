@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './DoneRegistration.module.scss';
 import remove from '../../../assets/icons/next.svg';
 import doneReg from '../../../assets/icons/doneRegistration.svg';
 import CanceledModal from '../CanceledModal/CanceledModal';
-import dayjs from 'dayjs';
-const DoneRegistrationModal = ({ doctor, selectedDate, selectedTime, onClose }) => {
+
+const DoneRegistrationModal = ({appointmentRes,onClose }) => {
     
     const [showCancelModal, setShowCancelModal] = useState(false);
 
@@ -23,8 +23,9 @@ const DoneRegistrationModal = ({ doctor, selectedDate, selectedTime, onClose }) 
                 <div className={styles.modal}>
                     <img className={styles.done} src={doneReg} alt="done" />
                     <h2 className={styles.doneScedule}>Вы записаны</h2>
-                    <p className={styles.selectedDataandTime}>{selectedDate && dayjs(selectedDate).format('DD/MM/YYYY')} ,{selectedTime}</p>
-                    <p className={styles.selectedDoctor}>{doctor.doctorName}</p>
+                    <p className={styles.selectedDataandTime}>{appointmentRes?.date?.join('/')}</p>
+                    <p className={styles.selectedDataandTime}>{appointmentRes.dayOfWeek}, {appointmentRes.timeFrom}-{appointmentRes.timeTo}</p>
+                    <p className={styles.selectedDoctor}>{appointmentRes?.response?.name} {appointmentRes?.response?.surName}</p>
                     
                     <p className={styles.cancel} onClick={() => setShowCancelModal(true)}>Отменить запись</p>
 
