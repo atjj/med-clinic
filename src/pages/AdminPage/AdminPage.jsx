@@ -16,7 +16,7 @@ const AdminPage = () =>{
                 
                 <div className= {styles.header}>
                     <div className= {styles.imgPanel}>
-                        <Link to = {'/'}><img src = {logo}/></Link>
+                        <Link to = {'/admin/online-reg'}><img src = {logo}/></Link>
                     </div>
 
                     <div className = {styles.nav}>
@@ -24,7 +24,7 @@ const AdminPage = () =>{
                             <li><Link to={'/admin/online-reg'}>Онлайн-запись</Link></li>
                             <li><Link to={'/admin/applications'}>Заявки</Link></li>
                             <li><Link to={'/admin/specialists'}>Специалисты</Link></li>
-                            <li><Link to={'/admin/analyzes'}>Пациенты</Link></li>
+                            <li><Link to={'/admin/analyzes'}>Анализы</Link></li>
                         </ul>
                     </div>
 

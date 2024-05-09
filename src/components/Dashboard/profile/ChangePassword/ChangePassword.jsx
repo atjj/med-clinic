@@ -34,6 +34,7 @@ const ChangePassword = () => {
             return;
 
         } else {
+
             const data = await res.json();
             setOldPwd('');
             setNewPwd('');
@@ -58,7 +59,7 @@ const ChangePassword = () => {
                 <div className= {styles.inputWrapper}>
                     <label>Новый пароль</label>
                     <input
-                        onChange={(e) => {setNewPwd(e.target.value)}} 
+                        onChange={(e) => { setNewPwd(e.target.value) }} 
                         placeholder="Введите новый пароль"/>
                 </div>
 

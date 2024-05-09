@@ -18,7 +18,7 @@ const CommentForm = ({doctor_id}) => {
     const sendComment = async (e) => {
         e.preventDefault();
 
-        if(auth.accessToken) {
+        if(auth.accessToken && auth.roles == 'PATIENT') {
             const res =  await fetch('https://medclinic-422605.uc.r.appspot.com/api/v1/reviews/add-review',{
                 method: 'POST',
                 headers: {

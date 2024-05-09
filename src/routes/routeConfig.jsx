@@ -18,7 +18,7 @@ import Dashboard from '../pages/Dashboard/Dashboard.jsx';
 import Profile from '../pages/Dashboard/profile/Profile.jsx';
 import Records from '../pages/Dashboard/records/Records.jsx';
 
-
+import AdminApplication from '../pages/AdminApplications/AdminApplications.jsx'
 
 
 import PersonalData from '../components/Dashboard/profile/PersonalData/PersonalData.jsx';
@@ -28,6 +28,8 @@ import SignUpConfirm from '../pages/SignUpConfrim/SignUpConfirm.jsx';
 import Results from '../pages/resultsPage/Results.jsx';
 import AdminPage from '../pages/AdminPage/AdminPage.jsx';
 import OnlineReg from '../pages/OnlineReg/OnlineReg.jsx';
+
+import { roles } from '../utils/constants.js';
 
 export default new createBrowserRouter([
     {
@@ -124,7 +126,7 @@ export default new createBrowserRouter([
               {
                 path: '/dashboard/profile',
                 element: (
-                  <Unauthorized>
+                  <Unauthorized allowedRoles = {roles.PATIENT} >
                     <Profile/>,
                   </Unauthorized>
                 ),
@@ -148,7 +150,7 @@ export default new createBrowserRouter([
               {
                 path: '/dashboard/records',
                 element: (
-                  <Unauthorized>
+                  <Unauthorized allowedRoles={roles.PATIENT}>
                     <Records/>
                   </Unauthorized>
                 ),
@@ -163,7 +165,12 @@ export default new createBrowserRouter([
     },
 
     {
-      element: <AdminPage/>,
+
+      element: (
+              <Unauthorized allowedRoles = {roles.ADMIN}>
+                <AdminPage/>
+              </Unauthorized>
+               ),
       errorElement: <div>404 Not Found</div>,
       children:[
         {
@@ -173,7 +180,7 @@ export default new createBrowserRouter([
         },
         {
           path: '/admin/applications',
-          element: <div>application</div>,
+          element: <div><AdminApplication/></div>,
           errorElement: <div>404 Not Found</div>,
         },       
         {

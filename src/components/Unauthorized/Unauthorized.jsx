@@ -2,9 +2,9 @@ import useAuth from "../../hooks/useAuth";
 import {Navigate} from 'react-router-dom';
 
 
-const Unauthorized = ({children}) =>{
+const Unauthorized = ({children,allowedRoles}) =>{
     const {auth} = useAuth();
-    return auth?.email ? children : <Navigate to = {'/'} replace/>
+    return (auth?.email && auth.roles === allowedRoles) ? children : <Navigate to = {'/'} replace/>
 
 }
 

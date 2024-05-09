@@ -3,14 +3,24 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
+import useAuth from '../../hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
+
 export default function BasicMenu({mainText,menuItem}) {
+
+  const navigate = useNavigate();
+  const {setAuth} = useAuth();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
+    setAuth({});
+    navigate('/')
     setAnchorEl(null);
+
   };
 
   return (

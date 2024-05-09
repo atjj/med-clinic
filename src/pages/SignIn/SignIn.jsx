@@ -19,7 +19,7 @@ import Loading from '../../components/Loading/Loading.jsx';
 
 const SignIn = () => {
 
-    const {auth,setAuth} = useAuth();
+    const {setAuth} = useAuth();
     const userRef = useRef();
     const errRef = useRef();
     
@@ -85,7 +85,11 @@ const SignIn = () => {
             setPassword('');
 
             
-            navigate('/');
+            if(res.roles == 'PATIENT')
+                navigate('/');
+
+            if(res.roles == 'ADMIN')
+                navigate('/admin/online-reg');
             
         }
 
