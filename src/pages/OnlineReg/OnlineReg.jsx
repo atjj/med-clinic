@@ -31,7 +31,7 @@ const OnlineReg = () => {
                     {activeTab == 'schedule' ? <Button color="primary" variant="bordered"> EXPORT TO EXCEL </Button> : null}
 
                     <Button color="primary" startContent={""}>
-                        {activeTab == 'online' ? "Добавить запись": "Сохранить"}
+                        {activeTab == 'online' ? "ить запись": "Сохранить"}
                     </Button> 
                 </div>
             </div>

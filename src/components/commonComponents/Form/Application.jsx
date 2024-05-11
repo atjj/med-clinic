@@ -1,4 +1,4 @@
-import styles from './Modal.module.scss';
+import styles from './Form.module.scss';
 import user from '../../../assets/icons/Users.svg';
 import phone2 from '../../../assets/icons/phone2.svg';
 import send from '../../../assets/icons/send.svg';
