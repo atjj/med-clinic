@@ -1,6 +1,7 @@
 import styles from './AdminSpecialist.module.scss'
 import container from '../../styles/ContainerStyles.module.scss'
 import AdminSpecialistTable from './AdminSpecialistTable'
+import { Link } from 'react-router-dom'
 const AdminSpecialist = () =>{
     return (
         <>
@@ -9,12 +10,12 @@ const AdminSpecialist = () =>{
                <div className={styles.applicationAdmin}>
                 <div className={styles.headerSpecialist}>
                     <h2 className={styles.applicationsTitle}>Специалисты</h2>
-                    <button className={styles.addSpecialistbutton}>+ ДОБАВИТЬ СПЕЦИАЛИСТА</button>
+                    <Link to='./addSpecialist'><button className={styles.addSpecialistbutton}>+ ДОБАВИТЬ СПЕЦИАЛИСТА</button></Link>
                 </div>
                     <input type="text" placeholder='Поиск' className={styles.applicationsInput} />
                 </div>
                 <div className={styles.applicationsList}>
-                       <AdminSpecialistTable/>
+                  <AdminSpecialistTable/>  
                 </div>
             </div>
 

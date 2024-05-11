@@ -1,0 +1,43 @@
+.globalAdding{
+    margin-top: 80px;
+    .header{
+        font-size: 22px;
+        font-family: Manrope-Regular;
+        color: #000;
+    }
+    .addingDoctors{
+        display: flex;
+        
+        background: #fff;
+        .addImage{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .title{
+                font-family: Manrope-Regular;
+                font-size: 12px;
+                color: #909CB5;
+            }
+        }
+        .infoDoctors{
+            
+            .addSpecialistInput{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            .inputAddSpecialist{
+                width: 400px;
+                height: 38px;
+                border-radius: 6px;
+                border: 1px solid #909CB5;
+                padding: 10px;
+            }
+        }
+        .addSpecialistButton{
+            display: flex;
+            gap: 10px;
+        }
+    }
+    }
+    
+}

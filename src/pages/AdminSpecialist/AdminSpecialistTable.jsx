@@ -1,6 +1,8 @@
+import React, { useState, useEffect } from 'react';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { Switch } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
+import axios from 'axios';
 
 const columns = [
     { field: 'id', headerName: '№', width: 100 },
@@ -18,9 +20,9 @@ const columns = [
             />
         ),
     },
-    { field: 'firstName', headerName: 'Специалист', width: 200 },
-    { field: 'date', headerName: 'Отделение', width: 200 },
-    { field: 'phone', headerName: 'Расписание до', width: 200 },
+    { field: 'name', headerName: 'Имя', width: 200 },
+    { field: 'service', headerName: 'Специальность', width: 200 },
+    { field: 'schedule_to', headerName: 'Расписание до', width: 200 },
     {
         field: 'actions',
         headerName: 'Действия',
@@ -35,17 +37,23 @@ const columns = [
             />
         ),
     },
-    
-];
-
-const rows = [
-    { id: 1,isActive: false, date: '12.01.23', firstName: 'Jon', phone: '+996 707 123 456' },
-    { id: 2, isActive: true, date: '12.01.23', firstName: 'Cersei', phone: '+996 707 123 456' },
-    { id: 3, isActive: false ,date: '12.01.23', firstName: 'Jaime', phone: '+996 707 123 456' },
-    // Добавьте isActive в каждый объект ваших данных
 ];
 
 export default function DataTable() {
+    const [rows, setRows] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://medclinic-422605.uc.r.appspot.com/api/v1/doctor/get-doctors')
+            .then(response => {
+                // Обработка полученных данных и установка их в состояние
+                setRows(response.data.map((doctor, index) => ({
+                    ...doctor,
+                    id: index + 1 // Установка уникального идентификатора для каждой строки
+                })));
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }, []);
+
     return (
         <div style={{ height: 400, width: '100%' }}>
             <DataGrid

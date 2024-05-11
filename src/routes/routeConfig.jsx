@@ -20,6 +20,7 @@ import Records from '../pages/Dashboard/records/Records.jsx';
 
 import AdminApplication from '../pages/AdminApplications/AdminApplications.jsx'
 import AdminSpecialist from '../pages/AdminSpecialist/AdminSpecialist.jsx'
+import AddAdminSpecialist from '../pages/AddAdminSpecialist/AddAdminSpecialist.jsx';
 import PersonalData from '../components/Dashboard/profile/PersonalData/PersonalData.jsx';
 import ChangePassword from '../components/Dashboard/profile/ChangePassword/ChangePassword.jsx';
 import Unauthorized from '../components/Unauthorized/Unauthorized.jsx';
@@ -185,6 +186,11 @@ export default new createBrowserRouter([
         {
           path: '/admin/specialists',
           element: <div><AdminSpecialist/></div>,
+          errorElement: <div>404 Not Found</div>,
+        },
+        {
+          path: '/admin/specialists/addSpecialist',
+          element: <div><AddAdminSpecialist/></div>,
           errorElement: <div>404 Not Found</div>,
         },
         {
