@@ -1,9 +1,9 @@
-import styles from './AddAdminSpecialist.module.scss'
+import styles  from './AdminSpecialist.module.scss'
 import image from '../../assets/icons/savephoto.svg'
 import Button from '../../UI/Button/Button';
 import CancelButton from '../../UI/CancelButton/CancelButton';
-import SpecialistToggleButton from './SpecialistToggleButton.jsx'
-const AddAdminSpecialist = () =>{
+import SpecialistToggleButton from './SpecialistToggleEdit.jsx'
+const AdminSpecialistEdit = () =>{
     return(
         <div className={styles.globalAdding}>
             <h3 className={styles.header}>Добавление специалиста</h3>
@@ -14,7 +14,7 @@ const AddAdminSpecialist = () =>{
                 </div>
 
                 <div className={styles.infoDoctors}>
-                    <h4 className={styles.infoDoctorsHeader}>Добавление специалиста</h4>
+                    <h4 className={styles.infoDoctorsHeader}>Личные данные</h4>
                     
                     <div className={styles.addSpecialistInput}>
                         <input className={styles.inputAddSpecialist} placeholder='Напишите имя' type="text" />
@@ -27,8 +27,8 @@ const AddAdminSpecialist = () =>{
                     </div>
                     <div className={styles.addSpecialistButton}>
                     
-                        <CancelButton radius= "small" text='Отменить'/>
-                        <Button text='Добавить' radius= "small"/>
+                        <CancelButton radius= "small" text='назад'/>
+                        <Button text='Редактировать' radius= "small"/>
                     </div>
                 </div>
 
@@ -37,4 +37,4 @@ const AddAdminSpecialist = () =>{
         </div>
     )
 }
-export default AddAdminSpecialist
+export default AdminSpecialistEdit
