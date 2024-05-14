@@ -20,7 +20,7 @@ const SignUpConfrim = () =>{
 
         console.log('Отправка данных на сервер:',{token, email: signUpConfirm.email});
 
-        const res = await fetch(`http://medclinic-420017.uc.r.appspot.com/api/v1/auth/sign-up/confirm`,{
+        const res = await fetch(`http://medclinic-422605.uc.r.appspot.com/api/v1/auth/sign-up/confirm`,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

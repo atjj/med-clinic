@@ -19,7 +19,7 @@ const LanguageSwitcher = () => {
 
     useEffect(()=>{
         let handler = (e) =>{
-            if(e.target && !menuRef.current.contains(e.target)){
+            if(e.target && menuRef !== null && !menuRef.current.contains(e.target)){
                 setOpen(false);
             }
         };

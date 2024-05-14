@@ -4,21 +4,20 @@ import styles from './OnlineReg.module.scss';
 import TableComponent from "../../components/Admin/OnlineRegistration/Table/Table";
 import Schedule from "../../components/Admin/OnlineRegistration/Schedule/Schedule";
 
-import { useState } from "react";
+import {useState } from "react";
 
 import SearchPanel from '../../UI/SearchPanel/SearchPanel.jsx';
   
 
 
-
 const OnlineReg = () => {
+
 
     const [activeTab, setActiveTab] = useState('online'); // По умолчанию активна вкладка "Онлайн-запись"
 
     const handleTabClick = (tab) => {
       setActiveTab(tab);
     };
-
 
 
 
@@ -46,7 +45,7 @@ const OnlineReg = () => {
             </div>
 
             <SearchPanel/>
-
+            
 
             {activeTab === 'online' && <TableComponent />}
             {activeTab === 'schedule' && <Schedule/>}  

@@ -1,61 +1,126 @@
+import {useEffect, useState } from 'react';
 import styles from './Table.module.scss';
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell,getKeyValue} from "@nextui-org/react";
 
+import useAuth from '../../../../hooks/useAuth';
 
-const rows = [
-    {
-      key: "1",
-      id: "1",
-      fullName: "Джон Сноу",
-      phoneNumber: "+996505100100",
-      email: "JohnKnowNothing@gmail.com",
-      service: "Окулист",
-      specialist: "Манак Елена",
-      date: "07.05.2024",
-      processed: <input type="checkbox"/>,
-      actions: <img src="../../../src/assets/icons/trash.svg"/>
+const Processed = ({setMessage,processed,id}) => {
 
-    },
-    {
-        key: "2",
-        id: "2",
-        fullName: "Джон Сноу",
-        phoneNumber: "+996505100100",
-        email: "JohnKnowNothing@gmail.com",
-        service: "Окулист",
-        specialist: "Манак Елена",
-        date: "07.05.2024",
-        processed: <input type="checkbox"/>,
-        actions: <img src="../../../src/assets/icons/trash.svg"/>
+
+    const process = async (id) => {
+        const res = await fetch(`https://medclinic-422605.uc.r.appspot.com/api/v1/appointments/processed?appointmentId=${id}`,{
+            method: 'POST',
+            headers: {
+                'Content-Type':'application/json',
+            },
+            body: JSON.stringify('')
+        })
+        
+        const data = await res.json();
+        console.log(data);
+        setMessage(data.message);
+
+    }
+
+
+
+    const [checked,setChecked] = useState(processed);
+
+    return ( <input 
+                type='checkbox' 
+                checked = {checked}
+                disabled = {checked && true} 
+                onClick={() => {
+                        setChecked(!checked);
+                        process(id); 
+            }}/> )
+}
+
+
+
+const DeleteAppointment = ({setMessage,id}) => {
+
+    const {auth} = useAuth();
+
+    const deleteAppointment = async (id) => {
+            const res = await fetch('https://medclinic-422605.uc.r.appspot.com/api/v1/appointments/delete',{
+                method: 'DELETE',
+                headers: {
+                    'Content-Type':'application/json',
+                    'Authorization': `Bearer ${auth?.accessToken}` 
+                },
+                body: JSON.stringify([id])
+            })
+            const data = await res.json();
+            console.log(data);
+            setMessage(data.message);
+    }
+
+    return (
+        <button onClick = {() => {deleteAppointment(id)}}>
+            <img src="../../../src/assets/icons/trash.svg"/>
+        </button>
+    )
+}
+
+
+const TableComponent = () => {
+
+    const [appointments,setAppointments] = useState([]);
+    const [message,setMessage] = useState('');
+
+
+    
+
+    useEffect(() =>{
+
+
+        (async () => {
+            
+            const res = await fetch('https://medclinic-422605.uc.r.appspot.com/api/v1/appointments');
+
+            const data = await res.json();
+
+            const arr = data.map(item => {
+                return {
+                    key: item?.appointmentId,
+                    id: item?.appointmentId,
+                    fullName: item?.patientFullName,
+                    phoneNumber: item?.tellNumber,
+                    email: item?.email,
+                    service: item?.service,
+                    specialist: item?.doctor,
+                    date: `${item?.date}  ${item?.time}`,/*  checked = {item.isProcessed} */
+                    processed: <Processed setMessage = {setMessage} processed = {item?.isProcessed} id = {item?.appointmentId}/>,
+                    actions: <DeleteAppointment setMessage = {setMessage} id = {item?.appointmentId}/>
+        
+                }
+            });
+
+            setAppointments(arr.reverse());
+            
   
-      },
-      {
-        key: "3",
-        id: "3",
-        fullName: "Джон Сноу",
-        phoneNumber: "+996505100100",
-        email: "JohnKnowNothing@gmail.com",
-        service: "Окулист",
-        specialist: "Манак Елена",
-        date: "07.05.2024",
-        processed: <input type="checkbox"/>,
-        actions: <div><img src="../../../src/assets/icons/trash.svg"/></div>
-  
-      }
-  ];
+        })();
 
-  const columns = [
+
+    },[appointments]);
+
+
+    console.log(appointments);
+
+    
+    const columns = [
     {
-      key: "id",
-      label: "№",
+        key: "id",
+        label: "№",
     },
     {
-      key: "fullName",
-      label: "Имя и фамилия",
+        key: "fullName",
+        label: "Имя и фамилия",
     },
     {
-      key: "phoneNumber",
-      label: "Номер телефона",
+        key: "phoneNumber",
+        label: "Номер телефона",
     },
     {
         key: "email",
@@ -81,23 +146,27 @@ const rows = [
         key: "actions",
         label: "Действия",
     }
-  ];
+    ];
 
 
-const TableComponent = () => {
+
+
+
     return (
-        <div className= {styles.table}>
+    <div className= {styles.table}>
 
+        <div className= {styles.messages} onClick={() => {setMessage('')}}>{message}</div>
         <Table 
             aria-label = "Rows actions table example with dynamic content"
             selectionMode = "multiple"
             selectionBehavior = "toggle"
+
             onRowAction={(key) => {console.log(key)}}
         >
             <TableHeader columns={columns}>
                 {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
             </TableHeader>
-            <TableBody items={rows}>
+            <TableBody items={appointments}>
                 {(item) => (
                     <TableRow  key={item.key}>
                     {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
