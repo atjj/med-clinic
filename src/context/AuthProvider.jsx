@@ -1,4 +1,5 @@
 import {createContext,useState} from 'react';
+import { useEffect } from 'react';
 
 
 const AuthContext = createContext({});
@@ -10,7 +11,10 @@ export const AuthProvider = ({children}) => {
     const [auth,setAuth] = useState({});
     const [signUpConfirm,setSignUpConfirm] = useState({});
     
-    console.log(auth);
+    useEffect(()=>{
+        console.log('axaxa', auth);
+        localStorage.setItem('aimosh', auth.accessToken)
+    },[auth])
 
 
     
