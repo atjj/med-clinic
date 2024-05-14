@@ -73,7 +73,7 @@ const Analize = () =>{
                     />
                   )}
             </div>
-
+                  
             <div className={styles.Allanalize}>
             <ul className={styles.twoColumn}>
                 {filteredItems.map((item, index) => (

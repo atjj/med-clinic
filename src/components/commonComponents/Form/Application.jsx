@@ -7,17 +7,17 @@ import axios from 'axios';
 
 export const Application = ({ setApplicationModal, setSentModal }) => {
     const [name, setName] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
+    const [tel_number, setTelNumber] = useState('');
 
     const handleClick = async () => {
         try {
             const response = await axios.post('http://medclinic-422605.uc.r.appspot.com/api/v1/application/add-application', {
                 name: name,
-                phoneNumber: phoneNumber,
+                tel_number: tel_number,
             });
-
-            console.log('Заявка успешно отправлена');
-            console.log(name,phoneNumber)
+            console.log(response)
+            console.log('Заявка успешно отправлена', response);
+            console.log(name,tel_number)
             setApplicationModal(false);
             setSentModal(true);
         } catch (error) {
@@ -38,7 +38,7 @@ export const Application = ({ setApplicationModal, setSentModal }) => {
                 </div>
                 <div className={styles.inputPanel}>
                     <div className={styles.text}>Номер мобильного телефона</div>
-                    <input type="text" placeholder='Введите телефон номер' onChange={(e) => { setPhoneNumber(e.currentTarget.value) }} />
+                    <input type="text" placeholder='Введите телефон номер' onChange={(e) => { setTelNumber(e.currentTarget.value) }} />
                     <img src={phone2} alt="user" />
                 </div>
             </div>

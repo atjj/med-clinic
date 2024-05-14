@@ -13,7 +13,7 @@ export const Application = ({ setApplicationModal, setSentModal }) => {
         try {
             const response = await axios.post('http://medclinic-422605.uc.r.appspot.com/api/v1/application/add-application', {
                 name: name,
-                phoneNumber: phoneNumber,
+                tel_number: phoneNumber,
             });
 
             console.log('Заявка успешно отправлена');
