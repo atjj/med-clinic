@@ -6,6 +6,7 @@ import Schedule from "../../components/Admin/OnlineRegistration/Schedule/Schedul
 
 import { useState } from "react";
 
+import SearchPanel from '../../UI/SearchPanel/SearchPanel.jsx';
   
 
 
@@ -31,7 +32,7 @@ const OnlineReg = () => {
                     {activeTab == 'schedule' ? <Button color="primary" variant="bordered"> EXPORT TO EXCEL </Button> : null}
 
                     <Button color="primary" startContent={""}>
-                        {activeTab == 'online' ? "ить запись": "Сохранить"}
+                        {activeTab == 'online' ? "Добавить запись": "Сохранить"}
                     </Button> 
                 </div>
             </div>
@@ -44,9 +45,7 @@ const OnlineReg = () => {
                 </ul>
             </div>
 
-            <div className= {styles.search}>
-                <input className= {styles.searchPanel} type="search" placeholder="Поиск"/>
-            </div>
+            <SearchPanel/>
 
 
             {activeTab === 'online' && <TableComponent />}

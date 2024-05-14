@@ -4,6 +4,9 @@ import remove from '../../../assets/icons/next.svg';
 import ChooseDateDrawer from '../ChooseDateDrawer/ChooseDateDrawer'; 
 import rewies from '../../../assets/icons/rewies.svg';
 import Loading from '../../Loading/Loading';
+
+import unknownImage from '../../../assets/images/Unknown.jpg';
+
 const DoctorsDrawer = ({id, onClose }) => {
 
     const [doctorsList,setDoctorsList] = useState([]);
@@ -40,7 +43,7 @@ const DoctorsDrawer = ({id, onClose }) => {
                                     {doctorsList.map((item, index) => (
                                         <div key = {index} className = {styles.doctor} onClick = {() => handleDoctorClick(item)}>
                                             <div>
-                                                <img className={styles.doctorImage} style={{width: "36px", height: "36px"}} src={item.image} alt="doctor" />
+                                                <img className={styles.doctorImage} style={{width: "36px", height: "36px"}} src={item.image ? item.image : unknownImage} alt="doctor" />
                                             </div>
                                             <div className={styles.doctorInfo}>
                 

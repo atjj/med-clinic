@@ -12,6 +12,9 @@ import { useEffect, useState } from 'react';
 
 import { useParams } from 'react-router-dom';
 
+import unknownImage from '../../../assets/images/Unknown.jpg';
+
+
 const Doctorsinfo = () => {
 
     let {id} = useParams();
@@ -61,7 +64,7 @@ const Doctorsinfo = () => {
                                 <p className={styles.title}>Попасть в команду медицинской клиники «Medical Clinic» могут только лучшие специалисты с многолетней практикой и доказанным опытом.</p>
                                 <p className={styles.info__title}>Мы развиваемся, учимся и оттачиваем мастерство, стажируемся в ведущих университетах Европы, чтобы еще на шаг стать ближе к совершенству.</p>
                                 <div className={styles.doctor}>
-                                    <div className={styles.doctorImage}><img width="100%" height='100%' src={image} alt = {`${name} ${surName}`} /></div>
+                                    <div className={styles.doctorImage}><img width="100%" height='100%' src={image ? image : unknownImage} alt = {`${name} ${surName}`} /></div>
                                     <div className={styles.titles}>
                                         <p className={styles.name}>{`${name} ${surName}`}</p>
                                         <p className={styles.branch}>Отделение: <span> {service} </span></p>

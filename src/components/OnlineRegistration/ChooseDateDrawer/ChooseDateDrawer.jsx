@@ -11,6 +11,8 @@ import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import RegistrationDrawer from '../RegistrationDrawer/RegistrationDrawer';
 import useAuth from '../../../hooks/useAuth.jsx';
 
+import unknownImage from '../../../assets/images/Unknown.jpg';
+
 import TimeSlot from './TimeSlot/TimeSlot.jsx';
 
 const ChooseDate = ({ doctor, onClose ,serviceId}) => {
@@ -106,7 +108,7 @@ const ChooseDate = ({ doctor, onClose ,serviceId}) => {
 
                 <div className={styles.selectDoctorList}>
                     <div className={styles.selectDoctor}>
-                        <img className={styles.doctorSelectedImage} style={{ width: "60px", height: "60px" }} src={doctorResponse.image} alt="selectDoctor" />
+                        <img className={styles.doctorSelectedImage} style={{ width: "60px", height: "60px" }} src={doctorResponse.image ? doctorResponse.image : unknownImage} alt="selectDoctor" />
                         <div className={styles.doctorInfo}>
                             <p className={styles.doctorName}>{`${doctorResponse.name} ${doctorResponse.surname}`}</p>
                             <p className={styles.doctorProf}>{doctorResponse.positions}</p>

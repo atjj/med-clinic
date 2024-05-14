@@ -4,6 +4,7 @@ import container from '../../../styles/ContainerStyles.module.scss'
 
 import Button from '../../../UI/Button/Button.jsx';
 import { Link } from 'react-router-dom';
+import unknownImage from '../../../assets/images/Unknown.jpg';
 
 const DoctorProf = ({ data }) => {
   
@@ -17,7 +18,7 @@ const DoctorProf = ({ data }) => {
                         <Link to={`/doctors/${item?.doctor_id}`} key={index}>
                         <div className={styles.card} >
                             <div className={styles.imageDoctor}>
-                                <img width="100%" height='100%' src={item?.img} alt="" />
+                                <img width="100%" height='100%' src={item?.img ? item.img : unknownImage} alt="" />
                             </div>
                             <p className= {styles.docName}>{item?.name}</p>
                             <p className={styles.profile}>{item?.prof}</p>

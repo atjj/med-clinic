@@ -29,12 +29,14 @@ const SignUp = () => {
     const [visiblePwd,setVisiblePwd] = useState(false);
     const [visibleMatch,setVisibleMatch] = useState(false);
 
+
     const [input,setInput] = useState({
         name: "",
         surName: "",
         telNumber: "",
         email: "",
         password: "",
+        birthDate: ""
     });
 
     const [validInput,setValidInput] = useState({
@@ -129,6 +131,8 @@ const SignUp = () => {
 
 
     }
+
+    console.log(input)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -306,6 +310,12 @@ const SignUp = () => {
                     
                 </div>
 
+                <input  
+                    className= {styles.date} 
+                    type='date' 
+                    onChange={handleInput}
+                    name = "birthDate"
+                    />
 
 
                 <p id = 'confirm' className = {`${matchFocus && matchPassword && !validMatch ? styles.instructions :styles.offscreen}`}>

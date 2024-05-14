@@ -31,6 +31,7 @@ import AdminPage from '../pages/AdminPage/AdminPage.jsx';
 import OnlineReg from '../pages/OnlineReg/OnlineReg.jsx';
 
 import { roles } from '../utils/constants.js';
+import AdminAnalyze from '../pages/AdminAnalyze/AdminAnalyze.jsx';
 
 export default new createBrowserRouter([
     {
@@ -201,7 +202,7 @@ export default new createBrowserRouter([
         },
         {
           path: '/admin/analyzes',
-          element: <div>Analyzes</div>,
+          element: <AdminAnalyze/>,
           errorElement: <div>404 Not Found</div>,
         }
       ]
