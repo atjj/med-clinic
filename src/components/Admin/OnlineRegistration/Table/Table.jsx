@@ -106,7 +106,6 @@ const TableComponent = () => {
     },[appointments]);
 
 
-    console.log(appointments);
 
     
     const columns = [

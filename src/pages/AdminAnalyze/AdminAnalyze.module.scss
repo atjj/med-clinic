@@ -9,6 +9,25 @@
     }
 }
 
+.addCategory {
+    input {
+        margin-top: 27px;
+        padding: 31px 49px 31px 17px;
+        border-bottom: 1px solid #b5b5b5;
+        background-color: white;
+        font-size: 24px;
+        width: 100%;
+        font-family: Manrope-Regular;
+    }
+}
+
+.visible {
+    display: block;
+}
+.hidden {
+    display: none;
+}
+
 .analyzesList {
     margin-top: 27px;
     .item {
@@ -29,10 +48,17 @@
         }
 
         .action {
+            height: 26px;
+            width: 26px;
             cursor: pointer;
             img {
-                height: 26px;
+                height: 100%;
+                width: 100%;
             }
         }
+    }
+
+    a {
+        color: black;
     }
 }

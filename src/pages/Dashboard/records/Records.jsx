@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import styles from './Records.module.scss';
 import useAuth from '../../../hooks/useAuth';
+
+import unknownImage from '../../../assets/images/Unknown.jpg';
+
 const Records = () =>{
 
     const [appointments,setAppointments] = useState([]);
@@ -42,7 +45,7 @@ const Records = () =>{
                         
                             <li key = {id} className= {styles.listItem}>
                                 <div className = {styles.img}>
-                                     <img src= {image} alt = {name}/>
+                                     <img src= {image ? image : unknownImage} alt = {name}/>
                                 <div className= {styles.desc}>
                                     <p className = {styles.name}>{`${name} ${surname}`}</p>
                                     <p className = {styles.profi}>{positions}</p>

@@ -15,7 +15,7 @@ const LanguageSwitcher = () => {
     const [isOpen,setOpen] = useState(false);
     const {i18n} = useTranslation();
 
-    let menuRef = useRef();
+    let menuRef = useRef(false);
 
     useEffect(()=>{
         let handler = (e) =>{

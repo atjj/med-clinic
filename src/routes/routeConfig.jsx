@@ -32,6 +32,7 @@ import OnlineReg from '../pages/OnlineReg/OnlineReg.jsx';
 
 import { roles } from '../utils/constants.js';
 import AdminAnalyze from '../pages/AdminAnalyze/AdminAnalyze.jsx';
+import AnalyzeTable from '../pages/AdminAnalyzeTable/AnalyzeTable.jsx';
 
 export default new createBrowserRouter([
     {
@@ -204,7 +205,12 @@ export default new createBrowserRouter([
           path: '/admin/analyzes',
           element: <AdminAnalyze/>,
           errorElement: <div>404 Not Found</div>,
-        }
+        },
+        {
+          path: '/admin/analyzes/:id',
+          element: <AnalyzeTable/>,
+          errorElement: <div>404 Not Found</div>,
+        },
       ]
 
     }
