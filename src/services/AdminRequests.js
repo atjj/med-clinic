@@ -18,7 +18,7 @@ export const GetAllApplications = async (token) => {
 };
 
 export const DeleteApplication = async (token, id) => {
-    console.log('love; ', id)
+    console.log('id; ', id)
     try {
         
         const res = await request.delete('api/v1/application', {
@@ -35,11 +35,14 @@ export const DeleteApplication = async (token, id) => {
     }
 };
 
-export const GetAllDoctors = async (token) => {
-    console.log('doctors ',token)
+
+
+
+export const AddDoctors = async (token) => {
+    console.log('application; ',token)
     try {
-        
-        const res = await request.get('/api/v1/doctor/get-doctors', {
+
+        const res = await request.post('api/v1/doctor/add-doctor', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -48,7 +51,6 @@ export const GetAllDoctors = async (token) => {
         return res.data;
     } catch (error) {
         console.log('err', error);
-        throw error; 
+        throw error;
     }
 };
-
