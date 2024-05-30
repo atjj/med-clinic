@@ -19,15 +19,18 @@ const AdminAnalyze = () => {
     const [categoriesList,setCategoriesList] = useState([]);
     const [visible,setVisible] = useState(false);
 
-    useEffect(() =>{
-        (async () =>{
-            const res = await fetch('http://medclinic-422605.uc.r.appspot.com/api/v1/analysis');
-            const data = await res.json();
-            setCategoriesList(data.reverse());
+    const loadCategories = async () => {
+        const res = await fetch('http://medclinic-422605.uc.r.appspot.com/api/v1/analysis');
+        const data = await res.json();
+        setCategoriesList(data.reverse());
+    };
 
-        })();
+    useEffect(() => {
+        
+        loadCategories();
 
-    },[categoriesList])
+
+    },[visible])
 
     const isVisible = () => {
         setVisible(!visible)
@@ -44,10 +47,13 @@ const AdminAnalyze = () => {
             },
             body: JSON.stringify({ name: inputCategory})
         });
-        console.log(res);
-
-        setVisible(false);
-        setInputCategory('');
+        if (res.ok) {
+            loadCategories();
+            setVisible(false);
+            setInputCategory('');
+        } else {
+            console.log("Error adding category");
+        }
 
     }
 
@@ -59,7 +65,11 @@ const AdminAnalyze = () => {
                 'Authorization': `Bearer ${auth?.accessToken}` 
             },
         });
-        console.log(res);
+        if (res.ok) {
+            loadCategories();
+        } else {
+            console.log("Error deleting category");
+        }
     
     }
 
@@ -89,20 +99,25 @@ const AdminAnalyze = () => {
                 </div>
 
 
+
+
                 <ul className= {styles.analyzesList}>
 
-                    {categoriesList.map(({id,name}) =>
-                        <Link to = {`/admin/analyzes/${id}`} key={id}>
-                            <li className= {styles.item}>
-                                <div className= {styles.analyzeTitle}>
-                                    <span>{id}</span>
-                                    <span className= {styles.title}>{name}</span>
+                    {categoriesList.map(({id,name},index) =>
+                        <li key = {id} className = {styles.item}>
+                            <Link to = {`/admin/analyzes/${name}/${id}`}>
+                                <div className = {styles.analyzeTitle}>
+                                    <span>{index+1}</span>
+                                    <span className = {styles.title}>{name}</span>
                                 </div>
-                                <div className= {styles.action} onClick = {() => {removeAnalyzeCategory(id)}}>
-                                    <img src = {trashCan}/>
-                                </div>
-                            </li>
-                        </Link>)}
+                            </Link>
+                            <div className= {styles.action} onClick = {() => {removeAnalyzeCategory(id)}}>
+                                <img src = {trashCan}/>
+                            </div>
+                        </li>
+
+
+                    )}
 
                 </ul>
 

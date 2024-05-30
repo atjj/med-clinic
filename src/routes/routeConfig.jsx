@@ -170,9 +170,9 @@ export default new createBrowserRouter([
     {
 
       element: (
-              <Unauthorized allowedRoles = {roles.ADMIN}>
-                <AdminPage/>
-              </Unauthorized>
+                <Unauthorized allowedRoles = {roles.ADMIN}>
+                   <AdminPage/>
+                </Unauthorized>
                ),
       errorElement: <div>404 Not Found</div>,
       children:[
@@ -207,7 +207,7 @@ export default new createBrowserRouter([
           errorElement: <div>404 Not Found</div>,
         },
         {
-          path: '/admin/analyzes/:id',
+          path: '/admin/analyzes/:name/:id',
           element: <AnalyzeTable/>,
           errorElement: <div>404 Not Found</div>,
         },

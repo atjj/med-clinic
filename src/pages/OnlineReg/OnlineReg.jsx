@@ -111,6 +111,7 @@ const OnlineReg = () => {
 
 
     return (
+
         <div className= {styles.onlineReg}>
 
             <div className = {styles.header}>
