@@ -33,6 +33,7 @@ import OnlineReg from '../pages/OnlineReg/OnlineReg.jsx';
 import { roles } from '../utils/constants.js';
 import AdminAnalyze from '../pages/AdminAnalyze/AdminAnalyze.jsx';
 import AnalyzeTable from '../pages/AdminAnalyzeTable/AnalyzeTable.jsx';
+import LaborantPage from '../pages/LaborantPage/LaborantPage.jsx';
 
 export default new createBrowserRouter([
     {
@@ -213,6 +214,28 @@ export default new createBrowserRouter([
         },
       ]
 
+    },
+    
+    {
+      element: (
+        <Unauthorized allowedRoles={roles.LABORANT}>
+          <LaborantPage/>
+        </Unauthorized>
+      ),
+      errorElement: <div>404 Not Found</div>,
+      children: [
+        {
+          path: '/laborant/patients',
+          element: <div>patients</div>,
+          errorElement: <div>404 Not Found</div>,
+        },
+        {
+          path: '/laborant/analyzes',
+          element: <div>analyzes</div>,
+          errorElement: <div>404 Not Found</div>,
+        }, 
+
+      ]
     }
 
   ]);

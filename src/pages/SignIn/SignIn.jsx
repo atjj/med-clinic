@@ -90,6 +90,9 @@ const SignIn = () => {
 
             if(res.roles == 'ADMIN')
                 navigate('/admin/online-reg');
+
+            if(res.roles == 'LABORANT')
+                navigate('/laborant/patients');
             
         }
 
