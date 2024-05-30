@@ -266,6 +266,7 @@ const OnlineReg = () => {
             
 
             {activeTab === 'online' && <TableComponent />}
+            
             {activeTab === 'schedule' && <Schedule/>}  
         </div>
     )

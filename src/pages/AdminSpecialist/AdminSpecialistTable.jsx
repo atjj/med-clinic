@@ -83,8 +83,8 @@ const StickyHeadTable = () => {
                       <Switch checked={row.isActive} />
                     </TableCell>
                     <TableCell align="left">
-                      <div style={{display:'flex',gap: "7px" }}>
-                        <img src={row.image ? row.image : unknownImage} alt='artur'  style={{ width: '50px', height: '50px', borderRadius: '100%' }} />
+                      <div style={{display:'flex' }}>
+                        <img src={row.image} alt='artur'  style={{ width: '50px', height: 'auto',borderRadius:'25px' }} />
                         <div>
                         <div style={{fontFamily:'Manrope-Medium',fontSize:'16px'}}>{`${row.name} ${row.surName}`}</div>
                         <div style={{color:'#959595',fontSize:'14px',fontFamily:'Manrope-Medium'}}>{row.position}</div>
