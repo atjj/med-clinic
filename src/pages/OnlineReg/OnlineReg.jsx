@@ -25,64 +25,173 @@ import {
     ModalFooter,
     useDisclosure
   } from "@nextui-org/modal";
+import { BASE_URL } from "../../utils/constants.js";
+
+import useAuth from "../../hooks/useAuth.jsx";
   
 
 
 
-  const animals = [
-    {label: "Cat", value: "cat", description: "The second most popular pet in the world"},
-    {label: "Dog", value: "dog", description: "The most popular pet in the world"},
-    {label: "Elephant", value: "elephant", description: "The largest land animal"},
-    {label: "Lion", value: "lion", description: "The king of the jungle"},
-    {label: "Tiger", value: "tiger", description: "The largest cat species"},
-    {label: "Giraffe", value: "giraffe", description: "The tallest land animal"},
-    {
-      label: "Dolphin",
-      value: "dolphin",
-      description: "A widely distributed and diverse group of aquatic mammals",
-    },
-    {label: "Penguin", value: "penguin", description: "A group of aquatic flightless birds"},
-    {label: "Zebra", value: "zebra", description: "A several species of African equids"},
-    {
-      label: "Shark",
-      value: "shark",
-      description: "A group of elasmobranch fish characterized by a cartilaginous skeleton",
-    },
-    {
-      label: "Whale",
-      value: "whale",
-      description: "Diverse group of fully aquatic placental marine mammals",
-    },
-    {label: "Otter", value: "otter", description: "A carnivorous mammal in the subfamily Lutrinae"},
-    {label: "Crocodile", value: "crocodile", description: "A large semiaquatic reptile"},
+  const intervals = [
+    {label: "15 минут", value: "15"},
+    {label: "30 минут", value: "30"},
+    {label: "45 минут", value: "45"},
+    {label: "1 час", value: "60"},
+    {label: "1.5 час", value: "90"},
   ];
 
 
 
 
+const getFullTime = (time) => {
+  return time < 10 ? `0${time}`: time 
+}
+
+
 const OnlineReg = () => {
+
+   const {auth} = useAuth();
+
 
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
     const [services,setServices] = useState([]);
     const [specialists,setSpecialists] = useState([]);
 
     const [serviceId,setServiceId] = useState("");
-    const [specialistId,setSpecialistId] = useState("");
+    const [doctorId,setDoctorId] = useState("");
 
+    const [timeIntervals,setTimeInterval] = useState("");
 
+    const [message,setMessage] = useState('');
+
+    const [repeatDays, setRepeatDays] = useState({
+      "Пн": false,
+      "Вт": false,
+      "Ср": false,
+      "Чт": false,
+      "Пт": false,
+      "Сб": false,
+      "Вс": false,
+    });
 
     const [dateRange, setDateRange] = useState({
       start: parseDate("2024-04-01"),
       end: parseDate("2024-04-08"),
     });
 
-    const [time, setTime] = useState(new Time(0, 0)); // Начальное значение времени
 
-    const handleTimeChange = (newTime) => {
-      setTime(newTime);
+    const [time, setTime] = useState({
+      timeFrom: new Time(0, 0),
+      timeTo: new Time(0, 0)
+    }); 
+
+
+    const [breakTime,setBreakTime] = useState({
+      startBreak: new Time(0, 0),
+      endBreak: new Time(0, 0)
+    })
+
+
+    useEffect(() => {
+      setMessage('')
+    },[time,breakTime,dateRange,repeatDays,services,specialists,timeIntervals])
+
+    const handleRepeatDayToggle = (day) => {
+      setRepeatDays((prevDays) => ({
+        ...prevDays,
+        [day]: !prevDays[day],
+      }));
+
     };
 
-    console.log(time)
+
+    const handleStartBreak = (newTime) => {
+      setBreakTime(prev => ({
+        ...prev,
+        startBreak: newTime
+      }));
+    };
+
+    const handleEndBreak = (newTime) => {
+      setBreakTime(prev => ({
+        ...prev,
+        endBreak: newTime
+      }));
+    };
+
+    
+
+    const handleTimeFromChange = (newTime) => {
+      setTime(prev => ({
+        ...prev,
+        timeFrom: newTime
+      }));
+    };
+
+    const handleTimeToChange = (newTime) => {
+      setTime(prev => ({
+        ...prev,
+        timeTo: newTime
+      }));
+    };
+
+
+    
+
+
+    const handleSubmit = async () => {
+  
+      // Подготовка данных для отправки
+      const dataToSend = {
+        serviceId,
+        doctorId,
+        dateOfStart: `${dateRange.start.year}-${getFullTime(dateRange.start.month)}-${getFullTime(dateRange.start.day)}`,
+        dateOfFinish: `${dateRange.end.year}-${getFullTime(dateRange.end.month)}-${getFullTime(dateRange.end.day)}`,
+        timeFrom: `${getFullTime(time.timeFrom.hour)}:${getFullTime(time.timeFrom.minute)}`,
+        timeTo: `${getFullTime(time.timeTo.hour)}:${getFullTime(time.timeTo.minute)}`,
+        interval: parseInt(timeIntervals),
+        startBreak: `${getFullTime(breakTime.startBreak.hour)}:${getFullTime(breakTime.startBreak.minute)}`,
+        endBreak: `${getFullTime(breakTime.endBreak.hour)}:${getFullTime(breakTime.endBreak.minute)}`,
+        repeatDays: repeatDays
+      };
+      console.log(dataToSend);
+      try {
+        const res = await fetch(`${BASE_URL}/api/v1/schedule/add-schedule`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${auth?.accessToken}`
+          },
+          body: JSON.stringify(dataToSend)
+        });
+
+        if(res.status == 400)
+          setMessage("This doctor already has own schedule");
+
+    
+        if (!res.ok) {
+          console.log(res);
+          const errorText = await res.text();
+          throw new Error(`Error ${res.status}: ${errorText}`);
+        }
+        
+        setMessage("success")
+        const data = await res.json();
+        console.log(data);
+    
+        return data;
+      } catch (error) {
+        console.error('An error occurred:', error.message);
+        throw error;
+      }
+    
+
+
+    }
+
+
+
+   
     useEffect(()=> {
 
       (async () => {
@@ -114,6 +223,7 @@ const OnlineReg = () => {
 
         <div className= {styles.onlineReg}>
 
+
             <div className = {styles.header}>
                 <h1 className= {styles.head}>Онлайн-запись</h1>
                 
@@ -143,7 +253,8 @@ const OnlineReg = () => {
                   <>
                     <ModalHeader className="flex flex-col gap-1 text-center text-[24px]">Добавление записей</ModalHeader>
                     <ModalBody className="px-[0px] w-[490px] mt-[20px]">
-                              
+                    <p>{message}</p>
+
                     <div className="flex flex-col gap-[18px]">
                       <Select 
                           placeholder="Выберите услугу" 
@@ -167,6 +278,7 @@ const OnlineReg = () => {
                             variant = "bordered"
                             labelPlacement="outside"
                             label = "Специалист"
+                            onChange={(e) =>{setDoctorId(e.target.value)} }
           
                           >
                           {specialists.map((specialist) => (
@@ -192,22 +304,26 @@ const OnlineReg = () => {
 
                     <div className="flex gap-[18px]">
                         <TimeInput 
+                          aria-label="timeFrom"
                           label="Время от" 
                           labelPlacement="outside" 
                           defaultValue={new Time(0, 0)} 
                           hourCycle={24}
                           className="w-[80px]"
                           variant = "bordered"
-                          value = {time} onChange={handleTimeChange}
+                          value = {time.timeFrom} onChange={handleTimeFromChange}
                         />
                         
                         <TimeInput 
+                          aria-label="timeTo"
+
                           label="Время до" 
                           labelPlacement="outside" 
                           defaultValue={new Time(0, 0)} 
                           hourCycle={24}
                           className="w-[80px]"
                           variant = "bordered"
+                          value = {time.timeTo} onChange={handleTimeToChange}
 
                         />
 
@@ -219,27 +335,61 @@ const OnlineReg = () => {
                           labelPlacement="outside"
                           label = "Интервал часов"
                           className="w-[290px]"
+                          value={timeIntervals}
+                          onChange = {(e) => {setTimeInterval(e.target.value)}}
 
                         >
-                        {animals.map((animal) => (
-                        <SelectItem key = {animal.value} value = {animal.value}>
-                          {animal.label}
+                        {intervals.map((interval) => (
+                        <SelectItem key = {interval.value} value = {interval.value}>
+                          {interval.label}
                         </SelectItem>
                         ))}
                         </Select>
+                      </div>
+
+
+                      <div className="flex gap-[10px] flex-col	">
+                        <label>Перерыв:</label>
+                        <div className="flex gap-[18px]">
+                        <TimeInput 
+                          aria-label="startBreak"
+                          labelPlacement="outside" 
+                          defaultValue={new Time(0, 0)} 
+                          hourCycle={24}
+                          className="w-[80px]"
+                          variant = "bordered"
+                          value = {breakTime.startBreak} onChange={handleStartBreak}
+                        />
+                        
+                        <TimeInput 
+                          aria-label="endBreak"
+                          labelPlacement="outside" 
+                          defaultValue={new Time(0, 0)} 
+                          hourCycle={24}
+                          className="w-[80px]"
+                          variant = "bordered"
+                          value = {breakTime.endBreak} onChange={handleEndBreak}
+
+                        />
+                        </div>
                       </div>
 
                       
                       <div>
                           <h3>Дни повторения:</h3>
                           <div className="flex gap-[8px] mt-[4px] text-[14px]">
-                            <Button className="w-[53px] h-[42px]" size = 'sm' color="primary" variant = 'bordered'>Пн</Button>
-                            <Button className="w-[53px] h-[42px]" size = 'sm' color="primary" variant = 'bordered'>Вт</Button>
-                            <Button className="w-[53px] h-[42px]" size = 'sm' color="primary" variant = 'bordered'>Ср</Button>
-                            <Button className="w-[53px] h-[42px]" size = 'sm' color="primary" variant = 'bordered'>Чт</Button>
-                            <Button className="w-[53px] h-[42px]" size = 'sm' color="primary" variant = 'bordered'>Пт</Button>
-                            <Button className="w-[53px] h-[42px]" size = 'sm' color="primary" variant = 'bordered'>Сб</Button>
-                            <Button className="w-[53px] h-[42px]" size = 'sm' color="primary" variant = 'bordered'>Вс</Button>
+                            {Object.keys(repeatDays).map((day) => (
+                              <Button
+                                key={day}
+                                className={`w-[53px] h-[42px] ${repeatDays[day] ? 'bg-blue-500' : 'bg-gray-200'}`}
+                                size="sm"
+                                color="primary"
+                                variant="bordered"
+                                onClick={() => handleRepeatDayToggle(day)}
+                              >
+                                {day}
+                              </Button>
+                        ))}
                           </div>
                       </div>
                       </div>
@@ -255,7 +405,7 @@ const OnlineReg = () => {
                       <Button className="w-[236px]" color="primary" variant="bordered" onPress={onClose}>
                       Отменить
                       </Button>
-                      <Button className="w-[236px]" color="primary" onPress={onClose}>
+                      <Button className="w-[236px]" color="primary" onPress={handleSubmit}>
                         Опубликовать
                       </Button>
                     </ModalFooter>
@@ -270,6 +420,7 @@ const OnlineReg = () => {
             {activeTab === 'schedule' && <Schedule/>}  
         </div>
     )
+
 }
 
 
@@ -277,3 +428,6 @@ const OnlineReg = () => {
 
 
 export default OnlineReg;
+
+
+
