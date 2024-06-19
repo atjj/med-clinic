@@ -1,0 +1,61 @@
+.overlay{
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  height: 100%;
+  z-index: 1;
+.drawer{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  height: 100%;
+  background:#fFF;
+  right: 0;
+  box-shadow: -10px 4px 24px rgba(0,0,0,0.1);
+  gap: 5px;
+
+  .headerRegistration{
+    display: flex;
+    align-items: center;
+    background-color: #fFF;
+    width: 100%;
+    height: 56px;
+    .remove{
+      margin-right: 85px;
+      cursor: pointer;
+      margin-left: 4px;
+    }
+   }
+  .headerTitle{
+    color:#346EFB;
+    font-size: 16px;
+    font-family: Manrope-Bold;
+  }
+  .items{
+    padding: 20px;
+  .listServices{
+    display: flex;
+    ul{
+      list-style: none;
+      border-radius: 10px;
+      .services{
+        background: #fff;
+        padding: 8px;
+        border-radius: 5px;
+        width: 340px;
+        transition: .2s;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: Manrope-Medium;
+      }
+      .services:hover{
+        background-color: #DBEBFF;
+      }
+    }
+  }
+ }}
+}

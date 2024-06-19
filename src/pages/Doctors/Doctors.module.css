@@ -11,12 +11,13 @@
   margin-bottom: 34px;
 }
 .doctors h2 span {
-  color: rgb(52, 110, 251);
+  color: #346EFB;
 }
 .doctors .infoDoctors {
   font-weight: 400;
   font-family: Manrope-Regular;
   color: rgb(77, 78, 81);
+  margin-bottom: 60px;
 }
 .doctors .infoDoctors .paragraph1 {
   width: 664px;
@@ -25,6 +26,13 @@
 .doctors .infoDoctors .paragraph2 {
   width: 852px;
 }
+.doctors .doctorsList {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  /*      height: 1040px;
+       overflow: hidden; */
+}
 .doctors .cardsFooter {
   padding-top: 66px;
   text-align: center;
@@ -32,10 +40,10 @@
   color: #4D4E51;
 }
 .doctors .cardsFooter .number {
-  font-weight: 500;
   font-size: 16px;
   color: black;
 }
 .doctors .cardsFooter .more {
-  color: rgb(52, 110, 251);
+  color: #346EFB;
+  cursor: pointer;
 }/*# sourceMappingURL=Doctors.module.css.map */

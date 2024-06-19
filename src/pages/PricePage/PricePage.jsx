@@ -44,10 +44,10 @@ const PricePage = () =>{
                 <Accordion>
                 <AccordionSummary
                 style={{ 
-                         border: '1px solid rgb(52, 110, 251)',
+                         border: '1px solid "#346EFB")',
                          borderRadius: '10px', 
                          boxShadow: '1px 1px 5px 0px rgba(0, 0, 0, 0.15)',
-                         background: 'rgb(52, 110, 251)',
+                         background: "#346EFB",
                          color: 'white',
                          fontFamily: 'Manrope-Semi-Bold'
                        }}

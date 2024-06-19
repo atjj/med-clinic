@@ -3,7 +3,6 @@ import Footer from '../components/Footer/Footer.jsx'
 import './App.css'
 import {Outlet} from 'react-router-dom';
 
-
 function App() {
 
 
@@ -12,7 +11,7 @@ function App() {
   return (
     <>
       
-        <Header/>
+        <Header />
           <Outlet/>
         <Footer/>
       

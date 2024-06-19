@@ -20,4 +20,25 @@
   color: rgb(34, 34, 34);
   font-family: Manrope-Regular;
   font-size: 18px;
+}
+.poster .title .btn {
+  display: block;
+  border: none;
+  height: 43px;
+  /* border-radius: 24px; */
+  cursor: pointer;
+  font-family: Manrope-Medium;
+  font-size: 14px;
+  background: rgb(255, 255, 255);
+  color: #346EFB;
+  border: 1px solid #346EFB;
+  padding: 7px 19px 7px 19px;
+  min-width: 158px;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+.poster .title .btn:hover {
+  color: rgb(255, 255, 255);
+  border: none;
+  background: #346EFB;
 }/*# sourceMappingURL=Poster.module.css.map */

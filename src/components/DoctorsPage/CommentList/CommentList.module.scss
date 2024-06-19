@@ -1,0 +1,16 @@
+.commentsList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .patientName{
+        font-family: Manrope-Regular;
+    }
+    .body{
+        font-size: 18px;
+        padding: 10px 10px;
+        border: 1px solid black;
+        border-radius: 10px;
+        font-family: Manrope-Regular;
+        
+    }
+}

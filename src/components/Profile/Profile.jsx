@@ -3,19 +3,18 @@ import styles from './Profile.module.scss';
 
 import profile from '../../assets/icons/profile.svg';
 
-import { useState,useEffect,useRef, useContext } from 'react';
+import { useState,useEffect,useRef,  } from 'react';
 
 import DropDownBtn  from '../../UI/DropDownBtn/Button.jsx';
 
 import { Link } from 'react-router-dom';
 
-import AuthContext from '../../context/AuthProvider.jsx';
-
+import useAuth from '../../hooks/useAuth.jsx';
 import { useNavigate } from 'react-router-dom';
  
 const Profile = () => {
 
-    const {auth,setAuth} = useContext(AuthContext);
+    const {auth,setAuth} = useAuth();
     
     const [isOpen,setOpen] = useState(false);
 
@@ -42,11 +41,13 @@ const Profile = () => {
 
 
     const logout = () => {
-        const newObj = {...auth, email: '', roles: '', accessToken: "",refreshToken: ""};
-        setAuth(newObj);
+        /* const newObj = {...auth, email: '', roles: '', accessToken: "",refreshToken: ""}; */
+
+        /* setAuth(newObj); */
+        setAuth({})
         navigate('/signin');
-        localStorage.removeItem('site');
-    }
+/*         localStorage.removeItem('site');
+ */    }
 
 
 
@@ -87,7 +88,7 @@ const List2 = ({logout}) =>{
     return(
         <>
              <li><Link to = "/dashboard/records">Мои записи</Link></li>
-             <li><Link to = "/dashboard/profile">Профиль</Link></li>
+             <li><Link to = "/dashboard/profile/personaldata">Профиль</Link></li>
              <li onClick={logout}>Выйти</li>
         </>
     )

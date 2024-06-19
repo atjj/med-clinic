@@ -11,7 +11,7 @@ const Profile = () =>{
             <h2>Профиль</h2>
             
             <ul>
-                <li><Link to = '/dashboard/profile'>Личные данные</Link></li>
+                <li><Link to = '/dashboard/profile/personaldata'>Личные данные</Link></li>
                 <li><Link to = '/dashboard/profile/changePwd'>Сменить пароль</Link></li>
             </ul>
 

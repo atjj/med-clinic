@@ -1,0 +1,96 @@
+.Doctorsinfo {
+  margin-bottom: 120px;
+}
+.Doctorsinfo .doctorInfo {
+  margin-bottom: 120px;
+  max-width: 852px;
+  margin-top: 26px;
+}
+.Doctorsinfo .doctorInfo .header {
+  margin-top: 26px;
+}
+.Doctorsinfo .doctorInfo .title {
+  max-width: 664px;
+  color: #4D4E51;
+  font-family: Manrope-Regular;
+  font-size: 18px;
+  margin-top: 34px;
+}
+.Doctorsinfo .doctorInfo .info__title {
+  margin-top: 20px;
+  color: #4D4E51;
+  font-family: Manrope-Regular;
+  font-size: 18px;
+}
+.Doctorsinfo .doctorInfo .doctor {
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+}
+.Doctorsinfo .doctorInfo .doctor .doctorImage {
+  width: 319px;
+  height: 349px;
+  margin-right: 50px;
+}
+.Doctorsinfo .doctorInfo .titles .name {
+  color: #346EFB;
+  font-size: 24px;
+  font-family: Manrope-Medium;
+  padding-bottom: 40px;
+}
+.Doctorsinfo .doctorInfo .titles .branch {
+  font-family: Manrope-Regular;
+  color: #58595B;
+  font-size: 18px;
+}
+.Doctorsinfo .doctorInfo .titles .branch span {
+  color: black;
+  font-weight: 500;
+  font-family: Manrope-Medium;
+}
+.Doctorsinfo .doctorInfo .titles .jobTitle {
+  font-family: Manrope-Regular;
+  color: #58595B;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.Doctorsinfo .doctorInfo .titles .jobTitle span {
+  color: black;
+  font-weight: 500;
+  font-family: Manrope-Medium;
+}
+.Doctorsinfo .doctorInfo .details {
+  margin-top: 34px;
+}
+.Doctorsinfo .doctorInfo .details .listParagraph {
+  font-family: Manrope-Semi-Bold;
+  font-size: 18px;
+}
+.Doctorsinfo .doctorInfo .details ul {
+  margin-top: 4px;
+}
+.Doctorsinfo .doctorInfo .details ul li {
+  font-size: 16px;
+  font-family: Manrope-Regular;
+  color: #222222;
+  margin-left: 20px;
+}
+.Doctorsinfo .doctorInfo .details .infoFooter {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+}
+.Doctorsinfo .doctorInfo .details .infoFooter .vector {
+  margin-right: 8px;
+}
+.Doctorsinfo .doctorInfo .details .infoFooter span {
+  font-size: 16px;
+}
+.Doctorsinfo .doctorInfo .details .infoFooter span a {
+  text-decoration: none;
+  color: #346EFB;
+  font-family: Manrope-Regular;
+}
+.Doctorsinfo .commentSection {
+  width: 100%;
+}/*# sourceMappingURL=Doctorsinfo.module.css.map */

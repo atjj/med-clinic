@@ -1,0 +1,20 @@
+.form {
+  margin-top: 50px;
+}
+.form h3 {
+  font-family: Manrope-Medium;
+}
+.form .commentField textarea {
+  width: 100%;
+  resize: none;
+  padding: 27px 20px;
+  height: 315px;
+  border-radius: 20px;
+  font-family: Manrope-Medium;
+  font-size: 18px;
+}
+.form .btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+}/*# sourceMappingURL=CommentForm.module.css.map */

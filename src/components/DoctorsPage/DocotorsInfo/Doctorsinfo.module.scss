@@ -1,0 +1,96 @@
+.Doctorsinfo {
+    margin-bottom: 120px;
+
+
+    .doctorInfo {
+
+        margin-bottom: 120px;
+        .header {
+            margin-top: 26px;
+        }
+        
+        max-width: 852px ;
+        margin-top: 26px;
+        .title{
+         max-width:664px ;
+         color: #4D4E51;
+         font-family: Manrope-Regular;
+         font-size: 18px;
+         margin-top: 34px;
+        }
+        .info__title{
+         margin-top: 20px;
+         color: #4D4E51;
+         font-family: Manrope-Regular;
+         font-size: 18px;
+        }
+        .doctor{
+            display: flex;
+            align-items: center;
+            margin-top: 60px;
+            .doctorImage{
+                width: 319px;
+                height: 349px;
+                margin-right: 50px;
+            }
+        }
+        .titles{
+            .name{
+                color: #346EFB;
+                font-size: 24px;
+                font-family: Manrope-Medium;
+                padding-bottom: 40px;
+            }
+            .branch{
+                font-family: Manrope-Regular;
+                color: #58595B;
+                font-size: 18px;
+                span{
+                    color: black;
+                    font-weight: 500;
+                    font-family: Manrope-Medium;
+                }
+            }
+            .jobTitle{
+                font-family: Manrope-Regular;
+                color: #58595B;
+                font-size: 18px;
+                margin-bottom: 10px;
+                span{
+                    color: black;
+                    font-weight: 500;
+                    font-family: Manrope-Medium;
+                }
+            }
+
+          }
+    
+          .details {
+    
+            margin-top: 34px;
+            font-family: Manrope-Regular;
+            font-size: 18px;
+            
+            .infoFooter{
+             
+                margin-top: 40px;
+    
+                span{
+                    font-size: 16px;
+                    
+                    a{
+                        text-decoration:none;
+                        color: #346EFB;
+                        font-family: Manrope-Regular;
+                    }
+                }
+            }
+          }
+    }
+
+    .commentSection {
+        width: 100%;
+     
+    }
+    
+}

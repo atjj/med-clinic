@@ -11,8 +11,11 @@
   font-family: Manrope-Semi-Bold;
   margin-top: 26px;
 }
+.contacts h2 span {
+  color: #346EFB;
+}
 .contacts a {
-  color: rgb(52, 110, 251);
+  color: #346EFB;
 }
 .contacts ul {
   list-style-type: none;

@@ -1,5 +1,7 @@
-h3 {
+.header {
   margin-bottom: 30px;
+  font-family: Manrope-Semi-Bold;
+  font-size: 24px;
 }
 
 .cards {
@@ -25,15 +27,18 @@ h3 {
 .cards .card .imageDoctor {
   width: 319px;
   height: 349px;
+  margin-bottom: 16px;
 }
-.cards h4 {
+.cards .docName {
   font-size: 18px;
   color: rgb(34, 34, 34);
+  font-family: Manrope-Medium;
 }
 .cards .profile {
   font-size: 16px;
   color: rgb(149, 149, 149);
+  font-family: Manrope-Medium;
 }
 .cards .btn {
-  margin-top: 10px;
+  margin-top: 18px;
 }/*# sourceMappingURL=DoctorProf.module.css.map */
