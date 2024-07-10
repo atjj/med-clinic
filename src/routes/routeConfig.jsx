@@ -40,26 +40,31 @@ export default new createBrowserRouter([
       element: <App/>,
       errorElement: <div>404 Not Found</div>,
       children:[
+
           { 
             path: '/',
             element: <Home/>,
             errorElement: <div>404 Not Found</div>
           },
+
           {
             path: '/about',
             element: <About/>,
             errorElement: <div>404 Not Found</div>
           },
+
           {
             path: '/services',
             element: <ServicesPage/>,
             errorElement: <div>404 Not Found</div>
           },
+
           {
             path: '/doctors',
             element: <Doctors/>,
             errorElement: <div>404 Not Found</div>
           },
+
           {
             path: '/price',
             element: <PricePage/>,
@@ -71,11 +76,13 @@ export default new createBrowserRouter([
             element: <Analize/>,
             errorElement: <div>404 Not Found</div>
           },
+
           {
             path: '/cart',
             element: <Cart/>,
             errorElement: <div>404 Not Found</div>
           },
+          
           {
             path: '/analize/:id',
             element: <AnalizeInfo/>,
@@ -86,6 +93,7 @@ export default new createBrowserRouter([
             element: <Contacts/>,
             errorElement: <div>404 Not Found</div>
           },
+
           {
             path: '/services/:id',
             element: <Service/>,
